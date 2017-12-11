@@ -14,7 +14,6 @@ This problem decomposes into several areas of activity:
 ## Functionality & MVP
 - [ ] Show all jewelry listings
 - [ ] Allow users to post a new jewelry listing for sale
-- [ ] 
 - [ ] Seed Marketplace with appropriate precious stone and transaction history data
 - [ ] Create interactive walkthrough of how the process works
 
