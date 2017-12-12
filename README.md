@@ -105,3 +105,19 @@ This problem decomposes into several areas of activity:
 ### Day 8 (Mon)
 * Complete README for project
 * Continue with any Day 7 tasks that haven’t been finished
+
+## Wireframes
+
+### Landing Page
+![alt text](https://github.com/cylinda47/noncense/blob/master/splash.png)
+
+### Product List
+![alt_text](https://github.com/cylinda47/noncense/blob/master/list.png)
+
+### Product Detail
+
+![alt_text](https://github.com/cylinda47/noncense/blob/master/show%20detail.png)
+
+### Submit Form
+
+![alt_text](https://github.com/cylinda47/noncense/blob/master/create.png)
