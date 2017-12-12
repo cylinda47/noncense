@@ -1,27 +1,145 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 class Home extends Component {
   render() {
     return(
       <main className="container">
-        <div className="pure-g">
-          <div className="pure-u-1-1">
-            <h1>Good to Go!</h1>
-            <p>Your Truffle Box is installed and ready.</p>
-            <h2>Smart Contract Authentication</h2>
-            <p>This particular box comes with autentication via a smart contract built-in.</p>
-            <p>In the upper-right corner, you'll see a login button. Click it to login with with the Authentication smart contract. If there is no user information for the given address, you'll be redirected to sign up. There are two authenticated routes: "/dashboard", which displays the user's name once authenticated; and "/profile", which allows a user to update their name.</p>
-            <h3>Redirect Path</h3>
-            <p>This example redirects home ("/") when trying to access an authenticated route without first authenticating. You can change this path in the failureRedriectUrl property of the UserIsAuthenticated wrapper on <strong>line 9</strong> of util/wrappers.js.</p>
-            <h3>Accessing User Data</h3>
-            <p>Once authenticated, any component can access the user's data by assigning the authData object to a component's props.<br/><code>{"// In component's render function."}<br/>{"const { authData } = this.props"}<br/><br/>{"// Use in component."}<br/>{"Hello { this.props.authData.name }!"}</code></p>
-            <h3>Further Reading</h3>
-            <p>The React/Redux portions of the authentication fuctionality are provided by <a href="https://github.com/mjrussell/redux-auth-wrapper" target="_blank">mjrussell/redux-auth-wrapper</a>.</p>
+        <nav className='header'>
+
+        </nav>
+        <section className='splash-title'>
+          <h1>Noncense</h1>
+          <h4>A precious stone marketplace built on Ethereum blockchain</h4>
+        </section>
+
+        <section className='why-ethereum'>
+          <h1>Why Ethereum?</h1>
+          <hr className='underline'/>
+
+          <div>
+            <img src='https://images.unsplash.com/photo-1502101872923-d48509bff386?auto=format&fit=crop&w=2378&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D'
+            alt='long way to go photo'/>
+            <p>
+              'brief note outlining the security and functionality associated with Ethereum. This should include the problem statement.brief note outlining the security and functionality associated with Ethereum. This should include the problem statement.brief note outlining the security and functionality associated with Ethereum. This should include the problem statement.brief note outlining the security and functionality associated with Ethereum. This should include the problem statement.brief note outlining the security and functionality associated with Ethereum. This should include the problem statement.'
+            </p>
           </div>
-        </div>
+        </section>
+
+        <section className='how-it-works'>
+          <h1>How it Works</h1>
+          <hr className='underline' />
+          <ul>
+            <li>
+              <h6>
+                Smart Contracts
+              </h6>
+              <p>
+                This is some info about Smart ContractsThis is some info about Smart ContractsThis is some info about Smart ContractsThis is some info about Smart ContractsThis is some info about Smart ContractsThis is some info about Smart ContractsThis is some info about Smart Contracts
+              </p>
+            </li>
+            <li>
+              <h6>
+                Noncense Smart Contract
+              </h6>
+              <p>
+                This is some info about that delicious contract we're usingThis is some info about that delicious contract we're usingThis is some info about that delicious contract we're usingThis is some info about that delicious contract we're usingThis is some info about that delicious contract we're usingThis is some info about that delicious contract we're usingThis is some info about that delicious contract we're using
+              </p>
+            </li>
+            <li>
+              <h6>
+                Noncense Smart Contract Functionality
+              </h6>
+              <p>
+                This is what that amazing contract doesThis is what that amazing contract doesThis is what that amazing contract doesThis is what that amazing contract doesThis is what that amazing contract doesThis is what that amazing contract doesThis is what that amazing contract doesThis is what that amazing contract doesThis is what that amazing contract does
+              </p>
+            </li>
+          </ul>
+        </section>
+
+        <section className='instructions'>
+          <h1>How to Use Noncense</h1>
+          <hr className='underline' />
+          <ul>
+            <li>
+              <h6>
+                Step 1
+              </h6>
+              <p>
+                Get Metamask.io
+              </p>
+            </li>
+            <li>
+              <h6>
+                Step 2
+              </h6>
+              <p>
+                This
+              </p>
+            </li>
+            <li>
+              <h6>
+                Step 3
+              </h6>
+              <p>
+                Something else
+              </p>
+            </li>
+            <li>
+              <h6>
+                Step 4
+              </h6>
+              <p>
+                Profit
+              </p>
+            </li>
+          </ul>
+        </section>
+
+        <section className='contributors'>
+          <h1>Contributors</h1>
+          <hr className='underline' />
+          <ul>
+            <li>
+              <h6>Linda Chan</h6>
+              <a>
+                GitHub
+              </a>
+              <a>
+                LinkedIn
+              </a>
+            </li>
+            <li>
+              <h6>Jacob Butler</h6>
+                <a href='https://github.com/DrAmaze'>
+                  GitHub
+                </a>
+                <a href='https://www.linkedin.com/in/jacob-butler-a2ab7093/'>
+                  LinkedIn
+                </a>
+            </li>
+            <li>
+              <h6>Kevin Lee</h6>
+              <a>
+                GitHub
+              </a>
+              <a>
+                LinkedIn
+              </a>
+            </li>
+            <li>
+              <h6>William Meng</h6>
+              <a>
+                GitHub
+              </a>
+              <a>
+                LinkedIn
+              </a>
+            </li>
+          </ul>
+        </section>
       </main>
     )
   }
 }
 
-export default Home
+export default Home;

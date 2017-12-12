@@ -19,7 +19,6 @@ code {
 .container {
   box-sizing: border-box;
   width: 100%;
-  padding: 45px 20px;
 }
 
 .pure-button-primary {
