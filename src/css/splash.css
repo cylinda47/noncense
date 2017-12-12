@@ -1,0 +1,227 @@
+/* header */
+
+nav {
+  border-top: 1px solid #E0EAF4;
+  position: fixed;
+  top: -1px;
+  background color: #1A62A3;
+  width: 100%;
+  color: #E0EAF4;
+  z-index: 100;
+}
+
+/* title section */
+
+.splash-title {
+  background-clip: border-box;
+  background-image: url(https://images.unsplash.com/photo-1471201310397-b4dc5f0c49c5?auto=format&fit=crop&w=2602&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D);
+  /*background-image: url(https://images.unsplash.com/photo-1496124248071-3e497bb1696c?auto=format&fit=crop&w=1158&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D);*/
+  /*background-image: url(https://images.unsplash.com/photo-1503513270701-67f56ac2e4f6?auto=format&fit=crop&w=1655&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D);*/
+  /*background-image: url(https://images.unsplash.com/photo-1505177881989-a802eb3a7832?auto=format&fit=crop&w=1652&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D);*/
+  background-size: cover;
+  background-position: bottom -1px right 0px;
+  color: #659EC7;
+  /*color: #ff4646;*/
+  height: 1000px;
+  font-weight: lighter;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.splash-title h1 {
+  font-family: 'Berkshire Swash', cursive;
+  font-size: 56px;
+  position: relative;
+  top: 30%;
+}
+
+.splash-title h4 {
+  font-size: 24px;
+  position: relative;
+  top: 30%;
+  font-weight: 400
+}
+
+/* why ethereum */
+
+.why-ethereum {
+  background: linear-gradient(0deg,  #B4A28F, #7C7062);
+  height: 720px;
+  color: #E0EAF4;
+}
+
+.why-ethereum h1 {
+  justify-content: center;
+  font-size: 44px;
+  font-weight: lighter;
+  padding-top: 60px;
+  text-align: center;
+}
+
+.underline {
+  width: 50px;
+  margin-bottom: 1em;
+  height: 2px;
+  background-color: #E0EAF4;
+  border: none;
+}
+
+.why-ethereum div {
+  display: flex;
+  flex-direction: row;
+}
+
+.why-ethereum img {
+  width: 45%;
+  padding: 20px;
+  margin: 20px;
+  height: 65%;
+  background-size: cover;
+  background-color: #E0EAF4;
+}
+
+.why-ethereum p {
+  padding: 40px;
+  font-size: 24px;
+}
+
+/* how it works */
+
+.how-it-works {
+  background: linear-gradient(0deg,  #F7F6F4, #B4A28F);
+  height: 600px;
+}
+
+.how-it-works h1 {
+  justify-content: center;
+  color: #E0EAF4;
+  font-size: 44px;
+  font-weight: lighter;
+  padding-top: 60px;
+  text-align: center;
+}
+
+.how-it-works ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: .9em;
+  min-width: 950px;
+}
+
+.how-it-works ul li {
+  margin: 5px;
+  padding: 30px;
+  width: 25%;
+  position: relative;
+  background-color: #B4A28F;
+  top: 10px;
+  height: 280px;
+  border-radius: 5px;
+  text-align: center;
+  opacity: .7;
+}
+
+.how-it-works ul li h6 {
+  justify-content: center;
+  font-size: 1em;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+ /* how to use noncense */
+
+.instructions {
+  background: linear-gradient(0deg, #E0EAF4 , #F7F6F4);
+  height: 1400px;
+}
+
+.instructions h1 {
+  justify-content: center;
+  font-size: 44px;
+  font-weight: lighter;
+  padding-top: 60px;
+  text-align: center;
+  color: #7C7062;
+}
+
+.instructions hr {
+  background-color: #7C7062;
+  margin-bottom: 80px;
+}
+
+.instructions ul li {
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  background-color: white;
+
+  padding: 1px 10px 10px 10px;
+  position: relative;
+  width: 250px;
+  height: 200px;
+  margin-bottom: 80px;
+  box-shadow: 2px 2px 2px #e6e6e6;
+}
+
+.instructions h6 {
+  font-size: 18px;
+
+}
+
+/*contributors */
+
+.contributors {
+  background: linear-gradient(0deg, #1A62A3, #E0EAF4);
+  /*background-image: url(https://images.unsplash.com/photo-1503513270701-67f56ac2e4f6?auto=format&fit=crop&w=1655&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D);*/
+
+  height: 500px;
+}
+
+.contributors h1 {
+  justify-content: center;
+  color: #E0EAF4;
+  font-size: 60px;
+  font-weight: lighter;
+  padding-top: 60px;
+  text-align: center;
+  font-family: 'Berkshire Swash', cursive;
+  text-shadow: 1px 1px 1px #E0EAF4;
+}
+
+.contributors hr {
+  background-color: #E0EAF4;
+}
+
+.contributors ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: .9em;
+  color: #1A62A3;
+}
+
+.contributors ul li {
+  margin: 5px;
+  padding: 30px;
+  width: 25%;
+  position: relative;
+  background-color: #E0EAF4;
+  top: 10px;
+  height: 200px;
+  border-radius: 5px;
+  text-align: center;
+  display: block;
+}
+
+.contributors ul li h6 {
+  justify-content: center;
+  font-size: 1.8em;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
