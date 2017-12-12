@@ -109,15 +109,15 @@ This problem decomposes into several areas of activity:
 ## Wireframes
 
 ### Landing Page
-![alt text](https://github.com/cylinda47/noncense/blob/master/splash.png)
+![](https://github.com/cylinda47/noncense/blob/master/docs/splash.png)
 
 ### Product List
-![alt_text](https://github.com/cylinda47/noncense/blob/master/list.png)
+![](https://github.com/cylinda47/noncense/blob/master/docs/list.png)
 
 ### Product Detail
 
-![alt_text](https://github.com/cylinda47/noncense/blob/master/show%20detail.png)
+![](https://github.com/cylinda47/noncense/blob/master/docs/show%20detail.png)
 
 ### Submit Form
 
-![alt_text](https://github.com/cylinda47/noncense/blob/master/create.png)
+![](https://github.com/cylinda47/noncense/blob/master/docs/create.png)
