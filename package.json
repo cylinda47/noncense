@@ -59,6 +59,7 @@
     "redux": "^3.7.2",
     "redux-auth-wrapper": "^1.0.0",
     "redux-thunk": "^2.2.0",
+    "solc": "^0.4.19",
     "web3": "github:ethereum/web3.js"
   },
   "scripts": {
