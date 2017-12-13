@@ -18,7 +18,7 @@ class Home extends Component {
 
           <div>
             <img src='https://images.unsplash.com/photo-1502101872923-d48509bff386?auto=format&fit=crop&w=2378&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D'
-            alt='long way to go photo'/>
+            alt='long way to go'/>
             <p>
               'brief note outlining the security and functionality associated with Ethereum. This should include the problem statement.brief note outlining the security and functionality associated with Ethereum. This should include the problem statement.brief note outlining the security and functionality associated with Ethereum. This should include the problem statement.brief note outlining the security and functionality associated with Ethereum. This should include the problem statement.brief note outlining the security and functionality associated with Ethereum. This should include the problem statement.'
             </p>

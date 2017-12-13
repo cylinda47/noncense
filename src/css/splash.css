@@ -1,12 +1,12 @@
 /* header */
 
 nav {
+  background color: #1A62A3;
   border-top: 1px solid #E0EAF4;
+  color: #E0EAF4;
   position: fixed;
   top: -1px;
-  background color: #1A62A3;
   width: 100%;
-  color: #E0EAF4;
   z-index: 100;
 }
 
@@ -18,15 +18,15 @@ nav {
   /*background-image: url(https://images.unsplash.com/photo-1496124248071-3e497bb1696c?auto=format&fit=crop&w=1158&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D);*/
   /*background-image: url(https://images.unsplash.com/photo-1503513270701-67f56ac2e4f6?auto=format&fit=crop&w=1655&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D);*/
   /*background-image: url(https://images.unsplash.com/photo-1505177881989-a802eb3a7832?auto=format&fit=crop&w=1652&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D);*/
-  background-size: cover;
   background-position: bottom -1px right 0px;
+  background-size: cover;
   color: #659EC7;
   /*color: #ff4646;*/
-  height: 1000px;
   font-weight: lighter;
+  height: 1000px;
+  justify-content: center;
   margin: 0;
   padding: 0;
-  justify-content: center;
   text-align: center;
   width: 100%;
 }
@@ -39,34 +39,34 @@ nav {
 }
 
 .splash-title h4 {
-  font-size: 24px;
   position: relative;
+  font-size: 24px;
+  font-weight: 400;
   top: 30%;
-  font-weight: 400
 }
 
 /* why ethereum */
 
 .why-ethereum {
   background: linear-gradient(0deg,  #B4A28F, #7C7062);
-  height: 720px;
   color: #E0EAF4;
+  height: 720px;
 }
 
 .why-ethereum h1 {
-  justify-content: center;
   font-size: 44px;
   font-weight: lighter;
+  justify-content: center;
   padding-top: 60px;
   text-align: center;
 }
 
 .underline {
-  width: 50px;
-  margin-bottom: 1em;
-  height: 2px;
   background-color: #E0EAF4;
   border: none;
+  height: 2px;
+  margin-bottom: 1em;
+  width: 50px;
 }
 
 .why-ethereum div {
@@ -75,17 +75,17 @@ nav {
 }
 
 .why-ethereum img {
-  width: 45%;
-  padding: 20px;
-  margin: 20px;
-  height: 65%;
-  background-size: cover;
   background-color: #E0EAF4;
+  background-size: cover;
+  margin: 30px 20px;
+  height: 65%;
+  padding: 20px;
+  width: 45%;
 }
 
 .why-ethereum p {
-  padding: 0 40px;
   font-size: 24px;
+  padding: 0 40px;
 }
 
 /* how it works */
@@ -96,10 +96,10 @@ nav {
 }
 
 .how-it-works h1 {
-  justify-content: center;
   color: #E0EAF4;
   font-size: 44px;
   font-weight: lighter;
+  justify-content: center;
   padding-top: 60px;
   text-align: center;
 }
@@ -113,23 +113,24 @@ nav {
 }
 
 .how-it-works ul li {
-  margin: 5px;
-  padding: 30px;
-  width: 25%;
-  position: relative;
   background-color: #B4A28F;
-  top: 10px;
-  height: 280px;
   border-radius: 5px;
-  text-align: center;
+  margin: 5px;
+  max-height: 350px;
+  min-height: 280px;
   opacity: .7;
+  padding: 30px;
+  position: relative;
+  text-align: center;
+  top: 10px;
+  width: 25%;
 }
 
 .how-it-works ul li h6 {
-  justify-content: center;
   font-size: 1em;
-  margin-top: 5px;
+  justify-content: center;
   margin-bottom: 5px;
+  margin-top: 5px;
 }
 
  /* how to use noncense */
@@ -140,12 +141,12 @@ nav {
 }
 
 .instructions h1 {
-  justify-content: center;
+  color: #7C7062;
   font-size: 44px;
   font-weight: lighter;
+  justify-content: center;
   padding-top: 60px;
   text-align: center;
-  color: #7C7062;
 }
 
 .instructions hr {
@@ -154,24 +155,22 @@ nav {
 }
 
 .instructions ul li {
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 2px 2px 2px #e6e6e6;
   display: block;
-  text-align: center;
+  height: 200px;
+  margin-bottom: 80px;
   margin-left: auto;
   margin-right: auto;
-  border-radius: 50%;
-  background-color: white;
-
+  text-align: center;
   padding: 1px 10px 10px 10px;
   position: relative;
   width: 250px;
-  height: 200px;
-  margin-bottom: 80px;
-  box-shadow: 2px 2px 2px #e6e6e6;
 }
 
 .instructions h6 {
   font-size: 18px;
-
 }
 
 /*contributors */
@@ -179,18 +178,17 @@ nav {
 .contributors {
   background: linear-gradient(0deg, #1A62A3, #E0EAF4);
   /*background-image: url(https://images.unsplash.com/photo-1503513270701-67f56ac2e4f6?auto=format&fit=crop&w=1655&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D);*/
-
   height: 500px;
 }
 
 .contributors h1 {
-  justify-content: center;
   color: #E0EAF4;
+  font-family: 'Berkshire Swash', cursive;
   font-size: 60px;
   font-weight: lighter;
+  justify-content: center;
   padding-top: 60px;
   text-align: center;
-  font-family: 'Berkshire Swash', cursive;
   text-shadow: 1px 1px 1px #E0EAF4;
 }
 
@@ -199,29 +197,29 @@ nav {
 }
 
 .contributors ul {
+  color: #1A62A3;
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin: .9em;
-  color: #1A62A3;
 }
 
 .contributors ul li {
+  background-color: #E0EAF4;
+  border-radius: 5px;
+  display: block;
+  height: 200px;
   margin: 5px;
   padding: 30px;
-  width: 25%;
   position: relative;
-  background-color: #E0EAF4;
-  top: 10px;
-  height: 200px;
-  border-radius: 5px;
   text-align: center;
-  display: block;
+  top: 10px;
+  width: 25%;
 }
 
 .contributors ul li h6 {
-  justify-content: center;
   font-size: 1.8em;
-  margin-top: 5px;
+  justify-content: center;
   margin-bottom: 5px;
+  margin-top: 5px;
 }
