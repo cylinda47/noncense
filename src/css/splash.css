@@ -6,6 +6,10 @@ nav {
   color: #E0EAF4;
   position: fixed;
   top: -1px;
+<<<<<<< HEAD
+=======
+  background-color: #1A62A3;
+>>>>>>> a4c16a299bc949a3c33fb8286c1079fbade5e54f
   width: 100%;
   z-index: 100;
 }
@@ -14,12 +18,23 @@ nav {
 
 .splash-title {
   background-clip: border-box;
+<<<<<<< HEAD
   background-image: url(https://images.unsplash.com/photo-1471201310397-b4dc5f0c49c5?auto=format&fit=crop&w=2602&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D);
   /*background-image: url(https://images.unsplash.com/photo-1496124248071-3e497bb1696c?auto=format&fit=crop&w=1158&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D);*/
   /*background-image: url(https://images.unsplash.com/photo-1503513270701-67f56ac2e4f6?auto=format&fit=crop&w=1655&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D);*/
   /*background-image: url(https://images.unsplash.com/photo-1505177881989-a802eb3a7832?auto=format&fit=crop&w=1652&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D);*/
   background-position: bottom -1px right 0px;
   background-size: cover;
+=======
+  /* background-image: url(https://images.unsplash.com/photo-1471201310397-b4dc5f0c49c5?auto=format&fit=crop&w=2602&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D); */
+  /* background-image: url(https://images.unsplash.com/photo-1496124248071-3e497bb1696c?auto=format&fit=crop&w=1158&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D); */
+  /* background-image: url(https://images.unsplash.com/photo-1503513270701-67f56ac2e4f6?auto=format&fit=crop&w=1655&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D); */
+  /* background-image: url(https://images.unsplash.com/photo-1505177881989-a802eb3a7832?auto=format&fit=crop&w=1652&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D); */
+  background-image: url(https://images.unsplash.com/photo-1504190171281-53bcec256266?auto=format&fit=crop&w=1791&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D);
+  /* background-image: url(https://images.unsplash.com/photo-1495567357861-a3597539c9c6?auto=format&fit=crop&w=668&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D); */
+  background-size: cover;
+  background-position: top -1px right 0px;
+>>>>>>> a4c16a299bc949a3c33fb8286c1079fbade5e54f
   color: #659EC7;
   /*color: #ff4646;*/
   font-weight: lighter;
@@ -35,14 +50,19 @@ nav {
   font-family: 'Berkshire Swash', cursive;
   font-size: 56px;
   position: relative;
-  top: 30%;
+  top: 20%;
 }
 
 .splash-title h4 {
   position: relative;
+<<<<<<< HEAD
   font-size: 24px;
   font-weight: 400;
   top: 30%;
+=======
+  top: 20%;
+  font-weight: 400
+>>>>>>> a4c16a299bc949a3c33fb8286c1079fbade5e54f
 }
 
 /* why ethereum */

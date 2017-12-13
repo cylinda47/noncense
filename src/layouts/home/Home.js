@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Home extends Component {
   render() {
-    return(
+    return (
       <main className="container">
         <nav className='header'>
 
@@ -14,11 +14,15 @@ class Home extends Component {
 
         <section className='why-ethereum'>
           <h1>Why Ethereum?</h1>
-          <hr className='underline'/>
+          <hr className='underline' />
 
           <div>
             <img src='https://images.unsplash.com/photo-1502101872923-d48509bff386?auto=format&fit=crop&w=2378&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D'
+<<<<<<< HEAD
             alt='long way to go'/>
+=======
+              alt='long way to go photo' />
+>>>>>>> a4c16a299bc949a3c33fb8286c1079fbade5e54f
             <p>
               'brief note outlining the security and functionality associated with Ethereum. This should include the problem statement.brief note outlining the security and functionality associated with Ethereum. This should include the problem statement.brief note outlining the security and functionality associated with Ethereum. This should include the problem statement.brief note outlining the security and functionality associated with Ethereum. This should include the problem statement.brief note outlining the security and functionality associated with Ethereum. This should include the problem statement.'
             </p>
@@ -55,7 +59,6 @@ class Home extends Component {
             </li>
           </ul>
         </section>
-
         <section className='instructions'>
           <h1>How to Use Noncense</h1>
           <hr className='underline' />
@@ -94,7 +97,6 @@ class Home extends Component {
             </li>
           </ul>
         </section>
-
         <section className='contributors'>
           <h1>Contributors</h1>
           <hr className='underline' />
@@ -110,11 +112,11 @@ class Home extends Component {
             </li>
             <li>
               <h6>Jacob Butler</h6>
-                <a href='https://github.com/DrAmaze'>
-                  GitHub
+              <a href='https://github.com/DrAmaze'>
+                GitHub
                 </a>
-                <a href='https://www.linkedin.com/in/jacob-butler-a2ab7093/'>
-                  LinkedIn
+              <a href='https://www.linkedin.com/in/jacob-butler-a2ab7093/'>
+                LinkedIn
                 </a>
             </li>
             <li>
