@@ -49,9 +49,9 @@ export function createDiamond(price) {
                     console.log(error);
                 }
                 diamonds.deployed().then(function (instance) {
+                    var account = accounts[0];
                     diamondInstance = instance;
-                    diamondInstance.createDiamond(price, { from: coinbase });
-                    return diamondInstance.allDiamonds;
+                    diamondInstance.createDiamond(price, { from: account })
                 }).then(function (result) {
                     console.log(result);
                 }).catch(function (err) {

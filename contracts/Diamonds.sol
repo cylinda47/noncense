@@ -16,15 +16,15 @@ contract Diamonds {
         owner = msg.sender;
     }
 
-    function testDiamonds() public returns (bytes32) {
-        return 0x456; 
+    function getDiamondId() public constant returns (uint diamondId) {
+        return allDiamonds.length;
     }
     
-    function createDiamond(uint price) public returns (uint) {
-        uint diamondId = allDiamonds.length;
+    function createDiamond(uint price) public returns (uint diamondId) {
+        // diamondId = allDiamonds.length;
         allDiamonds.push(Diamond(diamondId, price, msg.sender));
         DiamondLogger(allDiamonds[diamondId].id, allDiamonds[diamondId].price, allDiamonds[diamondId].ownerAddr);
-        return diamondId;
+        // return diamondId;
     }
     
     function buy(uint diamondId) payable public {
