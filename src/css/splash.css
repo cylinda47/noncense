@@ -4,7 +4,7 @@ nav {
   border-top: 1px solid #E0EAF4;
   position: fixed;
   top: -1px;
-  background color: #1A62A3;
+  background-color: #1A62A3;
   width: 100%;
   color: #E0EAF4;
   z-index: 100;
@@ -19,8 +19,9 @@ nav {
   /* background-image: url(https://images.unsplash.com/photo-1503513270701-67f56ac2e4f6?auto=format&fit=crop&w=1655&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D); */
   /* background-image: url(https://images.unsplash.com/photo-1505177881989-a802eb3a7832?auto=format&fit=crop&w=1652&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D); */
   background-image: url(https://images.unsplash.com/photo-1504190171281-53bcec256266?auto=format&fit=crop&w=1791&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D);
+  /* background-image: url(https://images.unsplash.com/photo-1495567357861-a3597539c9c6?auto=format&fit=crop&w=668&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D); */
   background-size: cover;
-  background-position: bottom -1px right 0px;
+  background-position: top -1px right 0px;
   color: #659EC7;
   /*color: #ff4646;*/
   height: 1000px;
