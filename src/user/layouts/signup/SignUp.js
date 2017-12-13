@@ -11,6 +11,11 @@ class SignUp extends Component {
             <p>We've got your wallet information, simply input your name and your account is made!</p>
             <SignUpFormContainer />
           </div>
+
+          <div className='pure-u-1-1'>
+            <h1>How To</h1>
+            <p>You need to download Metamask</p>
+          </div>
         </div>
       </main>
     )

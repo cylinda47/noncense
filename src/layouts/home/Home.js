@@ -99,39 +99,47 @@ class Home extends Component {
           <ul>
             <li>
               <h6>Linda Chan</h6>
-              <a>
-                GitHub
-              </a>
-              <a>
-                LinkedIn
-              </a>
+              <div>
+                <a href='https://github.com/cylinda47'>
+                  GitHub
+                </a>
+                <a>
+                  LinkedIn
+                </a>
+              </div>
             </li>
             <li>
               <h6>Jacob Butler</h6>
-              <a href='https://github.com/DrAmaze'>
-                GitHub
+              <div>
+                <a href='https://github.com/DrAmaze'>
+                  GitHub
+                  </a>
+                <a href='https://www.linkedin.com/in/jacob-butler-a2ab7093/'>
+                  LinkedIn
                 </a>
-              <a href='https://www.linkedin.com/in/jacob-butler-a2ab7093/'>
-                LinkedIn
-                </a>
+              </div>
             </li>
             <li>
               <h6>Kevin Lee</h6>
-              <a>
-                GitHub
-              </a>
-              <a>
-                LinkedIn
-              </a>
+              <div>
+                <a>
+                  GitHub
+                </a>
+                <a>
+                  LinkedIn
+                </a>
+              </div>
             </li>
             <li>
               <h6>William Meng</h6>
-              <a>
-                GitHub
-              </a>
-              <a>
-                LinkedIn
-              </a>
+              <div>
+                <a href='https://github.com/will-meng'>
+                  GitHub
+                </a>
+                <a>
+                  LinkedIn
+                </a>
+              </div>
             </li>
           </ul>
         </section>

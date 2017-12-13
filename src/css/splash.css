@@ -69,7 +69,7 @@ nav a {
 
 .underline {
   width: 50px;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
   height: 2px;
   background-color: #E0EAF4;
   border: none;
@@ -125,10 +125,11 @@ nav a {
   position: relative;
   background-color: #B4A28F;
   top: 10px;
-  height: 280px;
+  min-height: 280px;
   border-radius: 5px;
   text-align: center;
   opacity: .7;
+  max-height: 500px;
 }
 
 .how-it-works ul li h6 {
@@ -177,7 +178,6 @@ nav a {
 
 .instructions h6 {
   font-size: 18px;
-
 }
 
 /*contributors */
@@ -230,4 +230,15 @@ nav a {
   font-size: 1.8em;
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+.contributors ul li div {
+  display: flex;
+  flex-direction: column;
+}
+
+.contributors ul li div a {
+  margin: 10px 0;
+  text-decoration: none;
+  color: #1A62A3;
 }
