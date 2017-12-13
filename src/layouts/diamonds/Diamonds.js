@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class Dashboard extends Component {
+class Diamonds extends Component {
   constructor(props, { authData }) {
     super(props)
     authData = this.props
@@ -20,4 +20,4 @@ class Dashboard extends Component {
   }
 }
 
-export default Dashboard
+export default Diamonds

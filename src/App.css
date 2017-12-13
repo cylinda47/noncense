@@ -6,9 +6,8 @@ body,
 }
 
 h1, h2, h3 {
-  font-family: 'Oswald', 'Arial Narrow', sans-serif;
+  font-family: 'Berkshire Swash', cursive;
 }
-
 code {
   display: block;
   margin: 20px 0 15px 0;
@@ -36,14 +35,14 @@ code {
 /* NAVBAR */
 
 .navbar {
-  position: fixed;
-  padding: 5px;
   background: #0c1a2b;
-  font-family: 'Oswald', 'Arial Narrow', sans-serif;
+  padding: 5px;
+  position: fixed;
+  opacity: .8;
 }
 
 .navbar a {
-  color: #fff;
+  color: #E0EAF4;
 }
 
 .navbar a:active,
@@ -64,4 +63,9 @@ code {
 .navbar .uport-logo {
   height: 16px;
   margin-right: 10px;
+}
+
+.pure-menu-heading.pure-menu-link {
+  font-family: 'Berkshire Swash', cursive;
+  color: #E0EAF4;
 }
