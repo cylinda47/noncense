@@ -1,0 +1,22 @@
+/* signup form */
+
+.pure-g {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.pure-g div{
+  background-color: white;
+  border-radius: 5px;
+  margin: 100px 10% 0 10%;
+  opacity: .8;
+  padding: 30px;
+  position: relative;
+  width: 20%;
+}
+
+.pure-u-1-1 input {
+  width: 95%;
+}

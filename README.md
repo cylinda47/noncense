@@ -26,7 +26,7 @@ This problem decomposes into several areas of activity:
 
 ## Technologies & Technical Challenges
 
-** Framework: Truffle **
+**Framework: Truffle**
 * A one-stop shop for backend, frontend and testing detailed below (like Ruby on Rails).
 
 **Backend: Solidity**

@@ -3,7 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/diamond.css">
+   <style>
+
+   </style>
     <!--
       Notice the use of %PUBLIC_URL% in the tag above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -13,9 +18,210 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>Truffle Box</title>
+    <title>Noncense</title>
   </head>
   <body>
+    <div id="wrapper">
+      <div id="outline" class="centering">
+        <div id="diamond" class="base">
+          <svg id="defs">
+            <defs>
+              <polygon points="32.5,79 48.5,49 79,32 114,32 143,50 159.5,79 159.5,113.5 142,143 112.5,159.5 79,159.5 50,143 32.5,112.5 "
+                id="t" fill="url(#grad_top)"></polygon>
+              <polygon points="0,54 0,3 45,12" id="m2" fill="url(#grad_a)"></polygon>
+              <polygon points="45,12 46,46 0,54" id="m1" fill="url(#grad_a2)"></polygon>
+              <polygon points="144,54 0.5,29 144,3" id="b" fill="url(#grad_b)"></polygon>
+              <polygon points="144,54 0.5,29 144,3" id="s" fill="url(#grad_s)"></polygon>
+              <lineargradient id="grad_top" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="192" y2="192">
+                <stop offset="0" class="grad_top_1"></stop>
+                <stop offset="1" class="grad_top_2"></stop>
+              </lineargradient>
+              <lineargradient id="grad_a" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="100">
+                <stop offset="0.1" style="stop-color:#FFFFFF; stop-opacity:0.5"></stop>
+                <stop offset="1" style="stop-color:#27344C"></stop>
+                <stop offset="0" style="stop-color:#B3C0D2"></stop>
+              </lineargradient>
+              <lineargradient id="grad_a2" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="100">
+                <stop offset="0" style="stop-color:#B3C0D2"></stop>
+                <stop offset="0.5" style="stop-color:#FFFFFF;stop-opacity:0.1"></stop>
+                <stop offset="1" style="stop-color:#27344C"></stop>
+              </lineargradient>
+              <lineargradient id="grad_b" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="50" y2="90">
+                <stop offset="0" class="grad_b1"></stop>
+                <stop offset="0.5" class="grad_b2"></stop>
+                <stop offset="1" class="grad_b3"></stop>
+              </lineargradient>
+              <lineargradient id="grad_s" gradientUnits="userSpaceOnUse">
+                <stop offset="0" class="grad_s1"></stop>
+                <stop offset="0.5" class="grad_s2"></stop>
+                <stop offset="1" class="grad_s3"></stop>
+              </lineargradient>
+            </defs>
+          </svg>
+          <svg id="top" width="192px" height="192px">
+            <use xlink:href="#t"></use>
+          </svg>
+          <div class="faces">
+            <div id="a1">
+              <div class="face1">
+                <svg class="m" width="45px" height="57px">
+                  <use xlink:href="#m1"></use>
+                  <use xlink:href="#m2"></use>
+                </svg>
+                <svg class="b" width="144px" height="54px">
+                  <use xlink:href="#b"></use>
+                </svg>
+                <svg class="s" width="144px" height="54px">
+                  <use xlink:href="#s"></use>
+                </svg>
+              </div>
+              <div class="face2">
+                <svg class="m" width="45px" height="57px">
+                  <use xlink:href="#m1"></use>
+                  <use xlink:href="#m2"></use>
+                </svg>
+                <svg class="b" width="144px" height="54px">
+                  <use xlink:href="#b"></use>
+                </svg>
+                <svg class="s" width="144px" height="54px">
+                  <use xlink:href="#s"></use>
+                </svg>
+              </div>
+            </div>
+            <div id="a2" class="anim">
+              <div class="face1">
+                <svg class="m" width="45px" height="57px">
+                  <use xlink:href="#m1"></use>
+                  <use xlink:href="#m2"></use>
+                </svg>
+                <svg class="b" width="144px" height="54px">
+                  <use xlink:href="#b"></use>
+                </svg>
+                <svg class="s" width="144px" height="54px">
+                  <use xlink:href="#s"></use>
+                </svg>
+              </div>
+              <div class="face2">
+                <svg class="m" width="45px" height="57px">
+                  <use xlink:href="#m1"></use>
+                  <use xlink:href="#m2"></use>
+                </svg>
+                <svg class="b" width="144px" height="54px">
+                  <use xlink:href="#b"></use>
+                </svg>
+                <svg class="s" width="144px" height="54px">
+                  <use xlink:href="#s"></use>
+                </svg>
+              </div>
+            </div>
+            <div id="a3" class="anim">
+              <div class="face1">
+                <svg class="m" width="45px" height="57px">
+                  <use xlink:href="#m1"></use>
+                  <use xlink:href="#m2"></use>
+                </svg>
+                <svg class="b" width="144px" height="54px">
+                  <use xlink:href="#b"></use>
+                </svg>
+                <svg class="s" width="144px" height="54px">
+                  <use xlink:href="#s"></use>
+                </svg>
+              </div>
+              <div class="face2">
+                <svg class="m" width="45px" height="57px">
+                  <use xlink:href="#m1"></use>
+                  <use xlink:href="#m2"></use>
+                </svg>
+                <svg class="b" width="144px" height="54px">
+                  <use xlink:href="#b"></use>
+                </svg>
+                <svg class="s" width="144px" height="54px">
+                  <use xlink:href="#s"></use>
+                </svg>
+              </div>
+            </div>
+            <div id="a4" class="anim">
+              <div class="face1">
+                <svg class="m" width="45px" height="57px">
+                  <use xlink:href="#m1"></use>
+                  <use xlink:href="#m2"></use>
+                </svg>
+                <svg class="b" width="144px" height="54px">
+                  <use xlink:href="#b"></use>
+                </svg>
+                <svg class="s" width="144px" height="54px">
+                  <use xlink:href="#s"></use>
+                </svg>
+              </div>
+              <div class="face2">
+                <svg class="m" width="45px" height="57px">
+                  <use xlink:href="#m1"></use>
+                  <use xlink:href="#m2"></use>
+                </svg>
+                <svg class="b" width="144px" height="54px">
+                  <use xlink:href="#b"></use>
+                </svg>
+                <svg class="s" width="144px" height="54px">
+                  <use xlink:href="#s"></use>
+                </svg>
+              </div>
+            </div>
+            <div id="a5" class="anim">
+              <div class="face1">
+                <svg class="m" width="45px" height="57px">
+                  <use xlink:href="#m1"></use>
+                  <use xlink:href="#m2"></use>
+                </svg>
+                <svg class="b" width="144px" height="54px">
+                  <use xlink:href="#b"></use>
+                </svg>
+                <svg class="s" width="144px" height="54px">
+                  <use xlink:href="#s"></use>
+                </svg>
+              </div>
+              <div class="face2">
+                <svg class="m" width="45px" height="57px">
+                  <use xlink:href="#m1"></use>
+                  <use xlink:href="#m2"></use>
+                </svg>
+                <svg class="b" width="144px" height="54px">
+                  <use xlink:href="#b"></use>
+                </svg>
+                <svg class="s" width="144px" height="54px">
+                  <use xlink:href="#s"></use>
+                </svg>
+              </div>
+            </div>
+            <div id="a6" class="anim">
+              <div class="face1">
+                <svg class="m" width="45px" height="57px">
+                  <use xlink:href="#m1"></use>
+                  <use xlink:href="#m2"></use>
+                </svg>
+                <svg class="b" width="144px" height="54px">
+                  <use xlink:href="#b"></use>
+                </svg>
+                <svg class="s" width="144px" height="54px">
+                  <use xlink:href="#s"></use>
+                </svg>
+              </div>
+              <div class="face2">
+                <svg class="m" width="45px" height="57px">
+                  <use xlink:href="#m1"></use>
+                  <use xlink:href="#m2"></use>
+                </svg>
+                <svg class="b" width="144px" height="54px">
+                  <use xlink:href="#b"></use>
+                </svg>
+                <svg class="s" width="144px" height="54px">
+                  <use xlink:href="#s"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div id="root"></div>
     <!--
       This HTML file is a template.
@@ -27,5 +233,6 @@
       To begin the development, run `npm start`.
       To create a production bundle, use `npm run build`.
     -->
+
   </body>
 </html>

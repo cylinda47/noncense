@@ -16,6 +16,10 @@ contract Diamonds {
     function Diamonds() public {
         owner = msg.sender;
     }
+
+    function getDiamondId() public constant returns (uint diamondId) {
+        return allDiamonds.length;
+    }
     
     function createDiamond(uint price) public {
         // uint diamondId = allDiamonds.length;
