@@ -1,4 +1,4 @@
-var Diamonds = artifacts.require("./Diamonds.sol");
+var Diamonds = artifacts.require("./Diamonds.sol"); 
 
 module.exports = function (deployer) {
     deployer.deploy(Diamonds);

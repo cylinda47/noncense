@@ -8,6 +8,7 @@ contract Diamonds {
     }
     
     Diamond[] public allDiamonds; // array of Diamond structs
+    mapping(uint => Diamond) public diamonds; 
     address owner;
     
     event DiamondLogger(uint, uint, address);
@@ -20,11 +21,12 @@ contract Diamonds {
         return allDiamonds.length;
     }
     
-    function createDiamond(uint price) public returns (uint diamondId) {
-        // diamondId = allDiamonds.length;
-        allDiamonds.push(Diamond(diamondId, price, msg.sender));
-        DiamondLogger(allDiamonds[diamondId].id, allDiamonds[diamondId].price, allDiamonds[diamondId].ownerAddr);
-        // return diamondId;
+    function createDiamond(uint price) public {
+        // uint diamondId = allDiamonds.length;
+        allDiamonds.push(Diamond(0, price, msg.sender));
+        diamonds[0] = Diamond(0, price, msg.sender); 
+        
+        // DiamondLogger(allDiamonds[diamondId].id, allDiamonds[diamondId].price, allDiamonds[diamondId].ownerAddr);
     }
     
     function buy(uint diamondId) payable public {
@@ -34,6 +36,18 @@ contract Diamonds {
             allDiamonds[diamondId].ownerAddr.transfer(allDiamonds[diamondId].price * 1e18);
             allDiamonds[diamondId].ownerAddr = msg.sender;
         }
+    }
+
+    function getDiamond(uint diamondId) public returns(uint, uint, address) {
+        Diamond d = diamonds[diamondId];
+        
+        // break the struct's members out into a tuple
+        // in the same order that they appear in the struct
+        return (d.id, d.price, d.ownerAddr);
+    }
+
+    function diamondsTot() public returns (address, uint) {
+        return (msg.sender, allDiamonds.length); 
     }
     
     function kill() public {
