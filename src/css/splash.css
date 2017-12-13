@@ -1,13 +1,17 @@
 /* header */
 
 nav {
-  border-top: 1px solid #E0EAF4;
+  background-color: #1A62A3;
+  border-bottom: 1px solid #E0EAF4;
+  color: #E0EAF4;
   position: fixed;
   top: -1px;
-  background-color: #1A62A3;
   width: 100%;
-  color: #E0EAF4;
   z-index: 100;
+}
+
+nav a {
+  color: #E0EAF4;
 }
 
 /* title section */
