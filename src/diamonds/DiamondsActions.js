@@ -55,6 +55,16 @@ export function requestAllDiamonds() {
                                 console.log(result);
                                 console.log(result[0].toNumber());
                                 console.log(result[1].toNumber());
+                                // should be 0,3, address 
+                                // we want to dispatch an action to receivealldiamonds that holds the diamond info 
+                                // destruct result (array) into object 
+                                const d = {
+                                    id: result[0].toNumber(), 
+                                    price: result[1].toNumber(), 
+                                    ownerAddr: result[2]
+                                }
+
+                                dispatch(receiveAllDiamonds(d)); 
                                 // console.log(diamond);
                                 // dispatch(receiveAllDiamonds(diamond))
                             })
