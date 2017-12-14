@@ -37,7 +37,7 @@ code {
 .navbar {
   background: #0c1a2b;
   padding: 5px;
-  position: fixed;
+  position: relative;
   opacity: .8;
 }
 

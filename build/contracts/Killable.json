@@ -50,7 +50,7 @@
       "absolutePath": "/Users/KevinLee/Documents/blockchain/noncense/contracts/zeppelin/lifecycle/Killable.sol",
       "exportedSymbols": {
         "Killable": [
-          380
+          399
         ]
       }
     },
@@ -64,39 +64,39 @@
             ".4"
           ]
         },
-        "id": 366,
+        "id": 385,
         "name": "PragmaDirective",
         "src": "0:23:3"
       },
       {
         "attributes": {
-          "SourceUnit": 422,
+          "SourceUnit": 441,
           "absolutePath": "/Users/KevinLee/Documents/blockchain/noncense/contracts/zeppelin/ownership/Ownable.sol",
           "file": "./../ownership/Ownable.sol",
-          "scope": 381,
+          "scope": 400,
           "symbolAliases": [
             null
           ],
           "unitAlias": ""
         },
-        "id": 367,
+        "id": 386,
         "name": "ImportDirective",
         "src": "26:36:3"
       },
       {
         "attributes": {
           "contractDependencies": [
-            421
+            440
           ],
           "contractKind": "contract",
           "documentation": null,
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            380,
-            421
+            399,
+            440
           ],
           "name": "Killable",
-          "scope": 381
+          "scope": 400
         },
         "children": [
           {
@@ -110,15 +110,15 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "Ownable",
-                  "referencedDeclaration": 421,
+                  "referencedDeclaration": 440,
                   "type": "contract Ownable"
                 },
-                "id": 368,
+                "id": 387,
                 "name": "UserDefinedTypeName",
                 "src": "200:7:3"
               }
             ],
-            "id": 369,
+            "id": 388,
             "name": "InheritanceSpecifier",
             "src": "200:7:3"
           },
@@ -129,7 +129,7 @@
               "isConstructor": false,
               "name": "kill",
               "payable": false,
-              "scope": 380,
+              "scope": 399,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "public"
@@ -142,7 +142,7 @@
                   ]
                 },
                 "children": [],
-                "id": 370,
+                "id": 389,
                 "name": "ParameterList",
                 "src": "225:2:3"
               },
@@ -153,7 +153,7 @@
                   ]
                 },
                 "children": [],
-                "id": 373,
+                "id": 392,
                 "name": "ParameterList",
                 "src": "238:0:3"
               },
@@ -170,16 +170,16 @@
                       "overloadedDeclarations": [
                         null
                       ],
-                      "referencedDeclaration": 402,
+                      "referencedDeclaration": 421,
                       "type": "modifier ()",
                       "value": "onlyOwner"
                     },
-                    "id": 371,
+                    "id": 390,
                     "name": "Identifier",
                     "src": "228:9:3"
                   }
                 ],
-                "id": 372,
+                "id": 391,
                 "name": "ModifierInvocation",
                 "src": "228:9:3"
               },
@@ -213,11 +213,11 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 439,
+                              "referencedDeclaration": 458,
                               "type": "function (address)",
                               "value": "selfdestruct"
                             },
-                            "id": 374,
+                            "id": 393,
                             "name": "Identifier",
                             "src": "244:12:3"
                           },
@@ -227,41 +227,41 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 384,
+                              "referencedDeclaration": 403,
                               "type": "address",
                               "value": "owner"
                             },
-                            "id": 375,
+                            "id": 394,
                             "name": "Identifier",
                             "src": "257:5:3"
                           }
                         ],
-                        "id": 376,
+                        "id": 395,
                         "name": "FunctionCall",
                         "src": "244:19:3"
                       }
                     ],
-                    "id": 377,
+                    "id": 396,
                     "name": "ExpressionStatement",
                     "src": "244:19:3"
                   }
                 ],
-                "id": 378,
+                "id": 397,
                 "name": "Block",
                 "src": "238:30:3"
               }
             ],
-            "id": 379,
+            "id": 398,
             "name": "FunctionDefinition",
             "src": "212:56:3"
           }
         ],
-        "id": 380,
+        "id": 399,
         "name": "ContractDefinition",
         "src": "179:91:3"
       }
     ],
-    "id": 381,
+    "id": 400,
     "name": "SourceUnit",
     "src": "0:271:3"
   },
@@ -273,9 +273,9 @@
     "4447": {
       "events": {},
       "links": {},
-      "address": "0xf328c11c4df88d18fcbd30ad38d8b4714f4b33bf"
+      "address": "0xef61059258414a65bf2d94a4fd3b503b5fee8b48"
     }
   },
   "schemaVersion": "1.0.1",
-  "updatedAt": "2017-12-13T21:05:25.369Z"
+  "updatedAt": "2017-12-14T03:01:49.806Z"
 }
