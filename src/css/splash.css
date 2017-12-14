@@ -67,7 +67,7 @@
 
 .underline {
   width: 60px;
-  margin-bottom: 0px;
+  margin-bottom: 50px;
   height: 1px;
   background-color: #E0EAF4;
   border: none;
@@ -86,8 +86,8 @@
   background-color: white;
   position: absolute;
   z-index: 1;
-  top: 300px;
-  left: -20px;
+  top: 302px;
+  left: -25px;
 }
 
 .why-ethereum img {
@@ -106,7 +106,7 @@
 /* how it works */
 
 .how-it-works {
-  background: linear-gradient(0deg,  #F7F6F4, #145686);
+  background: linear-gradient(0deg,  #95dce6, #145686);
   height: 800px;
 }
 
@@ -148,7 +148,6 @@
   min-height: 280px;
   border-radius: 20px;
   text-align: center;
-  opacity: .7;
   max-height: 500px;
   box-shadow: 1px 1px 2px #ccc;
 }
@@ -163,7 +162,7 @@
  /* how to use noncense */
 
 .instructions {
-  background: linear-gradient(0deg, #0fa5bd , #F7F6F4);
+  background: linear-gradient(0deg, #072a4e, #95dce6);
   /* background-image: url(https://images.unsplash.com/photo-1502675135487-e971002a6adb?auto=format&fit=crop&w=668&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D);
   background-size: cover;
   background-position: top -1px right 0px;
@@ -172,12 +171,13 @@
 
 .instructions h1 {
   font-family: 'Nunito', sans-serif;
+  color: white;
   justify-content: center;
   font-size: 60px;
   font-weight: lighter;
-  padding-top: 200px;
+  padding-top: 300px;
   text-align: center;
-  text-shadow: 0px 0px 2px white;
+  text-shadow: 0px 0px 12px rgb(177, 176, 176);
 }
 
 .instructions hr {
@@ -192,13 +192,16 @@
   margin-right: auto;
   border-radius: 50%;
   background-color: white;
-
   padding: 1px 10px 10px 10px;
   position: relative;
   width: 250px;
   height: 200px;
   margin-bottom: 80px;
   box-shadow: 2px 2px 2px #e6e6e6;
+}
+
+.instructions ul li:last-child {
+  margin-bottom: 0px;
 }
 
 .instructions h6 {
@@ -208,21 +211,21 @@
 /*contributors */
 
 .contributors {
-  background: linear-gradient(0deg, white, #0fa5bd);
+  background: linear-gradient(0deg, black, #072a4e);
   /*background-image: url(https://images.unsplash.com/photo-1503513270701-67f56ac2e4f6?auto=format&fit=crop&w=1655&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D);*/
 
   height: 600px;
 }
 
 .contributors h1 {
+  font-family: 'Nunito', sans-serif;
+  color: white;
   justify-content: center;
-  color: #E0EAF4;
   font-size: 60px;
   font-weight: lighter;
-  padding-top: 60px;
+  padding-top: 100px;
   text-align: center;
-  font-family: 'Berkshire Swash', cursive;
-  text-shadow: 1px 1px 1px #E0EAF4;
+  text-shadow: 0px 0px 12px rgb(177, 176, 176);
 }
 
 .contributors hr {
@@ -238,14 +241,14 @@
 }
 
 .contributors ul li {
-  margin: 5px;
+  margin: 10px;
   padding: 30px;
-  width: 25%;
+  width: 200px;
   position: relative;
-  background-color: #E0EAF4;
+  background-color: white;
   top: 10px;
   height: 200px;
-  border-radius: 5px;
+  border-radius: 200px;
   text-align: center;
   display: block;
 }
