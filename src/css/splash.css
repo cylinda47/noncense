@@ -7,12 +7,13 @@
   /* background-image: url(https://images.unsplash.com/photo-1503513270701-67f56ac2e4f6?auto=format&fit=crop&w=1655&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D); */
   /* background-image: url(https://images.unsplash.com/photo-1505177881989-a802eb3a7832?auto=format&fit=crop&w=1652&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D); */
   background-image: url(https://images.unsplash.com/photo-1504190171281-53bcec256266?auto=format&fit=crop&w=1791&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D);
+  /* background-image: url(https://images.unsplash.com/photo-1456154875099-97a3a56074d3?auto=format&fit=crop&w=1789&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D); */
   /* background-image: url(https://images.unsplash.com/photo-1495567357861-a3597539c9c6?auto=format&fit=crop&w=668&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D); */
   background-size: cover;
   background-position: top -1px right 0px;
   color: #659EC7;
   /*color: #ff4646;*/
-  height: 1000px;
+  height: 900px;
   font-weight: lighter;
   margin: 0;
   padding: 0;
@@ -22,39 +23,52 @@
 }
 
 .splash-title h1 {
-  font-family: 'Berkshire Swash', cursive;
-  font-size: 56px;
+  font-family: "Montserrat";
+  font-size: 80px;
   position: relative;
   top: 20%;
+  background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+	background-size: cover;
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+	line-height: .75;
 }
 
 .splash-title h4 {
   font-size: 24px;
+  font-family: 'Nunito', sans-serif;
   position: relative;
-  top: 20%;
-  font-weight: 400
+  top: 23%;
+  font-weight: 300;
+  text-shadow: 0px 0px 30px white;
+  color: #f0f8ff;
 }
 
 /* why ethereum */
 
 .why-ethereum {
-  background: linear-gradient(0deg,  #B4A28F, #7C7062);
+  background: linear-gradient(0deg,  #145686, #09080c);
   height: 720px;
   color: #E0EAF4;
+  position: relative;
 }
 
 .why-ethereum h1 {
+  font-family: 'Nunito', sans-serif;
   justify-content: center;
-  font-size: 44px;
+  font-size: 60px;
   font-weight: lighter;
-  padding-top: 60px;
+  padding-top: 200px;
   text-align: center;
+  text-shadow: 0px 0px 2px white;
 }
 
 .underline {
-  width: 50px;
-  margin-bottom: 2em;
-  height: 2px;
+  width: 60px;
+  margin-bottom: 0px;
+  height: 1px;
   background-color: #E0EAF4;
   border: none;
 }
@@ -62,36 +76,49 @@
 .why-ethereum div {
   display: flex;
   flex-direction: row;
+  margin: 30px 130px;
+}
+
+.image-background {
+  width: 400px;
+  height: 400px;
+  border-radius: 200px;
+  background-color: white;
+  position: absolute;
+  z-index: 1;
+  top: 300px;
+  left: -20px;
 }
 
 .why-ethereum img {
-  width: 45%;
-  padding: 20px;
-  margin: 20px;
+  width: 350px;
+  margin: 30px 0px;
   height: 65%;
-  background-size: cover;
-  background-color: #E0EAF4;
+  z-index: 2;
 }
 
 .why-ethereum p {
   padding: 0 40px;
-  font-size: 24px;
+  font-size: 20px;
+  text-align: center;
 }
 
 /* how it works */
 
 .how-it-works {
-  background: linear-gradient(0deg,  #F7F6F4, #B4A28F);
-  height: 600px;
+  background: linear-gradient(0deg,  #F7F6F4, #145686);
+  height: 800px;
 }
 
 .how-it-works h1 {
+  font-family: 'Nunito', sans-serif;
   justify-content: center;
-  color: #E0EAF4;
-  font-size: 44px;
+  font-size: 60px;
   font-weight: lighter;
-  padding-top: 60px;
+  padding-top: 200px;
   text-align: center;
+  text-shadow: 0px 0px 2px #EEE;
+  color: white;
 }
 
 .how-it-works ul {
@@ -102,18 +129,28 @@
   min-width: 950px;
 }
 
+.black {
+  background-color: black;
+}
+
+.contract-img {
+  width: 150px;
+  padding: 20px 0px 10px 0px;
+}
+
 .how-it-works ul li {
-  margin: 5px;
+  margin: 15px;
   padding: 30px;
   width: 25%;
   position: relative;
-  background-color: #B4A28F;
+  background-color: white;
   top: 10px;
   min-height: 280px;
-  border-radius: 5px;
+  border-radius: 20px;
   text-align: center;
   opacity: .7;
   max-height: 500px;
+  box-shadow: 1px 1px 2px #ccc;
 }
 
 .how-it-works ul li h6 {
@@ -126,17 +163,21 @@
  /* how to use noncense */
 
 .instructions {
-  background: linear-gradient(0deg, #E0EAF4 , #F7F6F4);
-  height: 1400px;
+  background: linear-gradient(0deg, #0fa5bd , #F7F6F4);
+  /* background-image: url(https://images.unsplash.com/photo-1502675135487-e971002a6adb?auto=format&fit=crop&w=668&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D);
+  background-size: cover;
+  background-position: top -1px right 0px;
+  height: 1800px; */
 }
 
 .instructions h1 {
+  font-family: 'Nunito', sans-serif;
   justify-content: center;
-  font-size: 44px;
+  font-size: 60px;
   font-weight: lighter;
-  padding-top: 60px;
+  padding-top: 200px;
   text-align: center;
-  color: #7C7062;
+  text-shadow: 0px 0px 2px white;
 }
 
 .instructions hr {
@@ -167,10 +208,10 @@
 /*contributors */
 
 .contributors {
-  background: linear-gradient(0deg, #1A62A3, #E0EAF4);
+  background: linear-gradient(0deg, white, #0fa5bd);
   /*background-image: url(https://images.unsplash.com/photo-1503513270701-67f56ac2e4f6?auto=format&fit=crop&w=1655&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D);*/
 
-  height: 500px;
+  height: 600px;
 }
 
 .contributors h1 {
