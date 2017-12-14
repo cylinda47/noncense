@@ -11,7 +11,8 @@ import getWeb3 from './util/web3/getWeb3'
 import App from './App'
 import Home from './layouts/home/Home'
 import SignUp from './user/layouts/signup/SignUp'
-import DiamondFormContainer from './user/ui/diamondform/DiamondFormContainer'
+import DiamondShow from './diamonds/diamondShow/DiamondShowContainer'
+import DiamondsFormContainer from './diamonds/diamondsForm/DiamondsFormContainer'
 
 // Redux Store
 import store from './store'
@@ -28,16 +29,15 @@ getWeb3
   console.log('Error in web3 initialization.')
 })
 
-
-
 ReactDOM.render((
     <Provider store={store}>
       <Router history={history}>
         <Route path="/" component={App}>
           <IndexRoute component={Home} />
           <Route path="signup" component={UserIsNotAuthenticated(SignUp)} />
-          <Route path="diamonds" component={UserIsAuthenticated(DiamondsIndexContainer)} />
+          <Route path="diamonds/:diamondId" component={UserIsNotAuthenticated(DiamondShow)} />
           <Route path="new" component={UserIsAuthenticated(DiamondFormContainer)} />
+          <Route path="diamonds" component={UserIsAuthenticated(DiamondsIndexContainer)} />
         </Route>
       </Router>
     </Provider>

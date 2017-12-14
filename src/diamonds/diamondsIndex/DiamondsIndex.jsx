@@ -25,11 +25,15 @@ class DiamondsIndex extends React.Component {
         if(this.state.diamonds.id === 0){
             console.log("im here")
             diamonds = (
-                <div>
+                <div className="diamonds-item">
                     <br/><br/><br/>
-                    <li>{this.state.diamonds.id}</li>
-                    <li>{this.state.diamonds.price}</li>
-                    <li>{this.state.diamonds.ownerAddr}</li>
+                    <img src="https://www.whiteflash.com/images/rd/articles/A-CUT-ABOVE-Diamond-sm.jpg"
+                    width="40" height="40" alt=""/>
+                    <ul className="diamonds-properites-list">
+                        <li>{this.state.diamonds.id}</li>
+                        <li>{this.state.diamonds.price}</li>
+                        <li>{this.state.diamonds.ownerAddr}</li>
+                    </ul>
                 </div>
             );
         }else{
@@ -41,7 +45,6 @@ class DiamondsIndex extends React.Component {
         return (
             <div className="diamonds-container">
                 {diamonds}
-                <div>HI IM HERE</div>
             </div>
         )
 

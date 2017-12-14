@@ -5,12 +5,26 @@ import store from '../store'
 const contract = require('truffle-contract')
 
 export const RECEIVE_ALL_DIAMONDS = 'RECEIVE_ALL_DIAMONDS';
-
+export const RECEIVE_DIAMOND = 'RECEIVE_DIAMOND';
 
 export const receiveAllDiamonds = diamonds => {
+  return {
+    type: RECEIVE_ALL_DIAMONDS,
+    diamonds,
+  }
+}
+
+export const receiveDiamond = diamond => {
+  return {
+    type: RECEIVE_DIAMOND,
+    diamond
+  }
+}
+
+export const receiveDiamond = diamond => {
     return {
-        type: RECEIVE_ALL_DIAMONDS,
-        diamonds,
+        type: RECEIVE_DIAMOND, 
+        diamond, 
     }
 }
 
@@ -25,8 +39,8 @@ export function requestAllDiamonds() {
             const diamonds = contract(DiamondsContract);
             diamonds.setProvider(web3.currentProvider);
 
-            diamonds.web3.eth.defaultAccount = diamonds.web3.eth.coinbase; 
-            const account = diamonds.web3.eth.defaultAccount; 
+            diamonds.web3.eth.defaultAccount = diamonds.web3.eth.coinbase;
+            const account = diamonds.web3.eth.defaultAccount;
 
             // Declaring this for later so we can chain functions on Authentication.
             var diamondsInstance;
@@ -39,41 +53,36 @@ export function requestAllDiamonds() {
                 // }
 
                 diamonds.deployed().then(function (instance) {
-                    
+
                     diamondsInstance = instance;
 
                     // Attempt to login user.
 
                     // Try to get all diamonds 
                     
-                    return diamondsInstance.createDiamond(4).then(function(result){
-                        console.log(result);
-                    })
-                        .then(function(result){
-                            diamondsInstance.getDiamond.call(0, {from: account}).then(function(result){
-                            
+                    return diamondsInstance.getDiamond.call(2, {from: account}).then(function(result){
                                 console.log(result);
                                 console.log(result[0].toNumber());
                                 console.log(result[1].toNumber());
-                                // should be 0,3, address 
-                                // we want to dispatch an action to receivealldiamonds that holds the diamond info 
-                                // destruct result (array) into object 
+                                // should be 0,3, address
+                                // we want to dispatch an action to receivealldiamonds that holds the diamond info
+                                // destruct result (array) into object
                                 const d = {
-                                    id: result[0].toNumber(), 
-                                    price: result[1].toNumber(), 
+                                    id: result[0].toNumber(),
+                                    price: result[1].toNumber(),
                                     ownerAddr: result[2]
                                 }
 
-                                dispatch(receiveAllDiamonds(d)); 
+                                dispatch(receiveAllDiamonds(d));
                             })
-                        
+
                         })
                         .catch(function(err){
                             console.log(err);
                         })
 
-                    
-                    
+
+
 
 
                     // diamondsInstance.login({ from: coinbase })
@@ -99,8 +108,63 @@ export function requestAllDiamonds() {
 
                     //         return browserHistory.push('/signup')
                     //     })
-                })
         // })
+      }
     }
 }
+
+
+export function createDiamond(price) {
+
+    let web3 = store.getState().web3.web3Instance;
+    // Double-check web3's status.
+    if (typeof web3 !== 'undefined') {
+        web3.eth.defaultAccount = web3.eth.coinbase;
+        return function (dispatch) {
+            // Using truffle-contract we create the authentication object.
+            const diamonds = contract(DiamondsContract);
+            diamonds.setProvider(web3.currentProvider);
+
+            diamonds.web3.eth.defaultAccount = diamonds.web3.eth.coinbase;
+            const account = diamonds.web3.eth.defaultAccount;
+
+            // Declaring this for later so we can chain functions on Authentication.
+            var diamondsInstance;
+
+            // Get current ethereum wallet.
+            // web3.eth.getCoinbase((error, coinbase) => {
+            // Log errors, if any.
+            // if (error) {
+            //     console.error(error);
+            // }
+
+            diamonds.deployed().then(function (instance) {
+
+                diamondsInstance = instance;
+
+                // Attempt to login user.
+
+                // Try to get all diamonds 
+
+                return diamondsInstance.createDiamond.call(price, { from: account })
+                    .then(function(result){
+                        console.log(result);
+                        const d = {
+                            id: result[0].toNumber(),
+                            price: result[1].toNumber(),
+                            ownerAddr: result[2]
+                        }
+
+                        dispatch(receiveDiamond(d)); 
+                    })
+                    .catch(function (err) {
+                        console.log(err);
+                    })
+
+
+            })
+            // })
+        }
+    }
 }
+
