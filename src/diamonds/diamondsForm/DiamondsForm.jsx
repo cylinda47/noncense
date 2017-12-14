@@ -4,12 +4,17 @@ class DiamondForm extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            name: '',
             price: ''
         }
+        this.onInputChange = this.onInputChange.bind(this);
     }
 
-    onInputChange(event) {
-        this.setState({ price: event.target.value })
+    onInputChange(field, event) {
+
+        return (event) => {
+            this.setState({ [field]: event.target.value })
+        }
     }
 
     handleSubmit(event) {
@@ -17,7 +22,7 @@ class DiamondForm extends Component {
         // if (this.state.name.length < 2) {
         //     return alert('Please fill in the price.')
         // }
-        this.props.createDiamond(this.state.price)
+        this.props.createDiamond(this.state.name, parseInt(this.state.price)); 
     }
 
     render() {
@@ -25,7 +30,8 @@ class DiamondForm extends Component {
             <form className="pure-form pure-form-stacked" onSubmit={this.handleSubmit.bind(this)}>
                 <fieldset>
                     <label htmlFor="price">Price</label>
-                    <input id="price" type="number" value={this.state.price} onChange={this.onInputChange.bind(this)} placeholder="Price" />
+                    <input id="price" type="number" value={this.state.price} onChange={this.onInputChange('price')} placeholder="Price" />
+                    <input id="name" type="text" value={this.state.name} onChange={this.onInputChange('name')} placeholder="Name" />
                     <span className="pure-form-message">This is a required field.</span>
 
                     <br />

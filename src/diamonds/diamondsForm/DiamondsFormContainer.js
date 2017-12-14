@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        createDiamond: price => dispatch(createDiamond(price))
+        createDiamond: (name, price) => dispatch(createDiamond(name, price))
     }
 }
 

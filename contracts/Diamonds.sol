@@ -14,13 +14,14 @@ contract Diamonds {
        owner = msg.sender; // contract owner
    }
    
-   function createDiamond(string name, uint price) public returns (uint) {
+   function createDiamond(string name, uint price) public returns (uint, string, uint, address) {
        diamondNames.push(name);
        diamondNamesString = concat(diamondNamesString, name, "|");
        diamondPrices.push(price);
        diamondOwners.push(msg.sender);
+       uint diamondId = diamondPrices.length - 1; 
 
-       return diamondPrices.length - 1; // return diamondId
+       return (diamondId, diamondNames[diamondId], diamondPrices[diamondId], diamondOwners[diamondId] ); // return diamondId
    }
    
    function buy(uint diamondId) payable public returns (uint) {
@@ -34,20 +35,17 @@ contract Diamonds {
        return diamondId;
    }
 
-   function getAllDiamonds()
-       view
-       public
-       returns (string, uint[], address[])
-   {
+   function getAllDiamonds() view public returns (string, uint[], address[]) {
        return (diamondNamesString, diamondPrices, diamondOwners);
    }
+
    function getDiamond(uint diamondId)
        view
        public
-       returns (string, uint, address)
+       returns (uint, string, uint, address)
    {
        require(diamondPrices.length > diamondId);
-       return (diamondNames[diamondId], diamondPrices[diamondId], diamondOwners[diamondId]);
+       return (diamondId, diamondNames[diamondId], diamondPrices[diamondId], diamondOwners[diamondId]);
    }
    
    function kill() public {
