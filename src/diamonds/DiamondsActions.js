@@ -28,6 +28,8 @@ export const receiveDiamond = diamond => {
     }
 }
 
+
+
 export function requestAllDiamonds() {
 
     let web3 = store.getState().web3.web3Instance;
@@ -60,20 +62,28 @@ export function requestAllDiamonds() {
 
                     // Try to get all diamonds 
                     
-                    return diamondsInstance.getDiamond.call(2, {from: account}).then(function(result){
+                    return diamondsInstance.getAllDiamonds.call({from: account}).then(function(result){
                                 console.log(result);
-                                console.log(result[0].toNumber());
-                                console.log(result[1].toNumber());
-                                // should be 0,3, address
-                                // we want to dispatch an action to receivealldiamonds that holds the diamond info
-                                // destruct result (array) into object
-                                const d = {
-                                    id: result[0].toNumber(),
-                                    price: result[1].toNumber(),
-                                    ownerAddr: result[2]
-                                }
 
-                                dispatch(receiveAllDiamonds(d));
+            
+                              let allDiamonds = {}; 
+
+                              result[1].forEach((price, index) =>{
+                                  allDiamonds[index] = {}
+                                  allDiamonds[index].price = price.toNumber()
+
+                              })
+                              result[2].forEach((address, index) =>{
+                                  allDiamonds[index].address = address
+                              })
+                                // const d = {
+                                //     id: result[0].toNumber(), 
+                                //     price: result[1].toNumber(), 
+                                //     ownerAddr: result[2]
+                                // }
+
+                                dispatch(receiveAllDiamonds(allDiamonds)); 
+
                             })
 
                         })
@@ -114,7 +124,7 @@ export function requestAllDiamonds() {
 }
 
 
-export function createDiamond(price) {
+export function createDiamond(name, price) {
 
     let web3 = store.getState().web3.web3Instance;
     // Double-check web3's status.
@@ -129,7 +139,6 @@ export function createDiamond(price) {
             const account = diamonds.web3.eth.defaultAccount;
 
             // Declaring this for later so we can chain functions on Authentication.
-            var diamondsInstance;
 
             // Get current ethereum wallet.
             // web3.eth.getCoinbase((error, coinbase) => {
@@ -138,28 +147,27 @@ export function createDiamond(price) {
             //     console.error(error);
             // }
 
-            diamonds.deployed().then(function (instance) {
-
-                diamondsInstance = instance;
-
-                // Attempt to login user.
-
-                // Try to get all diamonds 
-
-                return diamondsInstance.createDiamond.call(price, { from: account })
-                    .then(function(result){
-                        console.log(result);
-                        const d = {
-                            id: result[0].toNumber(),
-                            price: result[1].toNumber(),
-                            ownerAddr: result[2]
-                        }
-
-                        dispatch(receiveDiamond(d)); 
-                    })
-                    .catch(function (err) {
-                        console.log(err);
-                    })
+            diamonds.deployed()
+                .then(function (instance) {
+                    instance.createDiamond(name, price)
+                        .then(result => {
+                            console.log(result);
+                            // const d = {
+                            //     id: result[0],
+                            //     name: result[1],
+                            //     price: result[2].toNumber(),
+                            //     ownerAddr: result[3]
+                            // }
+                            // dispatch(receiveDiamond(d)); 
+                        })
+                        .then(result =>{
+                            instance.getAllDiamonds().then(result => {
+                                console.log(result);
+                        })
+                })
+                .catch(function (err) {
+                    console.log(err);
+                })
 
 
             })
@@ -167,4 +175,3 @@ export function createDiamond(price) {
         }
     }
 }
-

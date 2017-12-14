@@ -50,7 +50,7 @@
       "absolutePath": "/Users/cylinda/Documents/app_academy/noncense/contracts/zeppelin/lifecycle/Killable.sol",
       "exportedSymbols": {
         "Killable": [
-          399
+          542
         ]
       }
     },
@@ -64,39 +64,44 @@
             ".4"
           ]
         },
-        "id": 385,
+        "id": 528,
         "name": "PragmaDirective",
         "src": "0:23:3"
       },
       {
         "attributes": {
+
+          "SourceUnit": 584,
+          "absolutePath": "/Users/KevinLee/Documents/blockchain/noncense/contracts/zeppelin/ownership/Ownable.sol",
+
           "SourceUnit": 422,
           "absolutePath": "/Users/cylinda/Documents/app_academy/noncense/contracts/zeppelin/ownership/Ownable.sol",
+
           "file": "./../ownership/Ownable.sol",
-          "scope": 400,
+          "scope": 543,
           "symbolAliases": [
             null
           ],
           "unitAlias": ""
         },
-        "id": 386,
+        "id": 529,
         "name": "ImportDirective",
         "src": "26:36:3"
       },
       {
         "attributes": {
           "contractDependencies": [
-            440
+            583
           ],
           "contractKind": "contract",
           "documentation": null,
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            399,
-            440
+            542,
+            583
           ],
           "name": "Killable",
-          "scope": 400
+          "scope": 543
         },
         "children": [
           {
@@ -110,15 +115,15 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "Ownable",
-                  "referencedDeclaration": 440,
+                  "referencedDeclaration": 583,
                   "type": "contract Ownable"
                 },
-                "id": 387,
+                "id": 530,
                 "name": "UserDefinedTypeName",
                 "src": "200:7:3"
               }
             ],
-            "id": 388,
+            "id": 531,
             "name": "InheritanceSpecifier",
             "src": "200:7:3"
           },
@@ -129,7 +134,7 @@
               "isConstructor": false,
               "name": "kill",
               "payable": false,
-              "scope": 399,
+              "scope": 542,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "public"
@@ -142,7 +147,7 @@
                   ]
                 },
                 "children": [],
-                "id": 389,
+                "id": 532,
                 "name": "ParameterList",
                 "src": "225:2:3"
               },
@@ -153,7 +158,7 @@
                   ]
                 },
                 "children": [],
-                "id": 392,
+                "id": 535,
                 "name": "ParameterList",
                 "src": "238:0:3"
               },
@@ -170,16 +175,16 @@
                       "overloadedDeclarations": [
                         null
                       ],
-                      "referencedDeclaration": 421,
+                      "referencedDeclaration": 564,
                       "type": "modifier ()",
                       "value": "onlyOwner"
                     },
-                    "id": 390,
+                    "id": 533,
                     "name": "Identifier",
                     "src": "228:9:3"
                   }
                 ],
-                "id": 391,
+                "id": 534,
                 "name": "ModifierInvocation",
                 "src": "228:9:3"
               },
@@ -213,11 +218,11 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 458,
+                              "referencedDeclaration": 601,
                               "type": "function (address)",
                               "value": "selfdestruct"
                             },
-                            "id": 393,
+                            "id": 536,
                             "name": "Identifier",
                             "src": "244:12:3"
                           },
@@ -227,41 +232,41 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 403,
+                              "referencedDeclaration": 546,
                               "type": "address",
                               "value": "owner"
                             },
-                            "id": 394,
+                            "id": 537,
                             "name": "Identifier",
                             "src": "257:5:3"
                           }
                         ],
-                        "id": 395,
+                        "id": 538,
                         "name": "FunctionCall",
                         "src": "244:19:3"
                       }
                     ],
-                    "id": 396,
+                    "id": 539,
                     "name": "ExpressionStatement",
                     "src": "244:19:3"
                   }
                 ],
-                "id": 397,
+                "id": 540,
                 "name": "Block",
                 "src": "238:30:3"
               }
             ],
-            "id": 398,
+            "id": 541,
             "name": "FunctionDefinition",
             "src": "212:56:3"
           }
         ],
-        "id": 399,
+        "id": 542,
         "name": "ContractDefinition",
         "src": "179:91:3"
       }
     ],
-    "id": 400,
+    "id": 543,
     "name": "SourceUnit",
     "src": "0:271:3"
   },
@@ -273,9 +278,17 @@
     "4447": {
       "events": {},
       "links": {},
+
+      "address": "0x5b2073dd741ba8edfec887016b23e746f5dec48c"
+    }
+  },
+  "schemaVersion": "1.0.1",
+  "updatedAt": "2017-12-14T05:22:58.844Z"
+
       "address": "0xf25186b5081ff5ce73482ad761db0eb0d25abfbf"
     }
   },
   "schemaVersion": "1.0.1",
   "updatedAt": "2017-12-14T01:52:37.293Z"
+
 }
