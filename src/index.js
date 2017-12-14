@@ -4,7 +4,7 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import { Provider } from 'react-redux'
 import { syncHistoryWithStore } from 'react-router-redux'
 import { UserIsAuthenticated, UserIsNotAuthenticated } from './util/wrappers.js'
-import DiamondsIndexContainer from './diamonds/components/DiamondsIndexContainer'; 
+import DiamondsIndexContainer from './diamonds/diamondsIndex/DiamondsIndexContainer'; 
 import getWeb3 from './util/web3/getWeb3'
 
 // Layouts

@@ -13,11 +13,12 @@ class Home extends Component {
         </section>
 
         <section className='why-ethereum'>
-          <h1>Why Ethereum?</h1>
+          <h1>Why Ethereum</h1>
           <hr className='underline' />
 
           <div>
-            <img src='https://images.unsplash.com/photo-1502101872923-d48509bff386?auto=format&fit=crop&w=2378&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D'
+            <div className='image-background' />
+            <img src='https://bitcoinist.com/wp-content/themes/bitcoinist/img/ETHEREUM-LOGO-2.png'
               alt='long way to go' />
             <p>
               'brief note outlining the security and functionality associated with Ethereum. This should include the problem statement.brief note outlining the security and functionality associated with Ethereum. This should include the problem statement.brief note outlining the security and functionality associated with Ethereum. This should include the problem statement.brief note outlining the security and functionality associated with Ethereum. This should include the problem statement.brief note outlining the security and functionality associated with Ethereum. This should include the problem statement.'
@@ -33,6 +34,7 @@ class Home extends Component {
               <h6>
                 Smart Contracts
               </h6>
+              <img className="contract-img" src="https://image.flaticon.com/icons/svg/306/306438.svg" />
               <p>
                 This is some info about Smart ContractsThis is some info about Smart ContractsThis is some info about Smart ContractsThis is some info about Smart ContractsThis is some info about Smart ContractsThis is some info about Smart ContractsThis is some info about Smart Contracts
               </p>
@@ -41,6 +43,7 @@ class Home extends Component {
               <h6>
                 Noncense Smart Contract
               </h6>
+                <img className="contract-img" src="https://image.flaticon.com/icons/svg/306/306471.svg" />
               <p>
                 This is some info about that delicious contract we're usingThis is some info about that delicious contract we're usingThis is some info about that delicious contract we're usingThis is some info about that delicious contract we're usingThis is some info about that delicious contract we're usingThis is some info about that delicious contract we're usingThis is some info about that delicious contract we're using
               </p>
@@ -48,6 +51,7 @@ class Home extends Component {
             <li>
               <h6>
                 Noncense Smart Contract Functionality
+                <img className="contract-img" src="https://image.flaticon.com/icons/svg/306/306431.svg" />
               </h6>
               <p>
                 This is what that amazing contract doesThis is what that amazing contract doesThis is what that amazing contract doesThis is what that amazing contract doesThis is what that amazing contract doesThis is what that amazing contract doesThis is what that amazing contract doesThis is what that amazing contract doesThis is what that amazing contract does
