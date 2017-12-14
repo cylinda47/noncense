@@ -13,7 +13,9 @@ import './css/session.css'
 import './css/oswald.css'
 import './css/open-sans.css'
 import './css/pure-min.css'
+import './css/diamonds.css';
 import './App.css'
+
 
 class App extends Component {
 

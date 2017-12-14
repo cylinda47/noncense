@@ -39,7 +39,7 @@ contract Diamonds {
     }
 
     function getDiamond(uint diamondId) public returns(uint, uint, address) {
-        Diamond d = diamonds[diamondId];
+        Diamond memory d = diamonds[diamondId];
         
         // break the struct's members out into a tuple
         // in the same order that they appear in the struct

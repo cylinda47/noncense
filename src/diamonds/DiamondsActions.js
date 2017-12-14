@@ -46,12 +46,12 @@ export function requestAllDiamonds() {
 
                     // Try to get all diamonds 
                     
-                    return diamondsInstance.createDiamond(3).then(function(result){
+                    return diamondsInstance.createDiamond(4).then(function(result){
                         console.log(result);
                     })
                         .then(function(result){
                             diamondsInstance.getDiamond.call(0, {from: account}).then(function(result){
-                                // var diamond = web3.toUtf8(result)
+                            
                                 console.log(result);
                                 console.log(result[0].toNumber());
                                 console.log(result[1].toNumber());
@@ -65,8 +65,6 @@ export function requestAllDiamonds() {
                                 }
 
                                 dispatch(receiveAllDiamonds(d)); 
-                                // console.log(diamond);
-                                // dispatch(receiveAllDiamonds(diamond))
                             })
                         
                         })
