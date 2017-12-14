@@ -54,7 +54,7 @@ export function requestAllDiamonds() {
 
                     // Try to get all diamonds 
                     
-                    return diamondsInstance.getDiamond.call(2, {from: account}).then(function(result){
+                    return diamondsInstance.getAllDiamonds.call({from: account}).then(function(result){
                                 console.log(result);
                                 console.log(result[0].toNumber());
                                 console.log(result[1].toNumber());
