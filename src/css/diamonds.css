@@ -1,3 +1,13 @@
 .diamonds-container{
     color: white; 
+    display: flex; 
+    flex-direction: column;
+}
+
+.diamonds-item{
+
+}
+
+.diamonds-properties-list{
+    list-style:none; 
 }

@@ -1,3 +1,4 @@
+
 import {
   RECEIVE_ALL_DIAMONDS,
   RECEIVE_DIAMOND
@@ -11,12 +12,12 @@ const initialState = {
 const diamondsReducer = (state = initialState, action) => {
     let newState;
     switch(action.type){
-      case RECEIVE_ALL_DIAMONDS:
-        return action.diamonds;
-      case RECEIVE_DIAMOND:
-        return merge({}, state, {[action.diamond.id]: action.diamond});
-      default:
-        return state;
+       case RECEIVE_ALL_DIAMONDS:
+           return action.diamonds; 
+        case RECEIVE_DIAMOND: 
+            return action.diamond; 
+        default:
+            return state; 
     }
 }
 
