@@ -18,11 +18,12 @@ class DiamondsIndex extends React.Component {
     }
 
     render(){
-        console.log("state"); 
-        console.log("jacobrocks");
-        console.log(this.state.diamonds);
         let diamonds; 
-        if(this.state.diamonds.id){
+        console.log("state");
+        console.log(this.state.diamonds);
+        console.log(this.state.diamonds.id);
+        if(this.state.diamonds.id === 0){
+            console.log("im here")
             diamonds = (
                 <div>
                     <br/><br/><br/>
@@ -35,12 +36,10 @@ class DiamondsIndex extends React.Component {
             diamonds = <li>Diamonds</li>
         }
 
-
-        console.log("Im here!");
         console.log(diamonds);
 
         return (
-            <div className="container">
+            <div className="diamonds-container">
                 {diamonds}
                 <div>HI IM HERE</div>
             </div>

@@ -29,6 +29,33 @@
       "type": "function"
     },
     {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "diamonds",
+      "outputs": [
+        {
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "name": "price",
+          "type": "uint256"
+        },
+        {
+          "name": "ownerAddr",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
       "constant": false,
       "inputs": [],
       "name": "kill",
@@ -39,12 +66,7 @@
     },
     {
       "constant": true,
-      "inputs": [
-        {
-          "name": "price",
-          "type": "uint256"
-        }
-      ],
+      "inputs": [],
       "name": "getDiamondId",
       "outputs": [
         {
@@ -65,9 +87,63 @@
         }
       ],
       "name": "createDiamond",
-      "outputs": [
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
         {
           "name": "diamondId",
+          "type": "uint256"
+        }
+      ],
+      "name": "buy",
+      "outputs": [],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "diamondId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getDiamond",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "diamondsTot",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        },
+        {
+          "name": "",
           "type": "uint256"
         }
       ],
@@ -76,47 +152,10 @@
       "type": "function"
     },
     {
-      "inputs": [
-        {
-          "name": "diamondId",
-          "type": "uint256"
-        }
-      ],
-      "payable": true,
-      "stateMutability": "payable",
-      "type": "function",
-      "constant": false,
-      "name": "buy",
-      "outputs": [
-        {
-          "name": "",
-          "type": "bytes32"
-        }
-      ]
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": false,
-          "name": "",
-          "type": "uint256"
-        },
-        {
-          "indexed": false,
-          "name": "",
-          "type": "uint256"
-        },
-        {
-          "indexed": false,
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "name": "DiamondLogger",
-      "type": "constructor",
+      "inputs": [],
       "payable": false,
-      "stateMutability": "nonpayable"
+      "stateMutability": "nonpayable",
+      "type": "constructor"
     },
     {
       "anonymous": false,
@@ -141,18 +180,18 @@
       "type": "event"
     }
   ],
-  "bytecode": "0x6060604052341561000f57600080fd5b33600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555061061e8061005f6000396000f30060606040526004361061006d576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680631e570dd41461007257806341c0e1b5146100e35780638ae32610146100f8578063b5a3263614610121578063d96a094a14610158575b600080fd5b341561007d57600080fd5b6100936004808035906020019091905050610170565b604051808481526020018381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001935050505060405180910390f35b34156100ee57600080fd5b6100f66101c9565b005b341561010357600080fd5b61010b61025c565b6040518082815260200191505060405180910390f35b341561012c57600080fd5b6101426004808035906020019091905050610268565b6040518082815260200191505060405180910390f35b61016e600480803590602001909190505061041a565b005b60008181548110151561017f57fe5b90600052602060002090600302016000915090508060000154908060010154908060020160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905083565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141561025a57600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16ff5b565b60008080549050905090565b600080805480600101828161027d919061056a565b916000526020600020906003020160006060604051908101604052808581526020018681526020013373ffffffffffffffffffffffffffffffffffffffff168152509091909150600082015181600001556020820151816001015560408201518160020160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505050507f68fbd1057e8027d898c27fce86b80a981acecc1fedceaab794402d6d0a02111a60008281548110151561035257fe5b90600052602060002090600302016000015460008381548110151561037357fe5b90600052602060002090600302016001015460008481548110151561039457fe5b906000526020600020906003020160020160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16604051808481526020018381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001935050505060405180910390a1919050565b806000805490501180156104585750670de0b6b3a764000060008281548110151561044157fe5b906000526020600020906003020160010154023410155b156105675760008181548110151561046c57fe5b906000526020600020906003020160020160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc670de0b6b3a76400006000848154811015156104cf57fe5b906000526020600020906003020160010154029081150290604051600060405180830381858888f19350505050151561050757600080fd5b3360008281548110151561051757fe5b906000526020600020906003020160020160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b50565b81548183558181151161059757600302816003028360005260206000209182019101610596919061059c565b5b505050565b6105ef91905b808211156105eb5760008082016000905560018201600090556002820160006101000a81549073ffffffffffffffffffffffffffffffffffffffff0219169055506003016105a2565b5090565b905600a165627a7a72305820c293516bcba5c2037386dab24e6cbc6408c3e7627c45018391808f7551e96aac0029",
-  "deployedBytecode": "0x60606040526004361061006d576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680631e570dd41461007257806341c0e1b5146100e35780638ae32610146100f8578063b5a3263614610121578063d96a094a14610158575b600080fd5b341561007d57600080fd5b6100936004808035906020019091905050610170565b604051808481526020018381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001935050505060405180910390f35b34156100ee57600080fd5b6100f66101c9565b005b341561010357600080fd5b61010b61025c565b6040518082815260200191505060405180910390f35b341561012c57600080fd5b6101426004808035906020019091905050610268565b6040518082815260200191505060405180910390f35b61016e600480803590602001909190505061041a565b005b60008181548110151561017f57fe5b90600052602060002090600302016000915090508060000154908060010154908060020160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905083565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141561025a57600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16ff5b565b60008080549050905090565b600080805480600101828161027d919061056a565b916000526020600020906003020160006060604051908101604052808581526020018681526020013373ffffffffffffffffffffffffffffffffffffffff168152509091909150600082015181600001556020820151816001015560408201518160020160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505050507f68fbd1057e8027d898c27fce86b80a981acecc1fedceaab794402d6d0a02111a60008281548110151561035257fe5b90600052602060002090600302016000015460008381548110151561037357fe5b90600052602060002090600302016001015460008481548110151561039457fe5b906000526020600020906003020160020160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16604051808481526020018381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001935050505060405180910390a1919050565b806000805490501180156104585750670de0b6b3a764000060008281548110151561044157fe5b906000526020600020906003020160010154023410155b156105675760008181548110151561046c57fe5b906000526020600020906003020160020160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc670de0b6b3a76400006000848154811015156104cf57fe5b906000526020600020906003020160010154029081150290604051600060405180830381858888f19350505050151561050757600080fd5b3360008281548110151561051757fe5b906000526020600020906003020160020160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b50565b81548183558181151161059757600302816003028360005260206000209182019101610596919061059c565b5b505050565b6105ef91905b808211156105eb5760008082016000905560018201600090556002820160006101000a81549073ffffffffffffffffffffffffffffffffffffffff0219169055506003016105a2565b5090565b905600a165627a7a72305820c293516bcba5c2037386dab24e6cbc6408c3e7627c45018391808f7551e96aac0029",
-  "sourceMap": "25:1320:1:-;;;318:62;;;;;;;;363:10;355:5;;:18;;;;;;;;;;;;;;;;;;25:1320;;;;;;",
-  "deployedSourceMap": "25:1320:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;181:28;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1248:95;;;;;;;;;;;;;;386:107;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;503:325;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;838:400;;;;;;;;;;;;;;;;;;181:28;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;1248:95::-;1299:5;;;;;;;;;;;1285:19;;:10;:19;;;1281:55;;;1330:5;;;;;;;;;;;1317:19;;;1281:55;1248:95::o;386:107::-;435:14;468:11;:18;;;;461:25;;386:107;:::o;503:325::-;554:14;623:11;:55;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;640:37;;;;;;;;;648:9;640:37;;;;659:5;640:37;;;;666:10;640:37;;;;;623:55;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;688:104;702:11;714:9;702:22;;;;;;;;;;;;;;;;;;;;:25;;;729:11;741:9;729:22;;;;;;;;;;;;;;;;;;;;:28;;;759:11;771:9;759:22;;;;;;;;;;;;;;;;;;;;:32;;;;;;;;;;;;688:104;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;503:325;;;:::o;838:400::-;994:9;973:11;:18;;;;:30;:95;;;;;1064:4;1033:11;1045:9;1033:22;;;;;;;;;;;;;;;;;;;;:28;;;:35;1020:9;:48;;973:95;969:263;;;1084:11;1096:9;1084:22;;;;;;;;;;;;;;;;;;;;:32;;;;;;;;;;;;:41;;:78;1157:4;1126:11;1138:9;1126:22;;;;;;;;;;;;;;;;;;;;:28;;;:35;1084:78;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1211:10;1176:11;1188:9;1176:22;;;;;;;;;;;;;;;;;;;;:32;;;:45;;;;;;;;;;;;;;;;;;969:263;838:400;:::o;25:1320::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
-  "source": "pragma solidity ^0.4.0;\n\ncontract Diamonds {\n    struct Diamond {\n        uint id;\n        uint price; // in ether (should convert to Wei)\n        address ownerAddr;\n    }\n    \n    Diamond[] public allDiamonds; // array of Diamond structs\n    address owner;\n    \n    event DiamondLogger(uint, uint, address);\n    \n    function Diamonds() public {\n        owner = msg.sender;\n    }\n\n    function getDiamondId() public constant returns (uint diamondId) {\n        return allDiamonds.length;\n    }\n    \n    function createDiamond(uint price) public returns (uint diamondId) {\n        // diamondId = allDiamonds.length;\n        allDiamonds.push(Diamond(diamondId, price, msg.sender));\n        DiamondLogger(allDiamonds[diamondId].id, allDiamonds[diamondId].price, allDiamonds[diamondId].ownerAddr);\n        // return diamondId;\n    }\n    \n    function buy(uint diamondId) payable public {\n        //find diamond (diamondId should be index of diamond in allDiamonds)\n        if (allDiamonds.length > diamondId && \n            msg.value >= allDiamonds[diamondId].price * 1e18) {\n            allDiamonds[diamondId].ownerAddr.transfer(allDiamonds[diamondId].price * 1e18);\n            allDiamonds[diamondId].ownerAddr = msg.sender;\n        }\n    }\n    \n    function kill() public {\n        if (msg.sender == owner) \n          selfdestruct(owner);\n    }\n}",
-  "sourcePath": "/Users/dramaze/Desktop/appacademy/noncense/contracts/Diamonds.sol",
+  "bytecode": "0x6060604052341561000f57600080fd5b33600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506108618061005f6000396000f30060606040526004361061008e576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680631e570dd4146100935780633951e09b1461010457806341c0e1b5146101755780638ae326101461018a578063b5a32636146101b3578063d96a094a146101d6578063e3ed14db146101ee578063e61254241461025f575b600080fd5b341561009e57600080fd5b6100b460048080359060200190919050506102bb565b604051808481526020018381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001935050505060405180910390f35b341561010f57600080fd5b6101256004808035906020019091905050610314565b604051808481526020018381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001935050505060405180910390f35b341561018057600080fd5b61018861035e565b005b341561019557600080fd5b61019d6103f1565b6040518082815260200191505060405180910390f35b34156101be57600080fd5b6101d460048080359060200190919050506103fd565b005b6101ec600480803590602001909190505061055e565b005b34156101f957600080fd5b61020f60048080359060200190919050506106ae565b604051808481526020018381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001935050505060405180910390f35b341561026a57600080fd5b610272610763565b604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390f35b6000818154811015156102ca57fe5b90600052602060002090600302016000915090508060000154908060010154908060020160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905083565b60016020528060005260406000206000915090508060000154908060010154908060020160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905083565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614156103ef57600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16ff5b565b60008080549050905090565b600080548060010182816104119190610775565b91600052602060002090600302016000606060405190810160405280600081526020018581526020013373ffffffffffffffffffffffffffffffffffffffff168152509091909150600082015181600001556020820151816001015560408201518160020160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505050606060405190810160405280600081526020018281526020013373ffffffffffffffffffffffffffffffffffffffff1681525060016000808152602001908152602001600020600082015181600001556020820151816001015560408201518160020160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555090505050565b8060008054905011801561059c5750670de0b6b3a764000060008281548110151561058557fe5b906000526020600020906003020160010154023410155b156106ab576000818154811015156105b057fe5b906000526020600020906003020160020160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc670de0b6b3a764000060008481548110151561061357fe5b906000526020600020906003020160010154029081150290604051600060405180830381858888f19350505050151561064b57600080fd5b3360008281548110151561065b57fe5b906000526020600020906003020160020160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b50565b60008060006106bb6107a7565b600160008681526020019081526020016000206060604051908101604052908160008201548152602001600182015481526020016002820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815250509050806000015181602001518260400151935093509350509193909250565b60008033600080549050915091509091565b8154818355818115116107a2576003028160030283600052602060002091820191016107a191906107df565b5b505050565b6060604051908101604052806000815260200160008152602001600073ffffffffffffffffffffffffffffffffffffffff1681525090565b61083291905b8082111561082e5760008082016000905560018201600090556002820160006101000a81549073ffffffffffffffffffffffffffffffffffffffff0219169055506003016107e5565b5090565b905600a165627a7a7230582024a661aba000e76dc67b5546dcadc5bf9dd29505a4d6589c75f588e04041fe950029",
+  "deployedBytecode": "0x60606040526004361061008e576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680631e570dd4146100935780633951e09b1461010457806341c0e1b5146101755780638ae326101461018a578063b5a32636146101b3578063d96a094a146101d6578063e3ed14db146101ee578063e61254241461025f575b600080fd5b341561009e57600080fd5b6100b460048080359060200190919050506102bb565b604051808481526020018381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001935050505060405180910390f35b341561010f57600080fd5b6101256004808035906020019091905050610314565b604051808481526020018381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001935050505060405180910390f35b341561018057600080fd5b61018861035e565b005b341561019557600080fd5b61019d6103f1565b6040518082815260200191505060405180910390f35b34156101be57600080fd5b6101d460048080359060200190919050506103fd565b005b6101ec600480803590602001909190505061055e565b005b34156101f957600080fd5b61020f60048080359060200190919050506106ae565b604051808481526020018381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001935050505060405180910390f35b341561026a57600080fd5b610272610763565b604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018281526020019250505060405180910390f35b6000818154811015156102ca57fe5b90600052602060002090600302016000915090508060000154908060010154908060020160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905083565b60016020528060005260406000206000915090508060000154908060010154908060020160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905083565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614156103ef57600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16ff5b565b60008080549050905090565b600080548060010182816104119190610775565b91600052602060002090600302016000606060405190810160405280600081526020018581526020013373ffffffffffffffffffffffffffffffffffffffff168152509091909150600082015181600001556020820151816001015560408201518160020160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505050606060405190810160405280600081526020018281526020013373ffffffffffffffffffffffffffffffffffffffff1681525060016000808152602001908152602001600020600082015181600001556020820151816001015560408201518160020160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555090505050565b8060008054905011801561059c5750670de0b6b3a764000060008281548110151561058557fe5b906000526020600020906003020160010154023410155b156106ab576000818154811015156105b057fe5b906000526020600020906003020160020160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc670de0b6b3a764000060008481548110151561061357fe5b906000526020600020906003020160010154029081150290604051600060405180830381858888f19350505050151561064b57600080fd5b3360008281548110151561065b57fe5b906000526020600020906003020160020160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b50565b60008060006106bb6107a7565b600160008681526020019081526020016000206060604051908101604052908160008201548152602001600182015481526020016002820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815250509050806000015181602001518260400151935093509350509193909250565b60008033600080549050915091509091565b8154818355818115116107a2576003028160030283600052602060002091820191016107a191906107df565b5b505050565b6060604051908101604052806000815260200160008152602001600073ffffffffffffffffffffffffffffffffffffffff1681525090565b61083291905b8082111561082e5760008082016000905560018201600090556002820160006101000a81549073ffffffffffffffffffffffffffffffffffffffff0219169055506003016107e5565b5090565b905600a165627a7a7230582024a661aba000e76dc67b5546dcadc5bf9dd29505a4d6589c75f588e04041fe950029",
+  "sourceMap": "25:1795:1:-;;;365:62;;;;;;;;410:10;402:5;;:18;;;;;;;;;;;;;;;;;;25:1795;;;;;;",
+  "deployedSourceMap": "25:1795:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;181:28;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;243:40;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1723:95;;;;;;;;;;;;;;433:107;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;550:334;;;;;;;;;;;;;;;;;;;;;;;;;;894:400;;;;;;;;;;;;;;;;;;1300:296;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1602:111;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;181:28;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;243:40::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;1723:95::-;1774:5;;;;;;;;;;;1760:19;;:10;:19;;;1756:55;;;1805:5;;;;;;;;;;;1792:19;;;1756:55;1723:95::o;433:107::-;482:14;515:11;:18;;;;508:25;;433:107;:::o;550:334::-;650:11;:47;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;667:29;;;;;;;;;675:1;667:29;;;;678:5;667:29;;;;685:10;667:29;;;;;650:47;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;721:29;;;;;;;;;729:1;721:29;;;;732:5;721:29;;;;739:10;721:29;;;;;707:8;:11;716:1;707:11;;;;;;;;;;;:43;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;550:334;:::o;894:400::-;1050:9;1029:11;:18;;;;:30;:95;;;;;1120:4;1089:11;1101:9;1089:22;;;;;;;;;;;;;;;;;;;;:28;;;:35;1076:9;:48;;1029:95;1025:263;;;1140:11;1152:9;1140:22;;;;;;;;;;;;;;;;;;;;:32;;;;;;;;;;;;:41;;:78;1213:4;1182:11;1194:9;1182:22;;;;;;;;;;;;;;;;;;;;:28;;;:35;1140:78;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1267:10;1232:11;1244:9;1232:22;;;;;;;;;;;;;;;;;;;;:32;;;:45;;;;;;;;;;;;;;;;;;1025:263;894:400;:::o;1300:296::-;1351:4;1357;1363:7;1382:16;;:::i;:::-;1401:8;:19;1410:9;1401:19;;;;;;;;;;;1382:38;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1562:1;:4;;;1568:1;:7;;;1577:1;:11;;;1554:35;;;;;;1300:296;;;;;;:::o;1602:111::-;1641:7;1650:4;1674:10;1686:11;:18;;;;1666:39;;;;1602:111;;:::o;25:1795::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.4.0;\n\ncontract Diamonds {\n    struct Diamond {\n        uint id;\n        uint price; // in ether (should convert to Wei)\n        address ownerAddr;\n    }\n    \n    Diamond[] public allDiamonds; // array of Diamond structs\n    mapping(uint => Diamond) public diamonds; \n    address owner;\n    \n    event DiamondLogger(uint, uint, address);\n    \n    function Diamonds() public {\n        owner = msg.sender;\n    }\n\n    function getDiamondId() public constant returns (uint diamondId) {\n        return allDiamonds.length;\n    }\n    \n    function createDiamond(uint price) public {\n        // uint diamondId = allDiamonds.length;\n        allDiamonds.push(Diamond(0, price, msg.sender));\n        diamonds[0] = Diamond(0, price, msg.sender); \n        \n        // DiamondLogger(allDiamonds[diamondId].id, allDiamonds[diamondId].price, allDiamonds[diamondId].ownerAddr);\n    }\n    \n    function buy(uint diamondId) payable public {\n        //find diamond (diamondId should be index of diamond in allDiamonds)\n        if (allDiamonds.length > diamondId && \n            msg.value >= allDiamonds[diamondId].price * 1e18) {\n            allDiamonds[diamondId].ownerAddr.transfer(allDiamonds[diamondId].price * 1e18);\n            allDiamonds[diamondId].ownerAddr = msg.sender;\n        }\n    }\n\n    function getDiamond(uint diamondId) public returns(uint, uint, address) {\n        Diamond memory d = diamonds[diamondId];\n        \n        // break the struct's members out into a tuple\n        // in the same order that they appear in the struct\n        return (d.id, d.price, d.ownerAddr);\n    }\n\n    function diamondsTot() public returns (address, uint) {\n        return (msg.sender, allDiamonds.length); \n    }\n    \n    function kill() public {\n        if (msg.sender == owner) \n          selfdestruct(owner);\n    }\n}",
+  "sourcePath": "/Users/KevinLee/Documents/blockchain/noncense/contracts/Diamonds.sol",
   "ast": {
     "attributes": {
-      "absolutePath": "/Users/dramaze/Desktop/appacademy/noncense/contracts/Diamonds.sol",
+      "absolutePath": "/Users/KevinLee/Documents/blockchain/noncense/contracts/Diamonds.sol",
       "exportedSymbols": {
         "Diamonds": [
-          269
+          307
         ]
       }
     },
@@ -182,17 +221,17 @@
           "documentation": null,
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            269
+            307
           ],
           "name": "Diamonds",
-          "scope": 270
+          "scope": 308
         },
         "children": [
           {
             "attributes": {
               "canonicalName": "Diamonds.Diamond",
               "name": "Diamond",
-              "scope": 269,
+              "scope": 307,
               "visibility": "public"
             },
             "children": [
@@ -283,7 +322,7 @@
             "attributes": {
               "constant": false,
               "name": "allDiamonds",
-              "scope": 269,
+              "scope": 307,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "struct Diamonds.Diamond storage ref[] storage ref",
@@ -321,8 +360,55 @@
           {
             "attributes": {
               "constant": false,
+              "name": "diamonds",
+              "scope": 307,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(uint256 => struct Diamonds.Diamond storage ref)",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(uint256 => struct Diamonds.Diamond storage ref)"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 151,
+                    "name": "ElementaryTypeName",
+                    "src": "251:4:1"
+                  },
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "Diamond",
+                      "referencedDeclaration": 147,
+                      "type": "struct Diamonds.Diamond storage pointer"
+                    },
+                    "id": 152,
+                    "name": "UserDefinedTypeName",
+                    "src": "259:7:1"
+                  }
+                ],
+                "id": 153,
+                "name": "Mapping",
+                "src": "243:24:1"
+              }
+            ],
+            "id": 154,
+            "name": "VariableDeclaration",
+            "src": "243:40:1"
+          },
+          {
+            "attributes": {
+              "constant": false,
               "name": "owner",
-              "scope": 269,
+              "scope": 307,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "address",
@@ -335,25 +421,19 @@
                   "name": "address",
                   "type": "address"
                 },
-                "id": 151,
+                "id": 155,
                 "name": "ElementaryTypeName",
-                "src": "243:7:1"
+                "src": "290:7:1"
               }
             ],
-            "id": 152,
+            "id": 156,
             "name": "VariableDeclaration",
-            "src": "243:13:1"
+            "src": "290:13:1"
           },
           {
             "attributes": {
               "anonymous": false,
-              "name": "DiamondLogger",
-              "constant": false,
-              "scope": 131,
-              "stateVariable": true,
-              "storageLocation": "default",
-              "type": "uint256",
-              "visibility": "public"
+              "name": "DiamondLogger"
             },
             "children": [
               {
@@ -363,7 +443,7 @@
                       "constant": false,
                       "indexed": false,
                       "name": "",
-                      "scope": 160,
+                      "scope": 164,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -376,21 +456,21 @@
                           "name": "uint",
                           "type": "uint256"
                         },
-                        "id": 153,
+                        "id": 157,
                         "name": "ElementaryTypeName",
-                        "src": "287:4:1"
+                        "src": "334:4:1"
                       }
                     ],
-                    "id": 154,
+                    "id": 158,
                     "name": "VariableDeclaration",
-                    "src": "287:4:1"
+                    "src": "334:4:1"
                   },
                   {
                     "attributes": {
                       "constant": false,
                       "indexed": false,
                       "name": "",
-                      "scope": 160,
+                      "scope": 164,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -403,21 +483,21 @@
                           "name": "uint",
                           "type": "uint256"
                         },
-                        "id": 155,
+                        "id": 159,
                         "name": "ElementaryTypeName",
-                        "src": "293:4:1"
+                        "src": "340:4:1"
                       }
                     ],
-                    "id": 156,
+                    "id": 160,
                     "name": "VariableDeclaration",
-                    "src": "293:4:1"
+                    "src": "340:4:1"
                   },
                   {
                     "attributes": {
                       "constant": false,
                       "indexed": false,
                       "name": "",
-                      "scope": 160,
+                      "scope": 164,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -430,45 +510,24 @@
                           "name": "address",
                           "type": "address"
                         },
-                        "id": 157,
+                        "id": 161,
                         "name": "ElementaryTypeName",
-                        "src": "299:7:1"
+                        "src": "346:7:1"
                       }
                     ],
-                    "id": 158,
+                    "id": 162,
                     "name": "VariableDeclaration",
-                    "src": "299:7:1"
+                    "src": "346:7:1"
                   }
                 ],
-                "id": 159,
+                "id": 163,
                 "name": "ParameterList",
-                "src": "286:21:1",
-                "attributes": {
-                  "name": "uint",
-                  "type": "uint256"
-                }
-              },
-              {
-                "attributes": {
-                  "argumentTypes": null,
-                  "hexvalue": "3432",
-                  "isConstant": false,
-                  "isLValue": false,
-                  "isPure": true,
-                  "lValueRequested": false,
-                  "subdenomination": null,
-                  "token": "number",
-                  "type": "int_const 42",
-                  "value": "42"
-                },
-                "id": 15,
-                "name": "Literal",
-                "src": "282:2:0"
+                "src": "333:21:1"
               }
             ],
-            "id": 160,
+            "id": 164,
             "name": "EventDefinition",
-            "src": "267:41:1"
+            "src": "314:41:1"
           },
           {
             "attributes": {
@@ -480,11 +539,10 @@
               ],
               "name": "Diamonds",
               "payable": false,
-              "scope": 269,
+              "scope": 307,
               "stateMutability": "nonpayable",
               "superFunction": null,
-              "visibility": "public",
-              "anonymous": false
+              "visibility": "public"
             },
             "children": [
               {
@@ -493,92 +551,10 @@
                     null
                   ]
                 },
-                "children": [
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "indexed": false,
-                      "name": "",
-                      "scope": 24,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "uint256",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "uint",
-                          "type": "uint256"
-                        },
-                        "id": 17,
-                        "name": "ElementaryTypeName",
-                        "src": "315:4:0"
-                      }
-                    ],
-                    "id": 18,
-                    "name": "VariableDeclaration",
-                    "src": "315:4:0"
-                  },
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "indexed": false,
-                      "name": "",
-                      "scope": 24,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "uint256",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "uint",
-                          "type": "uint256"
-                        },
-                        "id": 19,
-                        "name": "ElementaryTypeName",
-                        "src": "321:4:0"
-                      }
-                    ],
-                    "id": 20,
-                    "name": "VariableDeclaration",
-                    "src": "321:4:0"
-                  },
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "indexed": false,
-                      "name": "",
-                      "scope": 24,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "address",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "address",
-                          "type": "address"
-                        },
-                        "id": 21,
-                        "name": "ElementaryTypeName",
-                        "src": "327:7:0"
-                      }
-                    ],
-                    "id": 22,
-                    "name": "VariableDeclaration",
-                    "src": "327:7:0"
-                  }
-                ],
-                "id": 161,
+                "children": [],
+                "id": 165,
                 "name": "ParameterList",
-                "src": "335:2:1"
+                "src": "382:2:1"
               },
               {
                 "attributes": {
@@ -587,9 +563,9 @@
                   ]
                 },
                 "children": [],
-                "id": 162,
+                "id": 166,
                 "name": "ParameterList",
-                "src": "345:0:1"
+                "src": "392:0:1"
               },
               {
                 "children": [
@@ -612,13 +588,13 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 152,
+                              "referencedDeclaration": 156,
                               "type": "address",
                               "value": "owner"
                             },
-                            "id": 163,
+                            "id": 167,
                             "name": "Identifier",
-                            "src": "355:5:1"
+                            "src": "402:5:1"
                           },
                           {
                             "attributes": {
@@ -638,38 +614,38 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 395,
+                                  "referencedDeclaration": 433,
                                   "type": "msg",
                                   "value": "msg"
                                 },
-                                "id": 164,
+                                "id": 168,
                                 "name": "Identifier",
-                                "src": "363:3:1"
+                                "src": "410:3:1"
                               }
                             ],
-                            "id": 165,
+                            "id": 169,
                             "name": "MemberAccess",
-                            "src": "363:10:1"
+                            "src": "410:10:1"
                           }
                         ],
-                        "id": 166,
+                        "id": 170,
                         "name": "Assignment",
-                        "src": "355:18:1"
+                        "src": "402:18:1"
                       }
                     ],
-                    "id": 167,
+                    "id": 171,
                     "name": "ExpressionStatement",
-                    "src": "355:18:1"
+                    "src": "402:18:1"
                   }
                 ],
-                "id": 168,
+                "id": 172,
                 "name": "Block",
-                "src": "345:35:1"
+                "src": "392:35:1"
               }
             ],
-            "id": 169,
+            "id": 173,
             "name": "FunctionDefinition",
-            "src": "318:62:1"
+            "src": "365:62:1"
           },
           {
             "attributes": {
@@ -681,49 +657,22 @@
               ],
               "name": "getDiamondId",
               "payable": false,
-              "scope": 269,
+              "scope": 307,
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "public"
             },
             "children": [
               {
-                "children": [
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "price",
-                      "scope": 75,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "uint256",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "uint",
-                          "type": "uint256"
-                        },
-                        "id": 31,
-                        "name": "ElementaryTypeName",
-                        "src": "413:4:0"
-                      }
-                    ],
-                    "id": 32,
-                    "name": "VariableDeclaration",
-                    "src": "413:10:0"
-                  }
-                ],
-                "id": 170,
-                "name": "ParameterList",
-                "src": "407:2:1",
                 "attributes": {
                   "parameters": [
                     null
                   ]
-                }
+                },
+                "children": [],
+                "id": 174,
+                "name": "ParameterList",
+                "src": "454:2:1"
               },
               {
                 "children": [
@@ -731,7 +680,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "diamondId",
-                      "scope": 178,
+                      "scope": 182,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -744,109 +693,27 @@
                           "name": "uint",
                           "type": "uint256"
                         },
-                        "id": 171,
+                        "id": 175,
                         "name": "ElementaryTypeName",
-                        "src": "435:4:1"
+                        "src": "482:4:1"
                       }
                     ],
-                    "id": 172,
+                    "id": 176,
                     "name": "VariableDeclaration",
-                    "src": "435:14:1"
+                    "src": "482:14:1"
                   }
                 ],
-                "id": 173,
+                "id": 177,
                 "name": "ParameterList",
-                "src": "434:16:1",
-                "attributes": {
-                  "parameters": [
-                    null
-                  ]
-                }
+                "src": "481:16:1"
               },
               {
                 "children": [
                   {
                     "attributes": {
-                      "assignments": [
-                        38
-                      ],
-                      "functionReturnParameters": 173
+                      "functionReturnParameters": 177
                     },
                     "children": [
-                      {
-                        "attributes": {
-                          "constant": false,
-                          "name": "diamondId",
-                          "scope": 75,
-                          "stateVariable": false,
-                          "storageLocation": "default",
-                          "type": "uint256",
-                          "value": "0x456",
-                          "visibility": "internal",
-                          "argumentTypes": null,
-                          "isConstant": false,
-                          "isLValue": true,
-                          "isPure": false,
-                          "lValueRequested": false,
-                          "operator": "=",
-                          "hexvalue": "3078343536",
-                          "subdenomination": null,
-                          "token": "number",
-                          "member_name": "length",
-                          "referencedDeclaration": null
-                        },
-                        "children": [
-                          {
-                            "attributes": {
-                              "name": "uint",
-                              "type": "struct Diamonds.Diamond storage ref[] storage ref",
-                              "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": 150,
-                              "value": "allDiamonds"
-                            },
-                            "id": 174,
-                            "name": "Identifier",
-                            "src": "468:11:1"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": false,
-                              "isPure": false,
-                              "lValueRequested": false,
-                              "member_name": "sender",
-                              "referencedDeclaration": null,
-                              "type": "address"
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 143,
-                                  "type": "msg",
-                                  "value": "msg"
-                                },
-                                "id": 28,
-                                "name": "Identifier",
-                                "src": "391:3:0"
-                              }
-                            ],
-                            "id": 29,
-                            "name": "MemberAccess",
-                            "src": "391:10:0"
-                          }
-                        ],
-                        "id": 175,
-                        "name": "MemberAccess",
-                        "src": "468:18:1"
-                      },
                       {
                         "attributes": {
                           "argumentTypes": null,
@@ -865,24 +732,96 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 11,
+                              "referencedDeclaration": 150,
                               "type": "struct Diamonds.Diamond storage ref[] storage ref",
                               "value": "allDiamonds"
                             },
-                            "id": 39,
+                            "id": 178,
                             "name": "Identifier",
-                            "src": "485:11:0"
+                            "src": "515:11:1"
                           }
                         ],
-                        "id": 40,
+                        "id": 179,
                         "name": "MemberAccess",
-                        "src": "485:18:0"
+                        "src": "515:18:1"
                       }
                     ],
-                    "id": 176,
+                    "id": 180,
                     "name": "Return",
-                    "src": "461:25:1"
-                  },
+                    "src": "508:25:1"
+                  }
+                ],
+                "id": 181,
+                "name": "Block",
+                "src": "498:42:1"
+              }
+            ],
+            "id": 182,
+            "name": "FunctionDefinition",
+            "src": "433:107:1"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "createDiamond",
+              "payable": false,
+              "scope": 307,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "price",
+                      "scope": 210,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 183,
+                        "name": "ElementaryTypeName",
+                        "src": "573:4:1"
+                      }
+                    ],
+                    "id": 184,
+                    "name": "VariableDeclaration",
+                    "src": "573:10:1"
+                  }
+                ],
+                "id": 185,
+                "name": "ParameterList",
+                "src": "572:12:1"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 186,
+                "name": "ParameterList",
+                "src": "592:0:1"
+              },
+              {
+                "children": [
                   {
                     "children": [
                       {
@@ -904,7 +843,7 @@
                             "attributes": {
                               "argumentTypes": [
                                 {
-                                  "typeIdentifier": "t_struct$_Diamond_$8_memory",
+                                  "typeIdentifier": "t_struct$_Diamond_$147_memory",
                                   "typeString": "struct Diamonds.Diamond memory"
                                 }
                               ],
@@ -923,18 +862,18 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 11,
+                                  "referencedDeclaration": 150,
                                   "type": "struct Diamonds.Diamond storage ref[] storage ref",
                                   "value": "allDiamonds"
                                 },
-                                "id": 42,
+                                "id": 187,
                                 "name": "Identifier",
-                                "src": "513:11:0"
+                                "src": "650:11:1"
                               }
                             ],
-                            "id": 44,
+                            "id": 189,
                             "name": "MemberAccess",
-                            "src": "513:16:0"
+                            "src": "650:16:1"
                           },
                           {
                             "attributes": {
@@ -955,8 +894,8 @@
                                 "attributes": {
                                   "argumentTypes": [
                                     {
-                                      "typeIdentifier": "t_uint256",
-                                      "typeString": "uint256"
+                                      "typeIdentifier": "t_rational_0_by_1",
+                                      "typeString": "int_const 0"
                                     },
                                     {
                                       "typeIdentifier": "t_uint256",
@@ -970,27 +909,30 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 8,
+                                  "referencedDeclaration": 147,
                                   "type": "type(struct Diamonds.Diamond storage pointer)",
                                   "value": "Diamond"
                                 },
-                                "id": 45,
+                                "id": 190,
                                 "name": "Identifier",
-                                "src": "530:7:0"
+                                "src": "667:7:1"
                               },
                               {
                                 "attributes": {
                                   "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 38,
-                                  "type": "uint256",
-                                  "value": "diamondId"
+                                  "hexvalue": "30",
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "subdenomination": null,
+                                  "token": "number",
+                                  "type": "int_const 0",
+                                  "value": "0"
                                 },
-                                "id": 46,
-                                "name": "Identifier",
-                                "src": "538:9:0"
+                                "id": 191,
+                                "name": "Literal",
+                                "src": "675:1:1"
                               },
                               {
                                 "attributes": {
@@ -998,13 +940,13 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 32,
+                                  "referencedDeclaration": 184,
                                   "type": "uint256",
                                   "value": "price"
                                 },
-                                "id": 47,
+                                "id": 192,
                                 "name": "Identifier",
-                                "src": "549:5:0"
+                                "src": "678:5:1"
                               },
                               {
                                 "attributes": {
@@ -1024,587 +966,105 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 144,
+                                      "referencedDeclaration": 433,
                                       "type": "msg",
                                       "value": "msg"
                                     },
-                                    "id": 48,
+                                    "id": 193,
                                     "name": "Identifier",
-                                    "src": "556:3:0"
+                                    "src": "685:3:1"
                                   }
                                 ],
-                                "id": 49,
+                                "id": 194,
                                 "name": "MemberAccess",
-                                "src": "556:10:0"
+                                "src": "685:10:1"
                               }
                             ],
-                            "id": 50,
+                            "id": 195,
                             "name": "FunctionCall",
-                            "src": "530:37:0"
+                            "src": "667:29:1"
                           }
                         ],
-                        "id": 51,
+                        "id": 196,
                         "name": "FunctionCall",
-                        "src": "513:55:0"
+                        "src": "650:47:1"
                       }
                     ],
-                    "id": 52,
+                    "id": 197,
                     "name": "ExpressionStatement",
-                    "src": "513:55:0"
+                    "src": "650:47:1"
                   },
                   {
                     "children": [
                       {
                         "attributes": {
                           "argumentTypes": null,
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": false,
-                          "isStructConstructorCall": false,
-                          "lValueRequested": false,
-                          "names": [
-                            null
-                          ],
-                          "type": "tuple()",
-                          "type_conversion": false
-                        },
-                        "children": [
-                          {
-                            "attributes": {
-                              "argumentTypes": [
-                                {
-                                  "typeIdentifier": "t_uint256",
-                                  "typeString": "uint256"
-                                },
-                                {
-                                  "typeIdentifier": "t_uint256",
-                                  "typeString": "uint256"
-                                },
-                                {
-                                  "typeIdentifier": "t_address",
-                                  "typeString": "address"
-                                }
-                              ],
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": 21,
-                              "type": "function (uint256,uint256,address)",
-                              "value": "DiamondLogger"
-                            },
-                            "id": 53,
-                            "name": "Identifier",
-                            "src": "578:13:0"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": true,
-                              "isPure": false,
-                              "lValueRequested": false,
-                              "member_name": "id",
-                              "referencedDeclaration": 3,
-                              "type": "uint256"
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "isConstant": false,
-                                  "isLValue": true,
-                                  "isPure": false,
-                                  "lValueRequested": false,
-                                  "type": "struct Diamonds.Diamond storage ref"
-                                },
-                                "children": [
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 11,
-                                      "type": "struct Diamonds.Diamond storage ref[] storage ref",
-                                      "value": "allDiamonds"
-                                    },
-                                    "id": 54,
-                                    "name": "Identifier",
-                                    "src": "592:11:0"
-                                  },
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 38,
-                                      "type": "uint256",
-                                      "value": "diamondId"
-                                    },
-                                    "id": 55,
-                                    "name": "Identifier",
-                                    "src": "604:9:0"
-                                  }
-                                ],
-                                "id": 56,
-                                "name": "IndexAccess",
-                                "src": "592:22:0"
-                              }
-                            ],
-                            "id": 57,
-                            "name": "MemberAccess",
-                            "src": "592:25:0"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": true,
-                              "isPure": false,
-                              "lValueRequested": false,
-                              "member_name": "price",
-                              "referencedDeclaration": 5,
-                              "type": "uint256"
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "isConstant": false,
-                                  "isLValue": true,
-                                  "isPure": false,
-                                  "lValueRequested": false,
-                                  "type": "struct Diamonds.Diamond storage ref"
-                                },
-                                "children": [
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 11,
-                                      "type": "struct Diamonds.Diamond storage ref[] storage ref",
-                                      "value": "allDiamonds"
-                                    },
-                                    "id": 58,
-                                    "name": "Identifier",
-                                    "src": "619:11:0"
-                                  },
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 38,
-                                      "type": "uint256",
-                                      "value": "diamondId"
-                                    },
-                                    "id": 59,
-                                    "name": "Identifier",
-                                    "src": "631:9:0"
-                                  }
-                                ],
-                                "id": 60,
-                                "name": "IndexAccess",
-                                "src": "619:22:0"
-                              }
-                            ],
-                            "id": 61,
-                            "name": "MemberAccess",
-                            "src": "619:28:0"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": true,
-                              "isPure": false,
-                              "lValueRequested": false,
-                              "member_name": "ownerAddr",
-                              "referencedDeclaration": 7,
-                              "type": "address"
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "isConstant": false,
-                                  "isLValue": true,
-                                  "isPure": false,
-                                  "lValueRequested": false,
-                                  "type": "struct Diamonds.Diamond storage ref"
-                                },
-                                "children": [
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 11,
-                                      "type": "struct Diamonds.Diamond storage ref[] storage ref",
-                                      "value": "allDiamonds"
-                                    },
-                                    "id": 62,
-                                    "name": "Identifier",
-                                    "src": "649:11:0"
-                                  },
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 38,
-                                      "type": "uint256",
-                                      "value": "diamondId"
-                                    },
-                                    "id": 63,
-                                    "name": "Identifier",
-                                    "src": "661:9:0"
-                                  }
-                                ],
-                                "id": 64,
-                                "name": "IndexAccess",
-                                "src": "649:22:0"
-                              }
-                            ],
-                            "id": 65,
-                            "name": "MemberAccess",
-                            "src": "649:32:0"
-                          }
-                        ],
-                        "id": 66,
-                        "name": "FunctionCall",
-                        "src": "578:104:0"
-                      }
-                    ],
-                    "id": 67,
-                    "name": "ExpressionStatement",
-                    "src": "578:104:0"
-                  },
-                  {
-                    "attributes": {
-                      "functionReturnParameters": 36,
-                      "assignments": [
-                        69
-                      ]
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "argumentTypes": null,
-                          "overloadedDeclarations": [
-                            null
-                          ],
-                          "referencedDeclaration": 38,
-                          "type": "bytes32",
-                          "value": null,
-                          "constant": false,
-                          "name": "blah",
-                          "scope": 75,
-                          "stateVariable": false,
-                          "storageLocation": "default",
-                          "visibility": "internal"
-                        },
-                        "id": 69,
-                        "name": "VariableDeclaration",
-                        "src": "692:12:0",
-                        "children": [
-                          {
-                            "attributes": {
-                              "name": "bytes32",
-                              "type": "bytes32"
-                            },
-                            "id": 68,
-                            "name": "ElementaryTypeName",
-                            "src": "692:7:0"
-                          }
-                        ]
-                      },
-                      {
-                        "attributes": {
-                          "argumentTypes": null,
-                          "hexvalue": "30783231",
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": true,
-                          "lValueRequested": false,
-                          "subdenomination": null,
-                          "token": "number",
-                          "type": "int_const 33",
-                          "value": "0x21"
-                        },
-                        "id": 70,
-                        "name": "Literal",
-                        "src": "707:4:0"
-                      }
-                    ],
-                    "id": 71,
-                    "name": "VariableDeclarationStatement",
-                    "src": "692:19:0"
-                  },
-                  {
-                    "attributes": {
-                      "functionReturnParameters": 36
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "argumentTypes": null,
-                          "overloadedDeclarations": [
-                            null
-                          ],
-                          "referencedDeclaration": 69,
-                          "type": "bytes32",
-                          "value": "blah"
-                        },
-                        "id": 72,
-                        "name": "Identifier",
-                        "src": "728:4:0"
-                      }
-                    ],
-                    "id": 73,
-                    "name": "Return",
-                    "src": "721:11:0"
-                  }
-                ],
-                "id": 177,
-                "name": "Block",
-                "src": "451:42:1"
-              }
-            ],
-            "id": 178,
-            "name": "FunctionDefinition",
-            "src": "386:107:1"
-          },
-          {
-            "attributes": {
-              "constant": false,
-              "implemented": true,
-              "isConstructor": false,
-              "modifiers": [
-                null
-              ],
-              "name": "createDiamond",
-              "payable": false,
-              "scope": 269,
-              "stateMutability": "nonpayable",
-              "superFunction": null,
-              "visibility": "public"
-            },
-            "children": [
-              {
-                "children": [
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "price",
-                      "scope": 212,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "uint256",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "uint",
-                          "type": "uint256"
-                        },
-                        "id": 179,
-                        "name": "ElementaryTypeName",
-                        "src": "526:4:1"
-                      }
-                    ],
-                    "id": 180,
-                    "name": "VariableDeclaration",
-                    "src": "526:10:1"
-                  }
-                ],
-                "id": 181,
-                "name": "ParameterList",
-                "src": "525:12:1"
-              },
-              {
-                "attributes": {
-                  "parameters": [
-                    null
-                  ]
-                },
-                "children": [
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "diamondId",
-                      "scope": 212,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "uint256",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "uint",
-                          "type": "uint256"
-                        },
-                        "id": 182,
-                        "name": "ElementaryTypeName",
-                        "src": "554:4:1"
-                      }
-                    ],
-                    "id": 183,
-                    "name": "VariableDeclaration",
-                    "src": "554:14:1"
-                  }
-                ],
-                "id": 184,
-                "name": "ParameterList",
-                "src": "553:16:1"
-              },
-              {
-                "children": [
-                  {
-                    "attributes": {
-                      "falseBody": null,
-                      "assignments": [
-                        46
-                      ]
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "argumentTypes": null,
-                          "commonType": {
-                            "typeIdentifier": "t_bool",
-                            "typeString": "bool"
-                          },
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "operator": "=",
-                          "type": "uint256",
-                          "constant": false,
-                          "name": "diamondId",
-                          "scope": 79,
-                          "stateVariable": false,
-                          "storageLocation": "default",
-                          "value": null,
-                          "visibility": "internal",
-                          "isStructConstructorCall": false,
-                          "names": [
-                            null
-                          ],
-                          "type_conversion": false
+                          "type": "struct Diamonds.Diamond storage ref"
                         },
                         "children": [
                           {
                             "attributes": {
-                              "argumentTypes": [
-                                {
-                                  "typeIdentifier": "t_struct$_Diamond_$147_memory",
-                                  "typeString": "struct Diamonds.Diamond memory"
-                                }
-                              ],
-                              "commonType": {
-                                "typeIdentifier": "t_uint256",
-                                "typeString": "uint256"
-                              },
+                              "argumentTypes": null,
                               "isConstant": false,
-                              "isLValue": false,
+                              "isLValue": true,
                               "isPure": false,
-                              "lValueRequested": false,
-                              "operator": ">",
-                              "type": "function (struct Diamonds.Diamond storage ref) returns (uint256)",
-                              "name": "uint",
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": null,
-                              "value": "diamondId",
-                              "member_name": "push"
+                              "lValueRequested": true,
+                              "type": "struct Diamonds.Diamond storage ref"
                             },
                             "children": [
                               {
                                 "attributes": {
                                   "argumentTypes": null,
-                                  "isConstant": false,
-                                  "isLValue": true,
-                                  "isPure": false,
-                                  "lValueRequested": false,
-                                  "member_name": "length",
-                                  "referencedDeclaration": 150,
-                                  "type": "struct Diamonds.Diamond storage ref[] storage ref",
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "value": "allDiamonds"
+                                  "referencedDeclaration": 154,
+                                  "type": "mapping(uint256 => struct Diamonds.Diamond storage ref)",
+                                  "value": "diamonds"
                                 },
-                                "children": [
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 11,
-                                      "type": "struct Diamonds.Diamond storage ref[] storage ref",
-                                      "value": "allDiamonds"
-                                    },
-                                    "id": 80,
-                                    "name": "Identifier",
-                                    "src": "884:11:0"
-                                  }
-                                ],
-                                "id": 185,
+                                "id": 198,
                                 "name": "Identifier",
-                                "src": "623:11:1"
+                                "src": "707:8:1"
                               },
                               {
                                 "attributes": {
                                   "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 77,
-                                  "type": "uint256",
-                                  "value": "diamondId"
+                                  "hexvalue": "30",
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "subdenomination": null,
+                                  "token": "number",
+                                  "type": "int_const 0",
+                                  "value": "0"
                                 },
-                                "id": 82,
-                                "name": "Identifier",
-                                "src": "905:9:0"
+                                "id": 199,
+                                "name": "Literal",
+                                "src": "716:1:1"
                               }
                             ],
-                            "id": 187,
-                            "name": "MemberAccess",
-                            "src": "623:16:1"
+                            "id": 200,
+                            "name": "IndexAccess",
+                            "src": "707:11:1"
                           },
                           {
                             "attributes": {
                               "argumentTypes": null,
-                              "commonType": {
-                                "typeIdentifier": "t_uint256",
-                                "typeString": "uint256"
-                              },
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
-                              "lValueRequested": false,
-                              "operator": ">=",
-                              "type": "struct Diamonds.Diamond memory",
-                              "member_name": "length",
-                              "referencedDeclaration": null,
                               "isStructConstructorCall": true,
+                              "lValueRequested": false,
                               "names": [
                                 null
                               ],
+                              "type": "struct Diamonds.Diamond memory",
                               "type_conversion": false
                             },
                             "children": [
@@ -1612,8 +1072,8 @@
                                 "attributes": {
                                   "argumentTypes": [
                                     {
-                                      "typeIdentifier": "t_uint256",
-                                      "typeString": "uint256"
+                                      "typeIdentifier": "t_rational_0_by_1",
+                                      "typeString": "int_const 0"
                                     },
                                     {
                                       "typeIdentifier": "t_uint256",
@@ -1624,139 +1084,33 @@
                                       "typeString": "address"
                                     }
                                   ],
-                                  "isConstant": false,
-                                  "isLValue": false,
-                                  "isPure": false,
-                                  "lValueRequested": false,
-                                  "member_name": "value",
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
                                   "referencedDeclaration": 147,
                                   "type": "type(struct Diamonds.Diamond storage pointer)",
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
                                   "value": "Diamond"
                                 },
-                                "children": [
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 144,
-                                      "type": "msg",
-                                      "value": "msg"
-                                    },
-                                    "id": 84,
-                                    "name": "Identifier",
-                                    "src": "931:3:0"
-                                  }
-                                ],
-                                "id": 188,
+                                "id": 201,
                                 "name": "Identifier",
-                                "src": "640:7:1"
+                                "src": "721:7:1"
                               },
                               {
                                 "attributes": {
                                   "argumentTypes": null,
-                                  "commonType": {
-                                    "typeIdentifier": "t_uint256",
-                                    "typeString": "uint256"
-                                  },
+                                  "hexvalue": "30",
                                   "isConstant": false,
                                   "isLValue": false,
-                                  "isPure": false,
+                                  "isPure": true,
                                   "lValueRequested": false,
-                                  "operator": "*",
-                                  "type": "uint256",
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 183,
-                                  "value": "diamondId"
+                                  "subdenomination": null,
+                                  "token": "number",
+                                  "type": "int_const 0",
+                                  "value": "0"
                                 },
-                                "children": [
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "isConstant": false,
-                                      "isLValue": true,
-                                      "isPure": false,
-                                      "lValueRequested": false,
-                                      "member_name": "price",
-                                      "referencedDeclaration": 5,
-                                      "type": "uint256"
-                                    },
-                                    "children": [
-                                      {
-                                        "attributes": {
-                                          "argumentTypes": null,
-                                          "isConstant": false,
-                                          "isLValue": true,
-                                          "isPure": false,
-                                          "lValueRequested": false,
-                                          "type": "struct Diamonds.Diamond storage ref"
-                                        },
-                                        "children": [
-                                          {
-                                            "attributes": {
-                                              "argumentTypes": null,
-                                              "overloadedDeclarations": [
-                                                null
-                                              ],
-                                              "referencedDeclaration": 11,
-                                              "type": "struct Diamonds.Diamond storage ref[] storage ref",
-                                              "value": "allDiamonds"
-                                            },
-                                            "id": 86,
-                                            "name": "Identifier",
-                                            "src": "944:11:0"
-                                          },
-                                          {
-                                            "attributes": {
-                                              "argumentTypes": null,
-                                              "overloadedDeclarations": [
-                                                null
-                                              ],
-                                              "referencedDeclaration": 77,
-                                              "type": "uint256",
-                                              "value": "diamondId"
-                                            },
-                                            "id": 87,
-                                            "name": "Identifier",
-                                            "src": "956:9:0"
-                                          }
-                                        ],
-                                        "id": 88,
-                                        "name": "IndexAccess",
-                                        "src": "944:22:0"
-                                      }
-                                    ],
-                                    "id": 89,
-                                    "name": "MemberAccess",
-                                    "src": "944:28:0"
-                                  },
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "hexvalue": "31653138",
-                                      "isConstant": false,
-                                      "isLValue": false,
-                                      "isPure": true,
-                                      "lValueRequested": false,
-                                      "subdenomination": null,
-                                      "token": "number",
-                                      "type": "int_const 1000000000000000000",
-                                      "value": "1e18"
-                                    },
-                                    "id": 90,
-                                    "name": "Literal",
-                                    "src": "975:4:0"
-                                  }
-                                ],
-                                "id": 189,
-                                "name": "Identifier",
-                                "src": "648:9:1"
+                                "id": 202,
+                                "name": "Literal",
+                                "src": "729:1:1"
                               },
                               {
                                 "attributes": {
@@ -1764,680 +1118,24 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 180,
+                                  "referencedDeclaration": 184,
                                   "type": "uint256",
                                   "value": "price"
                                 },
-                                "id": 190,
-                                "name": "Identifier",
-                                "src": "659:5:1"
-                              },
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "isConstant": false,
-                                  "isLValue": false,
-                                  "isPure": false,
-                                  "lValueRequested": false,
-                                  "member_name": "sender",
-                                  "referencedDeclaration": null,
-                                  "type": "address"
-                                },
-                                "children": [
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 395,
-                                      "type": "msg",
-                                      "value": "msg"
-                                    },
-                                    "id": 191,
-                                    "name": "Identifier",
-                                    "src": "666:3:1"
-                                  }
-                                ],
-                                "id": 192,
-                                "name": "MemberAccess",
-                                "src": "666:10:1"
-                              }
-                            ],
-                            "id": 193,
-                            "name": "FunctionCall",
-                            "src": "640:37:1"
-                          }
-                        ],
-                        "id": 194,
-                        "name": "FunctionCall",
-                        "src": "623:55:1"
-                      },
-                      {
-                        "children": [
-                          {
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "isConstant": false,
-                                  "isLValue": false,
-                                  "isPure": false,
-                                  "isStructConstructorCall": false,
-                                  "lValueRequested": false,
-                                  "names": [
-                                    null
-                                  ],
-                                  "type": "tuple()",
-                                  "type_conversion": false
-                                },
-                                "children": [
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": [
-                                        {
-                                          "typeIdentifier": "t_uint256",
-                                          "typeString": "uint256"
-                                        }
-                                      ],
-                                      "isConstant": false,
-                                      "isLValue": false,
-                                      "isPure": false,
-                                      "lValueRequested": false,
-                                      "member_name": "transfer",
-                                      "referencedDeclaration": null,
-                                      "type": "function (uint256)"
-                                    },
-                                    "children": [
-                                      {
-                                        "attributes": {
-                                          "argumentTypes": null,
-                                          "isConstant": false,
-                                          "isLValue": true,
-                                          "isPure": false,
-                                          "lValueRequested": false,
-                                          "member_name": "ownerAddr",
-                                          "referencedDeclaration": 7,
-                                          "type": "address"
-                                        },
-                                        "children": [
-                                          {
-                                            "attributes": {
-                                              "argumentTypes": null,
-                                              "isConstant": false,
-                                              "isLValue": true,
-                                              "isPure": false,
-                                              "lValueRequested": false,
-                                              "type": "struct Diamonds.Diamond storage ref"
-                                            },
-                                            "children": [
-                                              {
-                                                "attributes": {
-                                                  "argumentTypes": null,
-                                                  "overloadedDeclarations": [
-                                                    null
-                                                  ],
-                                                  "referencedDeclaration": 11,
-                                                  "type": "struct Diamonds.Diamond storage ref[] storage ref",
-                                                  "value": "allDiamonds"
-                                                },
-                                                "id": 94,
-                                                "name": "Identifier",
-                                                "src": "995:11:0"
-                                              },
-                                              {
-                                                "attributes": {
-                                                  "argumentTypes": null,
-                                                  "overloadedDeclarations": [
-                                                    null
-                                                  ],
-                                                  "referencedDeclaration": 77,
-                                                  "type": "uint256",
-                                                  "value": "diamondId"
-                                                },
-                                                "id": 95,
-                                                "name": "Identifier",
-                                                "src": "1007:9:0"
-                                              }
-                                            ],
-                                            "id": 96,
-                                            "name": "IndexAccess",
-                                            "src": "995:22:0"
-                                          }
-                                        ],
-                                        "id": 97,
-                                        "name": "MemberAccess",
-                                        "src": "995:32:0"
-                                      }
-                                    ],
-                                    "id": 98,
-                                    "name": "MemberAccess",
-                                    "src": "995:41:0"
-                                  },
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "commonType": {
-                                        "typeIdentifier": "t_uint256",
-                                        "typeString": "uint256"
-                                      },
-                                      "isConstant": false,
-                                      "isLValue": false,
-                                      "isPure": false,
-                                      "lValueRequested": false,
-                                      "operator": "*",
-                                      "type": "uint256"
-                                    },
-                                    "children": [
-                                      {
-                                        "attributes": {
-                                          "argumentTypes": null,
-                                          "isConstant": false,
-                                          "isLValue": true,
-                                          "isPure": false,
-                                          "lValueRequested": false,
-                                          "member_name": "price",
-                                          "referencedDeclaration": 5,
-                                          "type": "uint256"
-                                        },
-                                        "children": [
-                                          {
-                                            "attributes": {
-                                              "argumentTypes": null,
-                                              "isConstant": false,
-                                              "isLValue": true,
-                                              "isPure": false,
-                                              "lValueRequested": false,
-                                              "type": "struct Diamonds.Diamond storage ref"
-                                            },
-                                            "children": [
-                                              {
-                                                "attributes": {
-                                                  "argumentTypes": null,
-                                                  "overloadedDeclarations": [
-                                                    null
-                                                  ],
-                                                  "referencedDeclaration": 11,
-                                                  "type": "struct Diamonds.Diamond storage ref[] storage ref",
-                                                  "value": "allDiamonds"
-                                                },
-                                                "id": 99,
-                                                "name": "Identifier",
-                                                "src": "1037:11:0"
-                                              },
-                                              {
-                                                "attributes": {
-                                                  "argumentTypes": null,
-                                                  "overloadedDeclarations": [
-                                                    null
-                                                  ],
-                                                  "referencedDeclaration": 77,
-                                                  "type": "uint256",
-                                                  "value": "diamondId"
-                                                },
-                                                "id": 100,
-                                                "name": "Identifier",
-                                                "src": "1049:9:0"
-                                              }
-                                            ],
-                                            "id": 101,
-                                            "name": "IndexAccess",
-                                            "src": "1037:22:0"
-                                          }
-                                        ],
-                                        "id": 102,
-                                        "name": "MemberAccess",
-                                        "src": "1037:28:0"
-                                      },
-                                      {
-                                        "attributes": {
-                                          "argumentTypes": null,
-                                          "hexvalue": "31653138",
-                                          "isConstant": false,
-                                          "isLValue": false,
-                                          "isPure": true,
-                                          "lValueRequested": false,
-                                          "subdenomination": null,
-                                          "token": "number",
-                                          "type": "int_const 1000000000000000000",
-                                          "value": "1e18"
-                                        },
-                                        "id": 103,
-                                        "name": "Literal",
-                                        "src": "1068:4:0"
-                                      }
-                                    ],
-                                    "id": 104,
-                                    "name": "BinaryOperation",
-                                    "src": "1037:35:0"
-                                  }
-                                ],
-                                "id": 105,
-                                "name": "FunctionCall",
-                                "src": "995:78:0"
-                              }
-                            ],
-                            "id": 47,
-                            "name": "Identifier",
-                            "src": "559:11:0",
-                            "attributes": {
-                              "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": 11,
-                              "type": "struct Diamonds.Diamond storage ref[] storage ref",
-                              "value": "allDiamonds"
-                            }
-                          },
-                          {
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "isConstant": false,
-                                  "isLValue": false,
-                                  "isPure": false,
-                                  "lValueRequested": false,
-                                  "operator": "=",
-                                  "type": "address"
-                                },
-                                "children": [
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "isConstant": false,
-                                      "isLValue": true,
-                                      "isPure": false,
-                                      "lValueRequested": true,
-                                      "member_name": "ownerAddr",
-                                      "referencedDeclaration": 7,
-                                      "type": "address"
-                                    },
-                                    "children": [
-                                      {
-                                        "attributes": {
-                                          "argumentTypes": null,
-                                          "isConstant": false,
-                                          "isLValue": true,
-                                          "isPure": false,
-                                          "lValueRequested": false,
-                                          "type": "struct Diamonds.Diamond storage ref"
-                                        },
-                                        "children": [
-                                          {
-                                            "attributes": {
-                                              "argumentTypes": null,
-                                              "overloadedDeclarations": [
-                                                null
-                                              ],
-                                              "referencedDeclaration": 11,
-                                              "type": "struct Diamonds.Diamond storage ref[] storage ref",
-                                              "value": "allDiamonds"
-                                            },
-                                            "id": 107,
-                                            "name": "Identifier",
-                                            "src": "1087:11:0"
-                                          },
-                                          {
-                                            "attributes": {
-                                              "argumentTypes": null,
-                                              "overloadedDeclarations": [
-                                                null
-                                              ],
-                                              "referencedDeclaration": 77,
-                                              "type": "uint256",
-                                              "value": "diamondId"
-                                            },
-                                            "id": 108,
-                                            "name": "Identifier",
-                                            "src": "1099:9:0"
-                                          }
-                                        ],
-                                        "id": 109,
-                                        "name": "IndexAccess",
-                                        "src": "1087:22:0"
-                                      }
-                                    ],
-                                    "id": 110,
-                                    "name": "MemberAccess",
-                                    "src": "1087:32:0"
-                                  },
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "isConstant": false,
-                                      "isLValue": false,
-                                      "isPure": false,
-                                      "lValueRequested": false,
-                                      "member_name": "sender",
-                                      "referencedDeclaration": null,
-                                      "type": "address"
-                                    },
-                                    "children": [
-                                      {
-                                        "attributes": {
-                                          "argumentTypes": null,
-                                          "overloadedDeclarations": [
-                                            null
-                                          ],
-                                          "referencedDeclaration": 144,
-                                          "type": "msg",
-                                          "value": "msg"
-                                        },
-                                        "id": 111,
-                                        "name": "Identifier",
-                                        "src": "1122:3:0"
-                                      }
-                                    ],
-                                    "id": 112,
-                                    "name": "MemberAccess",
-                                    "src": "1122:10:0"
-                                  }
-                                ],
-                                "id": 113,
-                                "name": "Assignment",
-                                "src": "1087:45:0"
-                              }
-                            ],
-                            "id": 114,
-                            "name": "ExpressionStatement",
-                            "src": "1087:45:0"
-                          }
-                        ],
-                        "id": 48,
-                        "name": "MemberAccess",
-                        "src": "559:18:0",
-                        "attributes": {
-                          "argumentTypes": null,
-                          "isConstant": false,
-                          "isLValue": true,
-                          "isPure": false,
-                          "lValueRequested": false,
-                          "member_name": "length",
-                          "referencedDeclaration": null,
-                          "type": "uint256"
-                        }
-                      }
-                    ],
-                    "id": 195,
-                    "name": "ExpressionStatement",
-                    "src": "623:55:1"
-                  },
-                  {
-                    "children": [
-                      {
-                        "attributes": {
-                          "argumentTypes": null,
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": false,
-                          "isStructConstructorCall": false,
-                          "lValueRequested": false,
-                          "names": [
-                            null
-                          ],
-                          "type": "tuple()",
-                          "type_conversion": false
-                        },
-                        "children": [
-                          {
-                            "attributes": {
-                              "argumentTypes": [
-                                {
-                                  "typeIdentifier": "t_uint256",
-                                  "typeString": "uint256"
-                                },
-                                {
-                                  "typeIdentifier": "t_uint256",
-                                  "typeString": "uint256"
-                                },
-                                {
-                                  "typeIdentifier": "t_address",
-                                  "typeString": "address"
-                                }
-                              ],
-                              "isConstant": false,
-                              "isLValue": false,
-                              "isPure": false,
-                              "lValueRequested": false,
-                              "member_name": "push",
-                              "referencedDeclaration": 160,
-                              "type": "function (uint256,uint256,address)",
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "value": "DiamondLogger"
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 11,
-                                  "type": "struct Diamonds.Diamond storage ref[] storage ref",
-                                  "value": "allDiamonds"
-                                },
-                                "id": 50,
-                                "name": "Identifier",
-                                "src": "592:11:0"
-                              }
-                            ],
-                            "id": 196,
-                            "name": "Identifier",
-                            "src": "688:13:1"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": true,
-                              "isPure": false,
-                              "isStructConstructorCall": true,
-                              "lValueRequested": false,
-                              "names": [
-                                null
-                              ],
-                              "type": "uint256",
-                              "type_conversion": false,
-                              "member_name": "id",
-                              "referencedDeclaration": 142
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 8,
-                                  "type": "struct Diamonds.Diamond storage ref",
-                                  "value": "Diamond",
-                                  "isConstant": false,
-                                  "isLValue": true,
-                                  "isPure": false,
-                                  "lValueRequested": false
-                                },
-                                "id": 199,
-                                "name": "IndexAccess",
-                                "src": "702:22:1",
-                                "children": [
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 150,
-                                      "type": "struct Diamonds.Diamond storage ref[] storage ref",
-                                      "value": "allDiamonds"
-                                    },
-                                    "id": 197,
-                                    "name": "Identifier",
-                                    "src": "702:11:1"
-                                  },
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 183,
-                                      "type": "uint256",
-                                      "value": "diamondId"
-                                    },
-                                    "id": 198,
-                                    "name": "Identifier",
-                                    "src": "714:9:1"
-                                  }
-                                ]
-                              },
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 43,
-                                  "type": "uint256",
-                                  "value": "diamondId"
-                                },
-                                "id": 54,
-                                "name": "Identifier",
-                                "src": "617:9:0"
-                              },
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 40,
-                                  "type": "uint256",
-                                  "value": "price"
-                                },
-                                "id": 55,
-                                "name": "Identifier",
-                                "src": "628:5:0"
-                              },
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "isConstant": false,
-                                  "isLValue": false,
-                                  "isPure": false,
-                                  "lValueRequested": false,
-                                  "member_name": "sender",
-                                  "referencedDeclaration": null,
-                                  "type": "address"
-                                },
-                                "children": [
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 148,
-                                      "type": "msg",
-                                      "value": "msg"
-                                    },
-                                    "id": 56,
-                                    "name": "Identifier",
-                                    "src": "635:3:0"
-                                  }
-                                ],
-                                "id": 57,
-                                "name": "MemberAccess",
-                                "src": "635:10:0"
-                              }
-                            ],
-                            "id": 200,
-                            "name": "MemberAccess",
-                            "src": "702:25:1"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": true,
-                              "isPure": false,
-                              "lValueRequested": false,
-                              "member_name": "price",
-                              "referencedDeclaration": 144,
-                              "type": "uint256"
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "isConstant": false,
-                                  "isLValue": true,
-                                  "isPure": false,
-                                  "lValueRequested": false,
-                                  "type": "struct Diamonds.Diamond storage ref"
-                                },
-                                "children": [
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 150,
-                                      "type": "struct Diamonds.Diamond storage ref[] storage ref",
-                                      "value": "allDiamonds"
-                                    },
-                                    "id": 201,
-                                    "name": "Identifier",
-                                    "src": "729:11:1"
-                                  },
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 183,
-                                      "type": "uint256",
-                                      "value": "diamondId"
-                                    },
-                                    "id": 202,
-                                    "name": "Identifier",
-                                    "src": "741:9:1"
-                                  }
-                                ],
                                 "id": 203,
-                                "name": "IndexAccess",
-                                "src": "729:22:1"
-                              }
-                            ],
-                            "id": 204,
-                            "name": "MemberAccess",
-                            "src": "729:28:1"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": true,
-                              "isPure": false,
-                              "lValueRequested": false,
-                              "member_name": "ownerAddr",
-                              "referencedDeclaration": 146,
-                              "type": "address"
-                            },
-                            "children": [
+                                "name": "Identifier",
+                                "src": "732:5:1"
+                              },
                               {
                                 "attributes": {
                                   "argumentTypes": null,
                                   "isConstant": false,
-                                  "isLValue": true,
+                                  "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
-                                  "type": "struct Diamonds.Diamond storage ref"
+                                  "member_name": "sender",
+                                  "referencedDeclaration": null,
+                                  "type": "address"
                                 },
                                 "children": [
                                   {
@@ -2446,315 +1144,43 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 150,
-                                      "type": "struct Diamonds.Diamond storage ref[] storage ref",
-                                      "value": "allDiamonds"
+                                      "referencedDeclaration": 433,
+                                      "type": "msg",
+                                      "value": "msg"
                                     },
-                                    "id": 205,
+                                    "id": 204,
                                     "name": "Identifier",
-                                    "src": "759:11:1"
-                                  },
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 183,
-                                      "type": "uint256",
-                                      "value": "diamondId"
-                                    },
-                                    "id": 206,
-                                    "name": "Identifier",
-                                    "src": "771:9:1"
+                                    "src": "739:3:1"
                                   }
                                 ],
-                                "id": 207,
-                                "name": "IndexAccess",
-                                "src": "759:22:1"
+                                "id": 205,
+                                "name": "MemberAccess",
+                                "src": "739:10:1"
                               }
                             ],
-                            "id": 208,
-                            "name": "MemberAccess",
-                            "src": "759:32:1"
+                            "id": 206,
+                            "name": "FunctionCall",
+                            "src": "721:29:1"
                           }
                         ],
-                        "id": 209,
-                        "name": "FunctionCall",
-                        "src": "688:104:1"
+                        "id": 207,
+                        "name": "Assignment",
+                        "src": "707:43:1"
                       }
                     ],
-                    "id": 210,
+                    "id": 208,
                     "name": "ExpressionStatement",
-                    "src": "688:104:1"
-                  },
-                  {
-                    "children": [
-                      {
-                        "attributes": {
-                          "argumentTypes": null,
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": false,
-                          "isStructConstructorCall": false,
-                          "lValueRequested": false,
-                          "names": [
-                            null
-                          ],
-                          "type": "tuple()",
-                          "type_conversion": false
-                        },
-                        "children": [
-                          {
-                            "attributes": {
-                              "argumentTypes": [
-                                {
-                                  "typeIdentifier": "t_uint256",
-                                  "typeString": "uint256"
-                                },
-                                {
-                                  "typeIdentifier": "t_uint256",
-                                  "typeString": "uint256"
-                                },
-                                {
-                                  "typeIdentifier": "t_address",
-                                  "typeString": "address"
-                                }
-                              ],
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": 21,
-                              "type": "function (uint256,uint256,address)",
-                              "value": "DiamondLogger"
-                            },
-                            "id": 61,
-                            "name": "Identifier",
-                            "src": "657:13:0"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": true,
-                              "isPure": false,
-                              "lValueRequested": false,
-                              "member_name": "id",
-                              "referencedDeclaration": 3,
-                              "type": "uint256"
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "isConstant": false,
-                                  "isLValue": true,
-                                  "isPure": false,
-                                  "lValueRequested": false,
-                                  "type": "struct Diamonds.Diamond storage ref"
-                                },
-                                "children": [
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 11,
-                                      "type": "struct Diamonds.Diamond storage ref[] storage ref",
-                                      "value": "allDiamonds"
-                                    },
-                                    "id": 62,
-                                    "name": "Identifier",
-                                    "src": "671:11:0"
-                                  },
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 43,
-                                      "type": "uint256",
-                                      "value": "diamondId"
-                                    },
-                                    "id": 63,
-                                    "name": "Identifier",
-                                    "src": "683:9:0"
-                                  }
-                                ],
-                                "id": 64,
-                                "name": "IndexAccess",
-                                "src": "671:22:0"
-                              }
-                            ],
-                            "id": 65,
-                            "name": "MemberAccess",
-                            "src": "671:25:0"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": true,
-                              "isPure": false,
-                              "lValueRequested": false,
-                              "member_name": "price",
-                              "referencedDeclaration": 5,
-                              "type": "uint256"
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "isConstant": false,
-                                  "isLValue": true,
-                                  "isPure": false,
-                                  "lValueRequested": false,
-                                  "type": "struct Diamonds.Diamond storage ref"
-                                },
-                                "children": [
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 11,
-                                      "type": "struct Diamonds.Diamond storage ref[] storage ref",
-                                      "value": "allDiamonds"
-                                    },
-                                    "id": 66,
-                                    "name": "Identifier",
-                                    "src": "698:11:0"
-                                  },
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 43,
-                                      "type": "uint256",
-                                      "value": "diamondId"
-                                    },
-                                    "id": 67,
-                                    "name": "Identifier",
-                                    "src": "710:9:0"
-                                  }
-                                ],
-                                "id": 68,
-                                "name": "IndexAccess",
-                                "src": "698:22:0"
-                              }
-                            ],
-                            "id": 69,
-                            "name": "MemberAccess",
-                            "src": "698:28:0"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": true,
-                              "isPure": false,
-                              "lValueRequested": false,
-                              "member_name": "ownerAddr",
-                              "referencedDeclaration": 7,
-                              "type": "address"
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "isConstant": false,
-                                  "isLValue": true,
-                                  "isPure": false,
-                                  "lValueRequested": false,
-                                  "type": "struct Diamonds.Diamond storage ref"
-                                },
-                                "children": [
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 11,
-                                      "type": "struct Diamonds.Diamond storage ref[] storage ref",
-                                      "value": "allDiamonds"
-                                    },
-                                    "id": 70,
-                                    "name": "Identifier",
-                                    "src": "728:11:0"
-                                  },
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 43,
-                                      "type": "uint256",
-                                      "value": "diamondId"
-                                    },
-                                    "id": 71,
-                                    "name": "Identifier",
-                                    "src": "740:9:0"
-                                  }
-                                ],
-                                "id": 72,
-                                "name": "IndexAccess",
-                                "src": "728:22:0"
-                              }
-                            ],
-                            "id": 73,
-                            "name": "MemberAccess",
-                            "src": "728:32:0"
-                          }
-                        ],
-                        "id": 74,
-                        "name": "FunctionCall",
-                        "src": "657:104:0"
-                      }
-                    ],
-                    "id": 75,
-                    "name": "ExpressionStatement",
-                    "src": "657:104:0"
-                  },
-                  {
-                    "attributes": {
-                      "functionReturnParameters": 44
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "argumentTypes": null,
-                          "overloadedDeclarations": [
-                            null
-                          ],
-                          "referencedDeclaration": 43,
-                          "type": "uint256",
-                          "value": "diamondId"
-                        },
-                        "id": 76,
-                        "name": "Identifier",
-                        "src": "778:9:0"
-                      }
-                    ],
-                    "id": 77,
-                    "name": "Return",
-                    "src": "771:16:0"
+                    "src": "707:43:1"
                   }
                 ],
-                "id": 211,
+                "id": 209,
                 "name": "Block",
-                "src": "570:258:1"
+                "src": "592:292:1"
               }
             ],
-            "id": 212,
+            "id": 210,
             "name": "FunctionDefinition",
-            "src": "503:325:1"
+            "src": "550:334:1"
           },
           {
             "attributes": {
@@ -2766,24 +1192,19 @@
               ],
               "name": "buy",
               "payable": true,
-              "scope": 269,
+              "scope": 307,
               "stateMutability": "payable",
               "superFunction": null,
               "visibility": "public"
             },
             "children": [
               {
-                "attributes": {
-                  "parameters": [
-                    null
-                  ]
-                },
                 "children": [
                   {
                     "attributes": {
                       "constant": false,
                       "name": "diamondId",
-                      "scope": 255,
+                      "scope": 253,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -2796,19 +1217,19 @@
                           "name": "uint",
                           "type": "uint256"
                         },
-                        "id": 213,
+                        "id": 211,
                         "name": "ElementaryTypeName",
-                        "src": "851:4:1"
+                        "src": "907:4:1"
                       }
                     ],
-                    "id": 214,
+                    "id": 212,
                     "name": "VariableDeclaration",
-                    "src": "851:14:1"
+                    "src": "907:14:1"
                   }
                 ],
-                "id": 215,
+                "id": 213,
                 "name": "ParameterList",
-                "src": "850:16:1"
+                "src": "906:16:1"
               },
               {
                 "attributes": {
@@ -2817,9 +1238,9 @@
                   ]
                 },
                 "children": [],
-                "id": 216,
+                "id": 214,
                 "name": "ParameterList",
-                "src": "882:0:1"
+                "src": "938:0:1"
               },
               {
                 "children": [
@@ -2846,38 +1267,29 @@
                           {
                             "attributes": {
                               "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": false,
-                              "isPure": false,
-                              "lValueRequested": false,
-                              "member_name": "sender",
-                              "referencedDeclaration": null,
-                              "type": "bool",
                               "commonType": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               },
-                              "operator": ">"
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": ">",
+                              "type": "bool"
                             },
                             "children": [
                               {
                                 "attributes": {
                                   "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": null,
-                                  "type": "uint256",
-                                  "value": "msg",
                                   "isConstant": false,
                                   "isLValue": true,
                                   "isPure": false,
                                   "lValueRequested": false,
-                                  "member_name": "length"
+                                  "member_name": "length",
+                                  "referencedDeclaration": null,
+                                  "type": "uint256"
                                 },
-                                "id": 218,
-                                "name": "MemberAccess",
-                                "src": "973:18:1",
                                 "children": [
                                   {
                                     "attributes": {
@@ -2889,11 +1301,14 @@
                                       "type": "struct Diamonds.Diamond storage ref[] storage ref",
                                       "value": "allDiamonds"
                                     },
-                                    "id": 217,
+                                    "id": 215,
                                     "name": "Identifier",
-                                    "src": "973:11:1"
+                                    "src": "1029:11:1"
                                   }
-                                ]
+                                ],
+                                "id": 216,
+                                "name": "MemberAccess",
+                                "src": "1029:18:1"
                               },
                               {
                                 "attributes": {
@@ -2901,28 +1316,22 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 214,
+                                  "referencedDeclaration": 212,
                                   "type": "uint256",
                                   "value": "diamondId"
                                 },
-                                "id": 219,
+                                "id": 217,
                                 "name": "Identifier",
-                                "src": "994:9:1"
+                                "src": "1050:9:1"
                               }
                             ],
-                            "id": 220,
+                            "id": 218,
                             "name": "BinaryOperation",
-                            "src": "973:30:1"
+                            "src": "1029:30:1"
                           },
                           {
                             "attributes": {
                               "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": 13,
-                              "type": "bool",
-                              "value": "owner",
                               "commonType": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -2931,11 +1340,9 @@
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
-                              "operator": ">="
+                              "operator": ">=",
+                              "type": "bool"
                             },
-                            "id": 229,
-                            "name": "BinaryOperation",
-                            "src": "1020:48:1",
                             "children": [
                               {
                                 "attributes": {
@@ -2955,18 +1362,18 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 395,
+                                      "referencedDeclaration": 433,
                                       "type": "msg",
                                       "value": "msg"
                                     },
-                                    "id": 221,
+                                    "id": 219,
                                     "name": "Identifier",
-                                    "src": "1020:3:1"
+                                    "src": "1076:3:1"
                                   }
                                 ],
-                                "id": 222,
+                                "id": 220,
                                 "name": "MemberAccess",
-                                "src": "1020:9:1"
+                                "src": "1076:9:1"
                               },
                               {
                                 "attributes": {
@@ -3015,9 +1422,9 @@
                                               "type": "struct Diamonds.Diamond storage ref[] storage ref",
                                               "value": "allDiamonds"
                                             },
-                                            "id": 223,
+                                            "id": 221,
                                             "name": "Identifier",
-                                            "src": "1033:11:1"
+                                            "src": "1089:11:1"
                                           },
                                           {
                                             "attributes": {
@@ -3025,23 +1432,23 @@
                                               "overloadedDeclarations": [
                                                 null
                                               ],
-                                              "referencedDeclaration": 214,
+                                              "referencedDeclaration": 212,
                                               "type": "uint256",
                                               "value": "diamondId"
                                             },
-                                            "id": 224,
+                                            "id": 222,
                                             "name": "Identifier",
-                                            "src": "1045:9:1"
+                                            "src": "1101:9:1"
                                           }
                                         ],
-                                        "id": 225,
+                                        "id": 223,
                                         "name": "IndexAccess",
-                                        "src": "1033:22:1"
+                                        "src": "1089:22:1"
                                       }
                                     ],
-                                    "id": 226,
+                                    "id": 224,
                                     "name": "MemberAccess",
-                                    "src": "1033:28:1"
+                                    "src": "1089:28:1"
                                   },
                                   {
                                     "attributes": {
@@ -3056,48 +1463,32 @@
                                       "type": "int_const 1000000000000000000",
                                       "value": "1e18"
                                     },
-                                    "id": 227,
+                                    "id": 225,
                                     "name": "Literal",
-                                    "src": "1064:4:1"
+                                    "src": "1120:4:1"
                                   }
                                 ],
-                                "id": 228,
+                                "id": 226,
                                 "name": "BinaryOperation",
-                                "src": "1033:35:1"
+                                "src": "1089:35:1"
                               }
-                            ]
+                            ],
+                            "id": 227,
+                            "name": "BinaryOperation",
+                            "src": "1076:48:1"
                           }
                         ],
-                        "id": 230,
+                        "id": 228,
                         "name": "BinaryOperation",
-                        "src": "973:95:1"
+                        "src": "1029:95:1"
                       },
                       {
                         "children": [
                           {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": false,
-                              "isPure": false,
-                              "isStructConstructorCall": false,
-                              "lValueRequested": false,
-                              "names": [
-                                null
-                              ],
-                              "type": "tuple()",
-                              "type_conversion": false
-                            },
                             "children": [
                               {
                                 "attributes": {
                                   "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 150,
-                                  "type": "tuple()",
-                                  "value": "selfdestruct",
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
@@ -3106,11 +1497,9 @@
                                   "names": [
                                     null
                                   ],
+                                  "type": "tuple()",
                                   "type_conversion": false
                                 },
-                                "id": 242,
-                                "name": "FunctionCall",
-                                "src": "1084:78:1",
                                 "children": [
                                   {
                                     "attributes": {
@@ -3161,9 +1550,9 @@
                                                   "type": "struct Diamonds.Diamond storage ref[] storage ref",
                                                   "value": "allDiamonds"
                                                 },
-                                                "id": 231,
+                                                "id": 229,
                                                 "name": "Identifier",
-                                                "src": "1084:11:1"
+                                                "src": "1140:11:1"
                                               },
                                               {
                                                 "attributes": {
@@ -3171,28 +1560,28 @@
                                                   "overloadedDeclarations": [
                                                     null
                                                   ],
-                                                  "referencedDeclaration": 214,
+                                                  "referencedDeclaration": 212,
                                                   "type": "uint256",
                                                   "value": "diamondId"
                                                 },
-                                                "id": 232,
+                                                "id": 230,
                                                 "name": "Identifier",
-                                                "src": "1096:9:1"
+                                                "src": "1152:9:1"
                                               }
                                             ],
-                                            "id": 233,
+                                            "id": 231,
                                             "name": "IndexAccess",
-                                            "src": "1084:22:1"
+                                            "src": "1140:22:1"
                                           }
                                         ],
-                                        "id": 234,
+                                        "id": 232,
                                         "name": "MemberAccess",
-                                        "src": "1084:32:1"
+                                        "src": "1140:32:1"
                                       }
                                     ],
-                                    "id": 235,
+                                    "id": 233,
                                     "name": "MemberAccess",
-                                    "src": "1084:41:1"
+                                    "src": "1140:41:1"
                                   },
                                   {
                                     "attributes": {
@@ -3241,9 +1630,9 @@
                                                   "type": "struct Diamonds.Diamond storage ref[] storage ref",
                                                   "value": "allDiamonds"
                                                 },
-                                                "id": 236,
+                                                "id": 234,
                                                 "name": "Identifier",
-                                                "src": "1126:11:1"
+                                                "src": "1182:11:1"
                                               },
                                               {
                                                 "attributes": {
@@ -3251,23 +1640,23 @@
                                                   "overloadedDeclarations": [
                                                     null
                                                   ],
-                                                  "referencedDeclaration": 214,
+                                                  "referencedDeclaration": 212,
                                                   "type": "uint256",
                                                   "value": "diamondId"
                                                 },
-                                                "id": 237,
+                                                "id": 235,
                                                 "name": "Identifier",
-                                                "src": "1138:9:1"
+                                                "src": "1194:9:1"
                                               }
                                             ],
-                                            "id": 238,
+                                            "id": 236,
                                             "name": "IndexAccess",
-                                            "src": "1126:22:1"
+                                            "src": "1182:22:1"
                                           }
                                         ],
-                                        "id": 239,
+                                        "id": 237,
                                         "name": "MemberAccess",
-                                        "src": "1126:28:1"
+                                        "src": "1182:28:1"
                                       },
                                       {
                                         "attributes": {
@@ -3282,35 +1671,24 @@
                                           "type": "int_const 1000000000000000000",
                                           "value": "1e18"
                                         },
-                                        "id": 240,
+                                        "id": 238,
                                         "name": "Literal",
-                                        "src": "1157:4:1"
+                                        "src": "1213:4:1"
                                       }
                                     ],
-                                    "id": 241,
+                                    "id": 239,
                                     "name": "BinaryOperation",
-                                    "src": "1126:35:1"
+                                    "src": "1182:35:1"
                                   }
-                                ]
-                              },
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 13,
-                                  "type": "address",
-                                  "value": "owner"
-                                },
-                                "id": 126,
-                                "name": "Identifier",
-                                "src": "1241:5:0"
+                                ],
+                                "id": 240,
+                                "name": "FunctionCall",
+                                "src": "1140:78:1"
                               }
                             ],
-                            "id": 243,
+                            "id": 241,
                             "name": "ExpressionStatement",
-                            "src": "1084:78:1"
+                            "src": "1140:78:1"
                           },
                           {
                             "children": [
@@ -3357,9 +1735,9 @@
                                               "type": "struct Diamonds.Diamond storage ref[] storage ref",
                                               "value": "allDiamonds"
                                             },
-                                            "id": 244,
+                                            "id": 242,
                                             "name": "Identifier",
-                                            "src": "1176:11:1"
+                                            "src": "1232:11:1"
                                           },
                                           {
                                             "attributes": {
@@ -3367,23 +1745,23 @@
                                               "overloadedDeclarations": [
                                                 null
                                               ],
-                                              "referencedDeclaration": 214,
+                                              "referencedDeclaration": 212,
                                               "type": "uint256",
                                               "value": "diamondId"
                                             },
-                                            "id": 245,
+                                            "id": 243,
                                             "name": "Identifier",
-                                            "src": "1188:9:1"
+                                            "src": "1244:9:1"
                                           }
                                         ],
-                                        "id": 246,
+                                        "id": 244,
                                         "name": "IndexAccess",
-                                        "src": "1176:22:1"
+                                        "src": "1232:22:1"
                                       }
                                     ],
-                                    "id": 247,
+                                    "id": 245,
                                     "name": "MemberAccess",
-                                    "src": "1176:32:1"
+                                    "src": "1232:32:1"
                                   },
                                   {
                                     "attributes": {
@@ -3403,48 +1781,48 @@
                                           "overloadedDeclarations": [
                                             null
                                           ],
-                                          "referencedDeclaration": 395,
+                                          "referencedDeclaration": 433,
                                           "type": "msg",
                                           "value": "msg"
                                         },
-                                        "id": 248,
+                                        "id": 246,
                                         "name": "Identifier",
-                                        "src": "1211:3:1"
+                                        "src": "1267:3:1"
                                       }
                                     ],
-                                    "id": 249,
+                                    "id": 247,
                                     "name": "MemberAccess",
-                                    "src": "1211:10:1"
+                                    "src": "1267:10:1"
                                   }
                                 ],
-                                "id": 250,
+                                "id": 248,
                                 "name": "Assignment",
-                                "src": "1176:45:1"
+                                "src": "1232:45:1"
                               }
                             ],
-                            "id": 251,
+                            "id": 249,
                             "name": "ExpressionStatement",
-                            "src": "1176:45:1"
+                            "src": "1232:45:1"
                           }
                         ],
-                        "id": 252,
+                        "id": 250,
                         "name": "Block",
-                        "src": "1070:162:1"
+                        "src": "1126:162:1"
                       }
                     ],
-                    "id": 253,
+                    "id": 251,
                     "name": "IfStatement",
-                    "src": "969:263:1"
+                    "src": "1025:263:1"
                   }
                 ],
-                "id": 254,
+                "id": 252,
                 "name": "Block",
-                "src": "882:356:1"
+                "src": "938:356:1"
               }
             ],
-            "id": 255,
+            "id": 253,
             "name": "FunctionDefinition",
-            "src": "838:400:1"
+            "src": "894:400:1"
           },
           {
             "attributes": {
@@ -3454,9 +1832,357 @@
               "modifiers": [
                 null
               ],
-              "name": "kill",
+              "name": "getDiamond",
               "payable": false,
-              "scope": 269,
+              "scope": 307,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "diamondId",
+                      "scope": 279,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 254,
+                        "name": "ElementaryTypeName",
+                        "src": "1320:4:1"
+                      }
+                    ],
+                    "id": 255,
+                    "name": "VariableDeclaration",
+                    "src": "1320:14:1"
+                  }
+                ],
+                "id": 256,
+                "name": "ParameterList",
+                "src": "1319:16:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 279,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 257,
+                        "name": "ElementaryTypeName",
+                        "src": "1351:4:1"
+                      }
+                    ],
+                    "id": 258,
+                    "name": "VariableDeclaration",
+                    "src": "1351:4:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 279,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 259,
+                        "name": "ElementaryTypeName",
+                        "src": "1357:4:1"
+                      }
+                    ],
+                    "id": 260,
+                    "name": "VariableDeclaration",
+                    "src": "1357:4:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 279,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 261,
+                        "name": "ElementaryTypeName",
+                        "src": "1363:7:1"
+                      }
+                    ],
+                    "id": 262,
+                    "name": "VariableDeclaration",
+                    "src": "1363:7:1"
+                  }
+                ],
+                "id": 263,
+                "name": "ParameterList",
+                "src": "1350:21:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "assignments": [
+                        265
+                      ]
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "name": "d",
+                          "scope": 279,
+                          "stateVariable": false,
+                          "storageLocation": "memory",
+                          "type": "struct Diamonds.Diamond memory",
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "contractScope": null,
+                              "name": "Diamond",
+                              "referencedDeclaration": 147,
+                              "type": "struct Diamonds.Diamond storage pointer"
+                            },
+                            "id": 264,
+                            "name": "UserDefinedTypeName",
+                            "src": "1382:7:1"
+                          }
+                        ],
+                        "id": 265,
+                        "name": "VariableDeclaration",
+                        "src": "1382:16:1"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "type": "struct Diamonds.Diamond storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 154,
+                              "type": "mapping(uint256 => struct Diamonds.Diamond storage ref)",
+                              "value": "diamonds"
+                            },
+                            "id": 266,
+                            "name": "Identifier",
+                            "src": "1401:8:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 255,
+                              "type": "uint256",
+                              "value": "diamondId"
+                            },
+                            "id": 267,
+                            "name": "Identifier",
+                            "src": "1410:9:1"
+                          }
+                        ],
+                        "id": 268,
+                        "name": "IndexAccess",
+                        "src": "1401:19:1"
+                      }
+                    ],
+                    "id": 269,
+                    "name": "VariableDeclarationStatement",
+                    "src": "1382:38:1"
+                  },
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 263
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isInlineArray": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "type": "tuple(uint256,uint256,address)"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "id",
+                              "referencedDeclaration": 142,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 265,
+                                  "type": "struct Diamonds.Diamond memory",
+                                  "value": "d"
+                                },
+                                "id": 270,
+                                "name": "Identifier",
+                                "src": "1562:1:1"
+                              }
+                            ],
+                            "id": 271,
+                            "name": "MemberAccess",
+                            "src": "1562:4:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "price",
+                              "referencedDeclaration": 144,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 265,
+                                  "type": "struct Diamonds.Diamond memory",
+                                  "value": "d"
+                                },
+                                "id": 272,
+                                "name": "Identifier",
+                                "src": "1568:1:1"
+                              }
+                            ],
+                            "id": 273,
+                            "name": "MemberAccess",
+                            "src": "1568:7:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "ownerAddr",
+                              "referencedDeclaration": 146,
+                              "type": "address"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 265,
+                                  "type": "struct Diamonds.Diamond memory",
+                                  "value": "d"
+                                },
+                                "id": 274,
+                                "name": "Identifier",
+                                "src": "1577:1:1"
+                              }
+                            ],
+                            "id": 275,
+                            "name": "MemberAccess",
+                            "src": "1577:11:1"
+                          }
+                        ],
+                        "id": 276,
+                        "name": "TupleExpression",
+                        "src": "1561:28:1"
+                      }
+                    ],
+                    "id": 277,
+                    "name": "Return",
+                    "src": "1554:35:1"
+                  }
+                ],
+                "id": 278,
+                "name": "Block",
+                "src": "1372:224:1"
+              }
+            ],
+            "id": 279,
+            "name": "FunctionDefinition",
+            "src": "1300:296:1"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "diamondsTot",
+              "payable": false,
+              "scope": 307,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "public"
@@ -3469,9 +2195,195 @@
                   ]
                 },
                 "children": [],
-                "id": 256,
+                "id": 280,
                 "name": "ParameterList",
-                "src": "1261:2:1"
+                "src": "1622:2:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 293,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 281,
+                        "name": "ElementaryTypeName",
+                        "src": "1641:7:1"
+                      }
+                    ],
+                    "id": 282,
+                    "name": "VariableDeclaration",
+                    "src": "1641:7:1"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 293,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 283,
+                        "name": "ElementaryTypeName",
+                        "src": "1650:4:1"
+                      }
+                    ],
+                    "id": 284,
+                    "name": "VariableDeclaration",
+                    "src": "1650:4:1"
+                  }
+                ],
+                "id": 285,
+                "name": "ParameterList",
+                "src": "1640:15:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 285
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isInlineArray": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "type": "tuple(address,uint256)"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "sender",
+                              "referencedDeclaration": null,
+                              "type": "address"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 433,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 286,
+                                "name": "Identifier",
+                                "src": "1674:3:1"
+                              }
+                            ],
+                            "id": 287,
+                            "name": "MemberAccess",
+                            "src": "1674:10:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "length",
+                              "referencedDeclaration": null,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 150,
+                                  "type": "struct Diamonds.Diamond storage ref[] storage ref",
+                                  "value": "allDiamonds"
+                                },
+                                "id": 288,
+                                "name": "Identifier",
+                                "src": "1686:11:1"
+                              }
+                            ],
+                            "id": 289,
+                            "name": "MemberAccess",
+                            "src": "1686:18:1"
+                          }
+                        ],
+                        "id": 290,
+                        "name": "TupleExpression",
+                        "src": "1673:32:1"
+                      }
+                    ],
+                    "id": 291,
+                    "name": "Return",
+                    "src": "1666:39:1"
+                  }
+                ],
+                "id": 292,
+                "name": "Block",
+                "src": "1656:57:1"
+              }
+            ],
+            "id": 293,
+            "name": "FunctionDefinition",
+            "src": "1602:111:1"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "kill",
+              "payable": false,
+              "scope": 307,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 294,
+                "name": "ParameterList",
+                "src": "1736:2:1"
               },
               {
                 "attributes": {
@@ -3480,9 +2392,9 @@
                   ]
                 },
                 "children": [],
-                "id": 257,
+                "id": 295,
                 "name": "ParameterList",
-                "src": "1271:0:1"
+                "src": "1746:0:1"
               },
               {
                 "children": [
@@ -3524,18 +2436,18 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 395,
+                                  "referencedDeclaration": 433,
                                   "type": "msg",
                                   "value": "msg"
                                 },
-                                "id": 258,
+                                "id": 296,
                                 "name": "Identifier",
-                                "src": "1285:3:1"
+                                "src": "1760:3:1"
                               }
                             ],
-                            "id": 259,
+                            "id": 297,
                             "name": "MemberAccess",
-                            "src": "1285:10:1"
+                            "src": "1760:10:1"
                           },
                           {
                             "attributes": {
@@ -3543,18 +2455,18 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 152,
+                              "referencedDeclaration": 156,
                               "type": "address",
                               "value": "owner"
                             },
-                            "id": 260,
+                            "id": 298,
                             "name": "Identifier",
-                            "src": "1299:5:1"
+                            "src": "1774:5:1"
                           }
                         ],
-                        "id": 261,
+                        "id": 299,
                         "name": "BinaryOperation",
-                        "src": "1285:19:1"
+                        "src": "1760:19:1"
                       },
                       {
                         "children": [
@@ -3584,13 +2496,13 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 401,
+                                  "referencedDeclaration": 439,
                                   "type": "function (address)",
                                   "value": "selfdestruct"
                                 },
-                                "id": 262,
+                                "id": 300,
                                 "name": "Identifier",
-                                "src": "1317:12:1"
+                                "src": "1792:12:1"
                               },
                               {
                                 "attributes": {
@@ -3598,48 +2510,48 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 152,
+                                  "referencedDeclaration": 156,
                                   "type": "address",
                                   "value": "owner"
                                 },
-                                "id": 263,
+                                "id": 301,
                                 "name": "Identifier",
-                                "src": "1330:5:1"
+                                "src": "1805:5:1"
                               }
                             ],
-                            "id": 264,
+                            "id": 302,
                             "name": "FunctionCall",
-                            "src": "1317:19:1"
+                            "src": "1792:19:1"
                           }
                         ],
-                        "id": 265,
+                        "id": 303,
                         "name": "ExpressionStatement",
-                        "src": "1317:19:1"
+                        "src": "1792:19:1"
                       }
                     ],
-                    "id": 266,
+                    "id": 304,
                     "name": "IfStatement",
-                    "src": "1281:55:1"
+                    "src": "1756:55:1"
                   }
                 ],
-                "id": 267,
+                "id": 305,
                 "name": "Block",
-                "src": "1271:72:1"
+                "src": "1746:72:1"
               }
             ],
-            "id": 268,
+            "id": 306,
             "name": "FunctionDefinition",
-            "src": "1248:95:1"
+            "src": "1723:95:1"
           }
         ],
-        "id": 269,
+        "id": 307,
         "name": "ContractDefinition",
-        "src": "25:1320:1"
+        "src": "25:1795:1"
       }
     ],
-    "id": 270,
+    "id": 308,
     "name": "SourceUnit",
-    "src": "0:1345:1"
+    "src": "0:1820:1"
   },
   "compiler": {
     "name": "solc",
@@ -3649,9 +2561,9 @@
     "4447": {
       "events": {},
       "links": {},
-      "address": "0x2c2b9c9a4a25e24b174f26114e8926a9f2128fe4"
+      "address": "0xde5491f774f0cb009abcea7326342e105dbb1b2e"
     }
   },
   "schemaVersion": "1.0.1",
-  "updatedAt": "2017-12-13T17:37:25.269Z"
+  "updatedAt": "2017-12-13T21:05:25.475Z"
 }
