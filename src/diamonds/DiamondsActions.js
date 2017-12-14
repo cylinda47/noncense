@@ -5,14 +5,20 @@ import store from '../store'
 const contract = require('truffle-contract')
 
 export const RECEIVE_ALL_DIAMONDS = 'RECEIVE_ALL_DIAMONDS';
-export const RECEIVE_DIAMOND = 'RECEIVE_DIAMOND'; 
-
+export const RECEIVE_DIAMOND = 'RECEIVE_DIAMOND';
 
 export const receiveAllDiamonds = diamonds => {
-    return {
-        type: RECEIVE_ALL_DIAMONDS,
-        diamonds,
-    }
+  return {
+    type: RECEIVE_ALL_DIAMONDS,
+    diamonds,
+  }
+}
+
+export const receiveDiamond = diamond => {
+  return {
+    type: RECEIVE_DIAMOND,
+    diamond
+  }
 }
 
 export const receiveDiamond = diamond => {
@@ -35,8 +41,8 @@ export function requestAllDiamonds() {
             const diamonds = contract(DiamondsContract);
             diamonds.setProvider(web3.currentProvider);
 
-            diamonds.web3.eth.defaultAccount = diamonds.web3.eth.coinbase; 
-            const account = diamonds.web3.eth.defaultAccount; 
+            diamonds.web3.eth.defaultAccount = diamonds.web3.eth.coinbase;
+            const account = diamonds.web3.eth.defaultAccount;
 
             // Declaring this for later so we can chain functions on Authentication.
             var diamondsInstance;
@@ -49,7 +55,7 @@ export function requestAllDiamonds() {
                 // }
 
                 diamonds.deployed().then(function (instance) {
-                    
+
                     diamondsInstance = instance;
 
                     // Attempt to login user.
@@ -58,6 +64,7 @@ export function requestAllDiamonds() {
                     
                     return diamondsInstance.getAllDiamonds.call({from: account}).then(function(result){
                                 console.log(result);
+
             
                               let allDiamonds = {}; 
 
@@ -76,15 +83,16 @@ export function requestAllDiamonds() {
                                 // }
 
                                 dispatch(receiveAllDiamonds(allDiamonds)); 
+
                             })
-                        
+
                         })
                         .catch(function(err){
                             console.log(err);
                         })
 
-                    
-                    
+
+
 
 
                     // diamondsInstance.login({ from: coinbase })
@@ -111,8 +119,8 @@ export function requestAllDiamonds() {
                     //         return browserHistory.push('/signup')
                     //     })
         // })
+      }
     }
-}
 }
 
 

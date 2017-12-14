@@ -49,7 +49,12 @@ class App extends Component {
             <OnlyGuestLinks />
             <OnlyAuthLinks />
           </ul>
-          <Link to="/" className="pure-menu-heading pure-menu-link">Noncense</Link>
+          <Link to="/" className="header-logo-link">
+            <div className="header-logo-container">  
+              <img className="header-logo" src="https://image.flaticon.com/icons/svg/262/262445.svg" />
+              Noncense
+            </div>
+          </Link>
         </nav>
 
         {this.props.children}
