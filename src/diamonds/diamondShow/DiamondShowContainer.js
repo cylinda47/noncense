@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 import getWeb3 from '../../util/web3/getWeb3';
-import { requestDiamond, buyDiamond } from '../DiamondsActions';
+import { requestDiamond, requestDiamondDetails, buyDiamond } from '../DiamondsActions';
 import DiamondShow from './DiamondShow';
 
 const mapStateToProps = (state, ownProps) => {
-  const diamondId = parseInt(ownProps.params.diamondId);
+  const diamondId = parseInt(ownProps.params.diamondId, 10);
 
   return {
     diamondId,
@@ -15,6 +15,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => ({
   getWeb3,
   requestDiamond: id => dispatch(requestDiamond(id)),
+  requestDiamondDetails: id => dispatch(requestDiamondDetails(id)),
   buyDiamond: (id, price) => dispatch(buyDiamond(id, price)),
 });
 

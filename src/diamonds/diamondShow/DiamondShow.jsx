@@ -31,13 +31,18 @@ class DiamondShow extends React.Component {
         return (
           <div className="diamonds-item">
             <br /><br /><br />
-            <img className="diamond-img"src="https://www.whiteflash.com/images/rd/articles/A-CUT-ABOVE-Diamond-sm.jpg"
+            <img className="diamond-img" src={diamond.url}
                     width="40" height="40" alt=""/>
             <ul className="diamonds-properites-list">
-              <li>{diamond.id}</li>
-              <li>{diamond.name}</li>
-              <li>{diamond.price}</li>
-              <li>{diamond.ownerAddr}</li>
+              <li>ID: {diamond.id}</li>
+              <li>Name: {diamond.name}</li>
+              <li>Price: {diamond.price}</li>
+              <li>Shape: {diamond.shape}</li>
+              <li>Carat: {diamond.carat}</li>
+              <li>Cut: {diamond.cut}</li>
+              <li>Grade: {diamond.grade}</li>
+              <li>Color: {diamond.color}</li>
+              <li>Owner: {diamond.ownerAddr}</li>
             </ul>
             <input type="submit" onClick={this.handleBuy()} value='Buy'/>
           </div>

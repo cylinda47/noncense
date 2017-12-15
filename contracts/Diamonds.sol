@@ -1,11 +1,19 @@
 pragma solidity ^0.4.18;
 
 contract Diamonds {
-   // separate arrays for each diamond field. Index is the id
-    uint[] diamondPrices;
-    address[] diamondOwners;
+  
+    // separate arrays for each diamond field. Index is the id
     string[] diamondNames;
     string diamondNamesString;
+    uint[] diamondPrices;
+    string[] diamondUrls;
+    string diamondUrlsString;
+    address[] diamondOwners;
+    uint8[] diamondShapes;
+    uint16[] diamondCarats;
+    uint8[] diamondGrades;
+    uint8[] diamondCuts;
+    uint8[] diamondColors;
 
     address private owner;
     
@@ -14,11 +22,20 @@ contract Diamonds {
         owner = msg.sender; // contract owner
     }
     
-    function createDiamond(string name, uint price) public {
+    function createDiamond(string name, uint price, string url, uint8 shape, 
+        uint16 carat, uint8 grade, uint8 cut, uint8 color) public 
+    {
         diamondNames.push(name);
         diamondNamesString = concat(diamondNamesString, name, "|");
         diamondPrices.push(price);
         diamondOwners.push(msg.sender);
+        diamondUrls.push(url);
+        diamondUrlsString = concat(diamondUrlsString, name, "|");
+        diamondShapes.push(shape);
+        diamondCarats.push(carat);
+        diamondGrades.push(grade);
+        diamondCuts.push(cut);
+        diamondColors.push(color);
     }
     
     function buy(uint id) payable public {
@@ -31,23 +48,45 @@ contract Diamonds {
     }
     
     function getDiamond(uint id) view public 
-        returns (uint, string, uint, address) 
+        returns (uint, string, uint, address, string) 
     {
         require(diamondPrices.length > id);
-        return (id, diamondNames[id], diamondPrices[id], diamondOwners[id]);
+        return (id, diamondNames[id], diamondPrices[id], diamondOwners[id],
+            diamondUrls[id]
+        );
+    }
+
+    function getDiamondDetails(uint id) view public 
+        returns (uint, uint8, uint16, uint8, uint8, uint8)
+    {
+        return (id, diamondShapes[id], diamondCarats[id], diamondGrades[id],
+            diamondCuts[id], diamondColors[id]
+        );
     }
     
     function getLastDiamond() view public 
-        returns (uint, string, uint, address) 
+        returns (uint, string, uint, address, string) 
     {
         uint id = diamondPrices.length - 1;
-        return (id, diamondNames[id], diamondPrices[id], diamondOwners[id]);
+        return (id, diamondNames[id], diamondPrices[id], diamondOwners[id],
+            diamondUrls[id]
+        );
+    }
+    
+    function getLastDiamondDetails() view public 
+        returns (uint, uint8, uint16, uint8, uint8, uint8)
+    {
+        uint id = diamondPrices.length - 1;
+        return (id, diamondShapes[id], diamondCarats[id], diamondGrades[id],
+            diamondCuts[id], diamondColors[id]);
     }
 
     function getAllDiamonds() view public 
-        returns (string, uint[], address[]) 
+        returns (string, uint[], address[], string) 
     {
-        return (diamondNamesString, diamondPrices, diamondOwners);
+        return (diamondNamesString, diamondPrices, diamondOwners,
+            diamondUrlsString
+        );
     }
     
     function kill() public {
