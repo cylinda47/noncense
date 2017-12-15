@@ -19,7 +19,6 @@ class DiamondsIndex extends React.Component {
     }
 
     render(){
-        console.log(this.state);
         let diamonds; 
         if(this.state.diamonds[0]){ 
             
