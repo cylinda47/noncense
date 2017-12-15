@@ -1,14 +1,14 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 import { requestDiamond } from '../DiamondsActions';
 import DiamondShow from './DiamondShow';
 
-const mapStateToProps = (state, { match }) => {
-  // const diamondId = parseInt(match.params.diamondId);
-
+const mapStateToProps = (state, ownProps) => {
   return {
     web3: state.web3,
-    diamond: state.diamonds.diamondId
+    diamondId: ownProps.params.diamondId, 
+    diamond: state.diamonds, 
   }
 };
 

@@ -1,18 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
+import { Switch } from 'react-router-dom';
 import { Provider } from 'react-redux'
 import { syncHistoryWithStore } from 'react-router-redux'
 import { UserIsAuthenticated, UserIsNotAuthenticated } from './util/wrappers.js'
 import DiamondsIndexContainer from './diamonds/diamondsIndex/DiamondsIndexContainer'; 
+import DiamondShowContainer from './diamonds/diamondShow/DiamondShowContainer'
+import DiamondsFormContainer from './diamonds/diamondsForm/DiamondsFormContainer'
 import getWeb3 from './util/web3/getWeb3'
 
 // Layouts
 import App from './App'
 import Home from './layouts/home/Home'
 import SignUp from './user/layouts/signup/SignUp'
-import DiamondShow from './diamonds/diamondShow/DiamondShowContainer'
-import DiamondsFormContainer from './diamonds/diamondsForm/DiamondsFormContainer'
 
 // Redux Store
 import store from './store'
@@ -21,6 +22,7 @@ import store from './store'
 const history = syncHistoryWithStore(browserHistory, store)
 
 // Initialize web3 and set in Redux.
+
 getWeb3
 .then(results => {
   console.log('Web3 initialized!')
@@ -33,11 +35,11 @@ ReactDOM.render((
     <Provider store={store}>
       <Router history={history}>
         <Route path="/" component={App}>
-          <IndexRoute component={Home} />
-          <Route path="signup" component={UserIsNotAuthenticated(SignUp)} />
-          <Route path="diamonds/:diamondId" component={UserIsNotAuthenticated(DiamondShow)} />
-          <Route path="new" component={UserIsAuthenticated(DiamondFormContainer)} />
-          <Route path="diamonds" component={UserIsAuthenticated(DiamondsIndexContainer)} />
+            <IndexRoute component={Home} />
+            <Route path="/signup" component={UserIsNotAuthenticated(SignUp)} />
+            <Route path="/diamonds/:diamondId" component={(DiamondShowContainer)} />
+            <Route path="/new" component={UserIsAuthenticated(DiamondsFormContainer)} />
+            <Route exact path="/diamonds" component={UserIsAuthenticated(DiamondsIndexContainer)} />
         </Route>
       </Router>
     </Provider>

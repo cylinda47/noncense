@@ -2,49 +2,64 @@ import React from 'react';
 import { Link } from 'react-router';
 
 class DiamondShow extends React.Component {
+
+  constructor(props){
+    super(props); 
+    this.state = {
+      diamond: {}
+    }; 
+
+  }
   componentDidMount () {
     this.props.requestDiamond(this.props.diamondId);
   }
 
-  componentWillReceiveProps (nextProps) {
-    if (this.props.diamondId !== nextProps.diamondId) {
-      this.props.requestDiamond(nextProps.diamondId);
-    }
+  componentWillReceiveProps (newProps) {
+    this.setState({diamond:newProps.diamond});
   }
 
-  // <div className='diamond-show-image'>
-  //   <img src={diamond.img_url} />
-  // </div>
   render () {
-    let { diamond } = this.props;
-    debugger
 
-    if (diamond) {
-      return (
-        <div className="single-diamond-show">
-
-          <h1 className='diamond-title'> { diamond.name} </h1>
-          <div className="diamond-index-link">
-            <Link
-              to="/diamonds"
-              style={{
-                textDecoration: 'none',
-                color: 'darkgray',
-                fontWeight: 'bolder'
-              }}>
-              Back to San Francisco ...
-            </Link>
+    let diamond; 
+    if (this.state.diamond.name) {
+        diamond = (
+          <div className="diamonds-item">
+            <br /><br /><br />
+            <img className="diamond-img"src="https://www.whiteflash.com/images/rd/articles/A-CUT-ABOVE-Diamond-sm.jpg"
+                    width="40" height="40" alt=""/>
+            <ul className="diamonds-properites-list">
+              <li>{this.state.diamond.id}</li>
+              <li>{this.state.diamond.name}</li>
+              <li>{this.state.diamond.price}</li>
+              <li>{this.state.diamond.address}</li>
+            </ul>
           </div>
-        </div>
-      );
+        )
     } else {
+      diamond = <li>No Diamond</li>
+    }
+
+
       return (
-        <div className='empty'>
-          loading...
-        </div>
+          <div className="single-diamond-show">
+
+            <h1 className='diamond-title'> {this.state.diamond.name} </h1>
+            <div className="diamond-index-link">
+              <Link
+                to="/diamonds"
+                style={{
+                  textDecoration: 'none',
+                  color: 'darkgray',
+                  fontWeight: 'bolder'
+                }}>
+                Back to San Francisco ...
+            </Link>
+            </div>
+            {diamond}
+          </div>
       );
     }
   }
-}
+
 
 export default DiamondShow;
