@@ -11,55 +11,41 @@ class DiamondShow extends React.Component {
 
   }
   componentDidMount () {
-    this.props.requestDiamond(this.props.diamondId);
+    this.props.getWeb3.then(() => this.props.requestDiamond(this.props.diamondId));
   }
 
   componentWillReceiveProps (newProps) {
     this.setState({diamond:newProps.diamond});
   }
 
-  render () {
+  handleBuy() {
+    return (e) => {
+        e.preventDefault;
+        this.props.buyDiamond(this.props.diamondId, this.props.diamond.price);
+    };
+   }
 
-    let diamond; 
-    if (this.state.diamond.name) {
-        diamond = (
+  render () {
+    const { diamond } = this.props;
+    if (diamond) {
+        return (
           <div className="diamonds-item">
             <br /><br /><br />
             <img className="diamond-img"src="https://www.whiteflash.com/images/rd/articles/A-CUT-ABOVE-Diamond-sm.jpg"
                     width="40" height="40" alt=""/>
             <ul className="diamonds-properites-list">
-              <li>{this.state.diamond.id}</li>
-              <li>{this.state.diamond.name}</li>
-              <li>{this.state.diamond.price}</li>
-              <li>{this.state.diamond.address}</li>
+              <li>{diamond.id}</li>
+              <li>{diamond.name}</li>
+              <li>{diamond.price}</li>
+              <li>{diamond.ownerAddr}</li>
             </ul>
+            <input type="submit" onClick={this.handleBuy()} value='Buy'/>
           </div>
         )
     } else {
-      diamond = <li>No Diamond</li>
-    }
-
-
-      return (
-          <div className="single-diamond-show">
-
-            <h1 className='diamond-title'> {this.state.diamond.name} </h1>
-            <div className="diamond-index-link">
-              <Link
-                to="/diamonds"
-                style={{
-                  textDecoration: 'none',
-                  color: 'darkgray',
-                  fontWeight: 'bolder'
-                }}>
-                Back to San Francisco ...
-            </Link>
-            </div>
-            {diamond}
-          </div>
-      );
+      return <li>Loading...</li>
     }
   }
-
+}
 
 export default DiamondShow;
