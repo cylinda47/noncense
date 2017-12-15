@@ -14,7 +14,17 @@ class SignUp extends Component {
 
           <div className='pure-u-1-1'>
             <h1>How To</h1>
-            <p>You need to download Metamask</p>
+            <p>
+              Ensure your browser is running on an Ethereum node.
+              Typically, your browser is running on a centralized network server.
+              <br/><br/>
+              The easiest way to switch your browsing experience is to download the chrome extension, metamask, at Metamask.io.
+              <br/><br/>
+              Once downloaded, create an account with Metamask and acquire Ether.
+              <br/><br/>
+              Note: most interactions with our website (logging in, selling a stone, buying a stone, etc.) require the user to pay a small transaction fee.
+              In order to not incur cost while our site is in beta testing, please use a test network to acquire free test Ether.
+            </p>
           </div>
         </div>
       </main>
