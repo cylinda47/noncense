@@ -5,7 +5,7 @@ contract Diamonds {
     // separate arrays for each diamond field. Index is the id
     string[] diamondNames;
     string diamondNamesString;
-    uint[] diamondPrices;
+    uint[] diamondPrices; // in Wei
     string[] diamondUrls;
     string diamondUrlsString;
     address[] diamondOwners;
@@ -41,10 +41,17 @@ contract Diamonds {
     function buy(uint id) payable public {
         // id is index of diamond in the arrays
         require(diamondPrices.length > id && 
-            msg.value >= diamondPrices[id] * 1e18);
+            msg.value >= diamondPrices[id]);
 
-        diamondOwners[id].transfer(diamondPrices[id] * 1e18);
+        diamondOwners[id].transfer(diamondPrices[id]);
         diamondOwners[id] = msg.sender; // change owner
+    }
+
+    function updatePrice(uint id, uint price) public {
+        require(diamondPrices.length > id && 
+            msg.sender == diamondOwners[id]);
+        
+        diamondPrices[id] = price;
     }
     
     function getDiamond(uint id) view public 
