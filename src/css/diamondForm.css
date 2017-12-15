@@ -1,0 +1,26 @@
+.pure-form-stacked {
+  background-color: white;
+  margin: 0 10%;
+  border-radius: 10px;
+}
+
+.pure-form-stacked fieldset {
+  padding: 20px;
+  border: none;
+  width: 100%;
+
+  margin-right: 0;
+}
+
+.pure-form-stacked label {
+  padding: 5px 0;
+  font-size: 24px;
+
+}
+
+.pure-form-stacked input {
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  padding: 5px;
+
+}

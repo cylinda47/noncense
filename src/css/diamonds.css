@@ -1,24 +1,39 @@
 .diamonds-container{
-    color: white; 
-    display: flex; 
+    color: white;
+    display: flex;
     flex-direction: column;
 }
 
 .diamonds-item{
+  margin: 5%;
+  margin-top: 130px;
+  width: 40%;
+  position: relative;
+  background-color: white;
 
+  border-radius: 10px;
+  text-align: center;
+  max-height: 500px;
+  box-shadow: 1px 1px 2px #ccc;
 }
 
 .diamonds-properties-list{
-    list-style:none; 
+  list-style:none;
+  display: flex;
+  flex-direction: column;
+}
+
+.diamonds-properties-list {
 }
 
 .single-diamond-show{
-    color:white; 
+    color:white;
 }
 
 .diamond-img{
-     height: auto;
-     width: auto;
-     max-width: 300px;
-     max-height: 300px;
+   height: auto;
+   width: auto;
+   max-width: 300px;
+   max-height: 300px;
+   padding: 10px;
 }

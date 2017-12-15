@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router'; 
-import { HiddenOnlyAuth, VisibleOnlyAuth } from './util/wrappers.js'; 
+import { Link } from 'react-router';
+import { HiddenOnlyAuth, VisibleOnlyAuth } from './util/wrappers.js';
 
 // UI Components
 import LoginButtonContainer from './user/ui/loginbutton/LoginButtonContainer'
@@ -13,7 +13,8 @@ import './css/session.css'
 import './css/oswald.css'
 import './css/open-sans.css'
 import './css/pure-min.css'
-import './css/diamonds.css';
+import './css/diamonds.css'
+import './css/diamondForm.css'
 import './App.css'
 
 
@@ -28,7 +29,7 @@ class App extends Component {
         <li className="pure-menu-item">
           <Link to="/NEW" className="pure-menu-link">Create Diamond</Link>
         </li>
-        
+
         <LogoutButtonContainer />
       </span>
     )
@@ -50,7 +51,7 @@ class App extends Component {
             <OnlyAuthLinks />
           </ul>
           <Link to="/" className="header-logo-link">
-            <div className="header-logo-container">  
+            <div className="header-logo-container">
               <img className="header-logo" src="https://image.flaticon.com/icons/svg/262/262445.svg" />
               Noncense
             </div>

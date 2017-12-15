@@ -11,10 +11,9 @@ class DiamondForm extends Component {
     }
 
     onInputChange(field, event) {
-
-        return (event) => {
-            this.setState({ [field]: event.target.value })
-        }
+      return (event) => {
+        this.setState({ [field]: event.target.value })
+      }
     }
 
     handleSubmit(event) {
@@ -22,23 +21,52 @@ class DiamondForm extends Component {
         // if (this.state.name.length < 2) {
         //     return alert('Please fill in the price.')
         // }
-        this.props.createDiamond(this.state.name, parseInt(this.state.price)); 
+        this.props.createDiamond(this.state.name, parseInt(this.state.price));
     }
 
     render() {
         return (
-            <form className="pure-form pure-form-stacked" onSubmit={this.handleSubmit.bind(this)}>
-                <fieldset>
-                    <label htmlFor="price">Price</label>
-                    <input id="price" type="number" value={this.state.price} onChange={this.onInputChange('price')} placeholder="Price" />
-                    <input id="name" type="text" value={this.state.name} onChange={this.onInputChange('name')} placeholder="Name" />
-                    <span className="pure-form-message">This is a required field.</span>
+          <div className='new-diamond'>
+            <br/><br/><br/>
+            <form
+              className="pure-form-stacked"
+              onSubmit={this.handleSubmit.bind(this)}>
+              <fieldset >
+                <div>
+                  <label htmlFor="price">Price</label>
+                  <input
+                    id="price"
+                    type="number"
+                    value={this.state.price}
+                    onChange={this.onInputChange('price')}
+                    placeholder="Price" />
+                  <span className="pure-form-message">
+                    This is a required field.
+                  </span>
+                </div>
+                <div>
+                  <label htmlFor='name'>Name</label>
+                  <input
+                    id="name"
+                    type="text"
+                    value={this.state.name}
+                    onChange={this.onInputChange('name')}
+                    placeholder="Name" />
+                  <span className="pure-form-message">
+                    This is a required field.
+                  </span>
+                </div>
 
-                    <br />
+                <br />
 
-                    <button type="submit" className="pure-button pure-button-primary">Create</button>
-                </fieldset>
+                <button
+                type="submit"
+                  className="pure-button pure-button-primary">
+                  Create
+                </button>
+              </fieldset>
             </form>
+          </div>
         )
     }
 }
