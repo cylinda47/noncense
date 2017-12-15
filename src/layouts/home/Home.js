@@ -1,6 +1,18 @@
 import React, { Component } from 'react';
+import $ from 'jquery';
 
 class Home extends Component {
+
+  componentDidMount() {
+    $('svg').css('opacity', '1');
+    $('.base').css('opacity', '1');
+  }
+
+  componentWillUnmount() {
+    $('svg').css('opacity', '0');
+    $('.base').css('opacity', '0');
+  }
+
   render() {
     return (
       <main className="container">
@@ -15,19 +27,20 @@ class Home extends Component {
         <section className='why-ethereum'>
           <h1>Why Ethereum</h1>
           <hr className='underline' />
-
-          <div>
-            <div className='image-background' />
-            <img src='https://bitcoinist.com/wp-content/themes/bitcoinist/img/ETHEREUM-LOGO-2.png'
-              alt='long way to go' />
-            <p>
+          <div className="why-ethereum-containers">
+            <div className="why-ethereum-container-1">
+              <div className='image-background' />
+                <img src='https://bitcoinist.com/wp-content/themes/bitcoinist/img/ETHEREUM-LOGO-2.png'
+                alt='long way to go' />
+              </div>
+            <div className="why-ethereum-container-2">
               'brief note outlining the security and functionality associated with Ethereum. This should include the problem statement.brief note outlining the security and functionality associated with Ethereum. This should include the problem statement.brief note outlining the security and functionality associated with Ethereum. This should include the problem statement.brief note outlining the security and functionality associated with Ethereum. This should include the problem statement.brief note outlining the security and functionality associated with Ethereum. This should include the problem statement.'
-            </p>
+            </div>
           </div>
         </section>
 
         <section className='how-it-works'>
-          <h1>How it Works</h1>
+          <h1>How It Works</h1>
           <hr className='underline' />
           <ul>
             <li>
