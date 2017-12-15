@@ -97,6 +97,7 @@ export function createDiamond(name, price) {
     }
 }
 
+
 export function buyDiamond(id, price) {
       let web3 = store.getState().web3.web3Instance;
       // Double-check web3's status.

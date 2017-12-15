@@ -1,22 +1,40 @@
 /* signup form */
 
 .pure-g {
-
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 .pure-g div{
-  background-color: white;
-  border-radius: 5px;
-  margin: 100px 10% 0 10%;
-  opacity: .8;
-  padding: 30px;
+  width: 46%;
+  margin: 100px 0px 0px 0px;
+  padding: 10px;
   position: relative;
-  width: 20%;
+  text-align: right;
+}
+
+.pure-g div:nth-child(1){
+  text-align: left;
+}
+
+fieldset {
+  text-align: right;
 }
 
 .pure-u-1-1 input {
-  width: 95%;
+  width: 300px;
+}
+
+.pure-u-1-1 h1 {
+  font-family: 'Raleway Dots', cursive;
+  font-size: 100px;
+  text-transform: uppercase;
+}
+
+.pure-u-1-1 p {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
 }
