@@ -1,19 +1,18 @@
 import { connect } from 'react-redux'
-import { receiveAllDiamonds, createDiamond } from '../DiamondsActions'
+import { createDiamond } from '../DiamondsActions'
 import DiamondsForm from './DiamondsForm'
 
 const mapStateToProps = (state, ownProps) => {
-
-    return {
-        web3: state.web3,
-        diamonds: state.diamonds
-    }
+  return {
+    diamonds: state.diamonds
+  }
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-        createDiamond: (name, price) => dispatch(createDiamond(name, price))
-    }
+  return {
+    createDiamond: (name, price, url, shape, carat, grade, cut, color) => 
+      dispatch(createDiamond(name, price, url, shape, carat, grade, cut, color)),
+  }
 }
 
 const DiamondsFormContainer = connect(
