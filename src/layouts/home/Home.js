@@ -1,6 +1,18 @@
 import React, { Component } from 'react';
+import $ from 'jquery';
 
 class Home extends Component {
+
+  componentDidMount() {
+    $('svg').css('opacity', '1');
+    $('.base').css('opacity', '1');
+  }
+
+  componentWillUnmount() {
+    $('svg').css('opacity', '0');
+    $('.base').css('opacity', '0');
+  }
+
   render() {
     return (
       <main className="container">
@@ -16,6 +28,7 @@ class Home extends Component {
           <h1>Why Ethereum</h1>
           <hr className='underline' />
 
+<<<<<<< HEAD
           <div>
             <div className='image-background' />
             <img src='https://bitcoinist.com/wp-content/themes/bitcoinist/img/ETHEREUM-LOGO-2.png'
@@ -28,9 +41,25 @@ class Home extends Component {
             </p>
           </div>
         </section>
+=======
+          <div className="why-ethereum-containers">
+            <div className="why-ethereum-container-1">
+              <div className='image-background' />
+                <img src='https://bitcoinist.com/wp-content/themes/bitcoinist/img/ETHEREUM-LOGO-2.png'
+                alt='long way to go' />
+              </div>
+              <div className="why-ethereum-container-2">
+                The marketplace for precious stones is monopolized by big, corporate retailers due to their readily available access to effective evaluators of clarity, cut, color, and carat weight.
+                Noncense enables all buyers and sellers to have access to any stone's credentials, including past sale prices. This is made possible through Etehreum blockchain technology.
+                In essence, this technology is a linked list that stores the historical information for any given product. Ethereum makes this possible by decentralizing the traditional 'server' into many private Ethereum Nodes.
+                These nodes ensure 100% security for transactions conducted by both buyers and sellers.
+              </div>
+            </div>
+          </section>
+>>>>>>> d84864fea5b050d021d600784075773005e125f8
 
         <section className='how-it-works'>
-          <h1>How it Works</h1>
+          <h1>How It Works</h1>
           <hr className='underline' />
           <ul>
             <li>
