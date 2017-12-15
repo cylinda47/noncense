@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react'; 
+import { Link } from 'react-router';
 
 class DiamondsIndex extends React.Component {
 
@@ -20,20 +21,24 @@ class DiamondsIndex extends React.Component {
     render(){
         console.log(this.state);
         let diamonds; 
-        console.log(this.state.diamonds[0]);
-        if(this.state.diamonds[0]){
-            console.log("im here!!");
-            diamonds = Object.keys(this.state.diamonds).map(diamondId => (
+        if(this.state.diamonds[0]){ 
+            
+           
+            diamonds = Object.keys(this.state.diamonds).map(diamondId => {
+
+                return(
                 <div className="diamonds-item">
                     <br/><br/><br/>
-                    {/* <img src="https://www.whiteflash.com/images/rd/articles/A-CUT-ABOVE-Diamond-sm.jpg"
-                    width="40" height="40" alt=""/> */}
+                    <img className="diamond-img"src="https://www.whiteflash.com/images/rd/articles/A-CUT-ABOVE-Diamond-sm.jpg"
+                    width="40" height="40" alt=""/>
                     <ul className="diamonds-properites-list">
+                        <Link to={`diamonds/${diamondId}`}>{this.state.diamonds[diamondId].name}</Link>
                         <li>{this.state.diamonds[diamondId].price}</li>
                         <li>{this.state.diamonds[diamondId].address}</li>
                     </ul>
                 </div>
-            ));
+                )
+            });
         }else{
             diamonds = <li>Diamonds</li>
         }

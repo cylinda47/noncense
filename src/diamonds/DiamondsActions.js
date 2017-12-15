@@ -21,12 +21,6 @@ export const receiveDiamond = diamond => {
   }
 }
 
-export const receiveDiamond = diamond => {
-    return {
-        type: RECEIVE_DIAMOND, 
-        diamond, 
-    }
-}
 
 
 
@@ -63,19 +57,23 @@ export function requestAllDiamonds() {
                     // Try to get all diamonds 
                     
                     return diamondsInstance.getAllDiamonds.call({from: account}).then(function(result){
-                                console.log(result);
 
-            
+                              const allNames = result[0].slice(1).split('|');
                               let allDiamonds = {}; 
 
-                              result[1].forEach((price, index) =>{
-                                  allDiamonds[index] = {}
-                                  allDiamonds[index].price = price.toNumber()
+                                result[1].forEach((price, index) => {
+                                    allDiamonds[index] = {} 
+                                    allDiamonds[index].price = price.toNumber()
 
+                                })
+                                result[2].forEach((address, index) => {
+                                    allDiamonds[index].address = address
+                                })
+                                console.log(allNames);
+                              allNames.forEach((name, index) => {
+                                  allDiamonds[index].name = name
                               })
-                              result[2].forEach((address, index) =>{
-                                  allDiamonds[index].address = address
-                              })
+                
                                 // const d = {
                                 //     id: result[0].toNumber(), 
                                 //     price: result[1].toNumber(), 
@@ -165,6 +163,52 @@ export function createDiamond(name, price) {
                                 console.log(result);
                         })
                 })
+                .catch(function (err) {
+                    console.log(err);
+                })
+
+
+            })
+            // })
+        }
+    }
+}
+export function requestDiamond(id) {
+
+    let web3 = store.getState().web3.web3Instance;
+    // Double-check web3's status.
+    if (typeof web3 !== 'undefined') {
+        web3.eth.defaultAccount = web3.eth.coinbase;
+        return function (dispatch) {
+            // Using truffle-contract we create the authentication object.
+            const diamonds = contract(DiamondsContract);
+            diamonds.setProvider(web3.currentProvider);
+
+            diamonds.web3.eth.defaultAccount = diamonds.web3.eth.coinbase;
+            const account = diamonds.web3.eth.defaultAccount;
+
+            // Declaring this for later so we can chain functions on Authentication.
+
+            // Get current ethereum wallet.
+            // web3.eth.getCoinbase((error, coinbase) => {
+            // Log errors, if any.
+            // if (error) {
+            //     console.error(error);
+            // }
+
+            diamonds.deployed()
+                .then(function (instance) {
+                    instance.getDiamond.call(id, {from: account})
+                        .then(result => {
+                            console.log(result);
+                            const d = {
+                                id: result[0].toNumber(),
+                                name: result[1],
+                                price: result[2].toNumber(),
+                                ownerAddr: result[3]
+                            }
+                            dispatch(receiveDiamond(d)); 
+                        })
                 .catch(function (err) {
                     console.log(err);
                 })
