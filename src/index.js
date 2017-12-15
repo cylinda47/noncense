@@ -36,7 +36,7 @@ ReactDOM.render((
           <IndexRoute component={Home} />
           <Route path="signup" component={UserIsNotAuthenticated(SignUp)} />
           <Route path="diamonds/:diamondId" component={UserIsNotAuthenticated(DiamondShow)} />
-          <Route path="new" component={UserIsAuthenticated(DiamondFormContainer)} />
+          <Route path="new" component={UserIsAuthenticated(DiamondsFormContainer)} />
           <Route path="diamonds" component={UserIsAuthenticated(DiamondsIndexContainer)} />
         </Route>
       </Router>

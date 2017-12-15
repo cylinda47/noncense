@@ -1,13 +1,81 @@
-.diamonds-container{
-    color: white; 
+.diamonds-container { 
     display: flex; 
     flex-direction: column;
+    width: 100%;
+    background: linear-gradient(45deg, #8e73a7 0%,#aad4e4 100%);
+    height: 1000px;
 }
 
-.diamonds-item{
-
+.diamonds-container h1 {
+    margin-top: 100px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    font-size: 55px;
+    text-align: center;
+    color: white;
+    text-shadow: 0px 0px 9px white;
+    margin-bottom: 50px;
 }
 
-.diamonds-properties-list{
+.diamonds-item-container {
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+}
+
+.diamonds-item {
+    margin: 15px;
+    width: 300px;
+    height: 370px;
+    padding: 15px;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: white;
+    opacity: 0.65;
+    transition: 500ms linear;
+    position: relative;
+}
+
+.diamond-price {
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.diamond-name {
+    color: rgb(63, 63, 63);
+}
+
+.diamond-buy {
+    color:  #8e73a7;
+    border: 1px solid #8e73a7;
+    padding: 10px;
+    border-radius: 10px;
+    width: 60px;
+    position: absolute;
+    right: 20px;
+    transition: 250ms linear;
+}
+
+.diamond-buy:hover {
+    background-color: #8e73a7;
+    color: white;
+    font-weight: 600;
+}
+
+.diamonds-properties-list {
     list-style:none; 
+    
 }
+
+.diamonds-item:hover {
+    opacity: 1;
+}
+
+.diamonds-item img {
+    width: 300px;
+    height: auto;
+}
+

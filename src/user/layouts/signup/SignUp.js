@@ -6,16 +6,16 @@ class SignUp extends Component {
     return(
       <main className="container">
         <div className="pure-g">
+          <div className='pure-u-1-1'>
+            <h1>How To</h1>
+            <p>You need to download Metamask</p>
+          </div>
           <div className="pure-u-1-1">
             <h1>Sign Up</h1>
             <p>We've got your wallet information, simply input your name and your account is made!</p>
             <SignUpFormContainer />
           </div>
 
-          <div className='pure-u-1-1'>
-            <h1>How To</h1>
-            <p>You need to download Metamask</p>
-          </div>
         </div>
       </main>
     )

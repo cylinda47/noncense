@@ -21,14 +21,12 @@ export const receiveDiamond = diamond => {
   }
 }
 
-export const receiveDiamond = diamond => {
-    return {
-        type: RECEIVE_DIAMOND, 
-        diamond, 
-    }
-}
-
-
+// export const receiveDiamond = diamond => {
+//     return {
+//         type: RECEIVE_DIAMOND, 
+//         diamond, 
+//     }
+// }
 
 export function requestAllDiamonds() {
 
@@ -68,11 +66,16 @@ export function requestAllDiamonds() {
             
                               let allDiamonds = {}; 
 
+                              
                               result[1].forEach((price, index) =>{
                                   allDiamonds[index] = {}
                                   allDiamonds[index].price = price.toNumber()
-
+                                  
+                                })
+                              result[0].slice(1).split('|').forEach((name, index) => {
+                                  allDiamonds[index].name = name;
                               })
+
                               result[2].forEach((address, index) =>{
                                   allDiamonds[index].address = address
                               })
