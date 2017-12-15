@@ -1,22 +1,22 @@
 import { connect } from 'react-redux';
-
-import { requestDiamond } from '../DiamondsActions';
+import getWeb3 from '../../util/web3/getWeb3';
+import { requestDiamond, buyDiamond } from '../DiamondsActions';
 import DiamondShow from './DiamondShow';
 
-const mapStateToProps = (state, { match }) => {
-  // const diamondId = parseInt(match.params.diamondId);
+const mapStateToProps = (state, ownProps) => {
+  const diamondId = parseInt(ownProps.params.diamondId);
 
   return {
-    web3: state.web3,
-    diamond: state.diamonds.diamondId
+    diamondId,
+    diamond: state.diamonds[diamondId],
+    state,
   }
 };
 
 const mapDispatchToProps = dispatch => ({
-  requestDiamond: id => dispatch(requestDiamond(id))
+  getWeb3,
+  requestDiamond: id => dispatch(requestDiamond(id)),
+  buyDiamond: (id, price) => dispatch(buyDiamond(id, price)),
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(DiamondShow);
+export default connect(mapStateToProps,mapDispatchToProps)(DiamondShow);

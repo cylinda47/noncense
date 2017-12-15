@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 class DiamondShow extends React.Component {
   componentDidMount () {
-    this.props.requestDiamond(this.props.diamondId);
+    this.props.getWeb3.then(() => this.props.requestDiamond(this.props.diamondId));
   }
 
   componentWillReceiveProps (nextProps) {
@@ -12,18 +12,26 @@ class DiamondShow extends React.Component {
     }
   }
 
-  // <div className='diamond-show-image'>
-  //   <img src={diamond.img_url} />
-  // </div>
+  handleBuy() {
+    return (e) => {
+        e.preventDefault;
+        this.props.buyDiamond(this.props.diamondId, this.props.diamond.price);
+    };
+   }
+
   render () {
-    let { diamond } = this.props;
-    debugger
+    let { diamond, state } = this.props;
+    console.log(state);
 
     if (diamond) {
       return (
         <div className="single-diamond-show">
 
-          <h1 className='diamond-title'> { diamond.name} </h1>
+          <h1 className='diamond-title'>Name: {diamond.name}</h1>
+          <p>Price: {diamond.price}</p>
+          <p>Owner: {diamond.owner}</p>
+          <input type="submit" onClick={this.handleBuy()} value='Buy'/>
+
           <div className="diamond-index-link">
             <Link
               to="/diamonds"
@@ -35,6 +43,7 @@ class DiamondShow extends React.Component {
               Back to San Francisco ...
             </Link>
           </div>
+
         </div>
       );
     } else {

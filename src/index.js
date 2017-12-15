@@ -11,8 +11,8 @@ import getWeb3 from './util/web3/getWeb3'
 import App from './App'
 import Home from './layouts/home/Home'
 import SignUp from './user/layouts/signup/SignUp'
-import DiamondShow from './diamonds/diamondShow/DiamondShowContainer'
-import DiamondsFormContainer from './diamonds/diamondsForm/DiamondsFormContainer'
+import DiamondShowContainer from './diamonds/diamondShow/DiamondShowContainer'
+import DiamondFormContainer from './diamonds/diamondsForm/DiamondsFormContainer'
 
 // Redux Store
 import store from './store'
@@ -35,7 +35,7 @@ ReactDOM.render((
         <Route path="/" component={App}>
           <IndexRoute component={Home} />
           <Route path="signup" component={UserIsNotAuthenticated(SignUp)} />
-          <Route path="diamonds/:diamondId" component={UserIsNotAuthenticated(DiamondShow)} />
+          <Route path="diamonds/:diamondId" component={DiamondShowContainer} />
           <Route path="new" component={UserIsAuthenticated(DiamondFormContainer)} />
           <Route path="diamonds" component={UserIsAuthenticated(DiamondsIndexContainer)} />
         </Route>

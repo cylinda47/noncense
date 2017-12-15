@@ -17,18 +17,14 @@ export const receiveAllDiamonds = diamonds => {
 export const receiveDiamond = diamond => {
   return {
     type: RECEIVE_DIAMOND,
-    diamond
+    diamond: { 
+      id: diamond[0].toNumber(), 
+      name: diamond[1], 
+      price: diamond[2].toNumber(),
+      owner: diamond[3]
+    }
   }
 }
-
-export const receiveDiamond = diamond => {
-    return {
-        type: RECEIVE_DIAMOND, 
-        diamond, 
-    }
-}
-
-
 
 export function requestAllDiamonds() {
 
@@ -172,6 +168,57 @@ export function createDiamond(name, price) {
 
             })
             // })
+        }
+    }
+}
+
+export function buyDiamond(id, price) {
+    let web3 = store.getState().web3.web3Instance;
+    // Double-check web3's status.
+    if (typeof web3 !== 'undefined') {
+        web3.eth.defaultAccount = web3.eth.coinbase;
+        return dispatch => {
+            // Using truffle-contract we create the authentication object.
+            const diamonds = contract(DiamondsContract);
+            diamonds.setProvider(web3.currentProvider);
+            diamonds.web3.eth.defaultAccount = diamonds.web3.eth.coinbase; 
+
+            diamonds.deployed()
+                .then(function (instance) {
+                    console.log('buying diamond ', id);
+                    instance.buy(id, { value: web3.toWei(price) })
+                        .then(() => {
+                            instance.getLastDiamond().then(diamond => {
+                                console.log(diamond);
+                                // dispatch(receiveDiamond(diamond));
+                            });
+                        })
+                }).catch(function(err){
+                    console.log(err);
+                })
+        }
+    }
+}
+
+export function requestDiamond(id) {
+    let web3 = store.getState().web3.web3Instance;
+    // Double-check web3's status.
+    if (typeof web3 !== 'undefined') {
+        web3.eth.defaultAccount = web3.eth.coinbase;
+        return dispatch => {
+            // Using truffle-contract we create the authentication object.
+            const diamonds = contract(DiamondsContract);
+            diamonds.setProvider(web3.currentProvider);
+            diamonds.web3.eth.defaultAccount = diamonds.web3.eth.coinbase; 
+
+            diamonds.deployed()
+                .then(function (instance) {
+                    instance.getDiamond.call(id).then(diamond => {
+                        dispatch(receiveDiamond(diamond));
+                    });
+                }).catch(function(err){
+                    console.log(err);
+                })
         }
     }
 }
