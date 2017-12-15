@@ -18,6 +18,8 @@ code {
 .container {
   box-sizing: border-box;
   width: 100%;
+  height: 1000px;
+  background-image: -webkit-linear-gradient(165deg, #FFFFFF 50%, #EEEEEE 35%);
 }
 
 .pure-button-primary {
@@ -74,7 +76,6 @@ code {
 }
 
 .pure-menu-heading.pure-menu-link {
-  font-family: 'Berkshire Swash', cursive;
   color: #E0EAF4;
   border: 0px solid;
   padding: 7px 0px;

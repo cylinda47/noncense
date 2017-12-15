@@ -35,7 +35,6 @@ export function loginUser() {
 
         authentication.deployed().then(function(instance) {
           authenticationInstance = instance
-          console.log(authenticationInstance)
           // Attempt to login user.
           authenticationInstance.login({from: coinbase})
           .then(function(result) {
