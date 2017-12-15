@@ -3,11 +3,11 @@
     flex-direction: column;
     width: 100%;
     background: linear-gradient(45deg, #8e73a7 0%,#aad4e4 100%);
-    height: 1000px;
+    min-height:  calc(100vh);
 }
 
 .diamonds-container h1 {
-    margin-top: 100px;
+    margin-top: 120px;
     font-family: 'Nunito', sans-serif;
     font-weight: 300;
     font-size: 55px;
@@ -21,15 +21,17 @@
     margin: 0 auto;
     width: 80%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    flex-wrap: wrap;
     font-family: 'Nunito', sans-serif;
     font-weight: 300;
+    margin-bottom: 80px;
 }
 
 .diamonds-item {
     margin: 15px;
     width: 300px;
-    height: 370px;
+    height: 360px;
     padding: 15px;
     border: 1px solid white;
     border-radius: 10px;
@@ -46,6 +48,10 @@
 
 .diamond-name {
     color: rgb(63, 63, 63);
+}
+
+.diamond-name div {
+    height: 60px;
 }
 
 .diamond-buy {
@@ -79,3 +85,51 @@
     height: auto;
 }
 
+.diamond-item {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: black;
+}
+
+.diamond-form {
+    width: 700px;
+    margin: 0 auto;
+}
+
+.diamond-form fieldset {
+    text-align: left;
+    border: 0px solid white;
+}
+
+.diamond-form fieldset label {
+    
+    margin-top: 15px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.5pt;
+}
+
+.diamond-form input {
+    border: 0px solid white;
+    padding: 10px;
+    border-bottom: 1px solid rgb(32, 32, 32);
+    background: transparent;
+    display: block;
+    width: 90%; 
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+}
+
+.diamond-form input:hover {
+    background-color: rgba(255, 255, 255, 0.7)
+}
+
+.diamond-row {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}

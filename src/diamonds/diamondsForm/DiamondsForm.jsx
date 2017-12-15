@@ -19,26 +19,30 @@ class DiamondForm extends Component {
 
     handleSubmit(event) {
         event.preventDefault()
-        // if (this.state.name.length < 2) {
-        //     return alert('Please fill in the price.')
-        // }
         this.props.createDiamond(this.state.name, parseInt(this.state.price)); 
     }
 
     render() {
         return (
-            <form className="pure-form pure-form-stacked" onSubmit={this.handleSubmit.bind(this)}>
-                <fieldset>
-                    <label htmlFor="price">Price</label>
-                    <input id="price" type="number" value={this.state.price} onChange={this.onInputChange('price')} placeholder="Price" />
-                    <input id="name" type="text" value={this.state.name} onChange={this.onInputChange('name')} placeholder="Name" />
-                    <span className="pure-form-message">This is a required field.</span>
-
-                    <br />
-
-                    <button type="submit" className="pure-button pure-button-primary">Create</button>
-                </fieldset>
-            </form>
+            <div className="diamonds-container">
+            <h1>Sell Your Diamonds</h1>
+                <form className="diamond-form" onSubmit={this.handleSubmit.bind(this)}>
+                    <fieldset>
+                        <label htmlFor="name">Description</label>
+                        <input id="name" type="text" value={this.state.name} onChange={this.onInputChange('name')} placeholder="Description" />
+                        <div className="diamond-row">
+                            <label htmlFor="price">Price (USD)
+                                <input id="price" type="number" value={this.state.price} onChange={this.onInputChange('price')} placeholder="Price" />
+                            </label>
+                            <label htmlFor="price">Price (USD)
+                                <input id="price" type="number" value={this.state.price} onChange={this.onInputChange('price')} placeholder="Price" />
+                            </label>
+                        </div>
+                        <br />
+                        <button type="submit" className="pure-button pure-button-primary">Create</button>
+                    </fieldset>
+                </form>
+            </div>
         )
     }
 }

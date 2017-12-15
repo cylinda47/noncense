@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import SignUpFormContainer from '../../ui/signupform/SignUpFormContainer'
 
 class SignUp extends Component {
+
   render() {
     return(
       <main className="container">
