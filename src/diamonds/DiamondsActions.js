@@ -49,13 +49,14 @@ export function requestAllDiamonds() {
               })
 
               result[2].forEach((ownerAddr, index) => {
-                allDiamonds[index].ownerAddr = ownerAddr
+                allDiamonds[index].ownerAddr = ownerAddr;
               })
 
-              const allNames = result[0].slice(1).split('|');
-              allNames.forEach((name, index) => {
-                  allDiamonds[index].name = name
-              })
+              if (result[0]) {
+                result[0].slice(1).split('|').forEach((name, index) => {
+                    allDiamonds[index].name = name;
+                })
+              }
 
               dispatch(receiveAllDiamonds(allDiamonds)); 
             })
