@@ -19,9 +19,12 @@ class Home extends Component {
           <div>
             <div className='image-background' />
             <img src='https://bitcoinist.com/wp-content/themes/bitcoinist/img/ETHEREUM-LOGO-2.png'
-              alt='long way to go' />
+              alt='Ethereum logo' />
             <p>
-              'brief note outlining the security and functionality associated with Ethereum. This should include the problem statement.brief note outlining the security and functionality associated with Ethereum. This should include the problem statement.brief note outlining the security and functionality associated with Ethereum. This should include the problem statement.brief note outlining the security and functionality associated with Ethereum. This should include the problem statement.brief note outlining the security and functionality associated with Ethereum. This should include the problem statement.'
+              The marketplace for precious stones is monopolized by big, corporate retailers due to their readily available access to effective evaluators of clarity, cut, color, and carat weight.
+              Noncense enables all buyers and sellers to have access to any stone's credentials, including past sale prices. This is made possible through Etehreum blockchain technology.
+              In essence, this technology is a linked list that stores the historical information for any given product. Ethereum makes this possible by decentralizing the traditional 'server' into many private Ethereum Nodes.
+              These nodes ensure 100% security for transactions conducted by both buyers and sellers.
             </p>
           </div>
         </section>
@@ -36,7 +39,10 @@ class Home extends Component {
               </h6>
               <img className="contract-img" src="https://image.flaticon.com/icons/svg/306/306438.svg" />
               <p>
-                This is some info about Smart ContractsThis is some info about Smart ContractsThis is some info about Smart ContractsThis is some info about Smart ContractsThis is some info about Smart ContractsThis is some info about Smart ContractsThis is some info about Smart Contracts
+                Smart Contracts regulate the communication between the application and the blockchain.
+                These self-executing contracts define the terms of agreement between the buyer and the seller directly by writing them into the lines of the code.
+                In other words, these contracts create trust, and are then deployed to and subsequently written on the blockchain.
+                The code and the agreements contained therein, exist across the distributed blockchain network.
               </p>
             </li>
             <li>
@@ -45,7 +51,9 @@ class Home extends Component {
               </h6>
                 <img className="contract-img" src="https://image.flaticon.com/icons/svg/306/306471.svg" />
               <p>
-                This is some info about that delicious contract we're usingThis is some info about that delicious contract we're usingThis is some info about that delicious contract we're usingThis is some info about that delicious contract we're usingThis is some info about that delicious contract we're usingThis is some info about that delicious contract we're usingThis is some info about that delicious contract we're using
+                Due to the nature of precious stone transactions, Noncense necessitates users being able to interact securely and accurately.
+                Using a traditional network server database, users sacrifice security for minimally improved performance speed.
+                Our architecture is not only lightweight in order to improve speed, but also built on the Ethereum blockchain, utilizing Smart Contracts to maximize security.
               </p>
             </li>
             <li>
@@ -54,7 +62,10 @@ class Home extends Component {
                 <img className="contract-img" src="https://image.flaticon.com/icons/svg/306/306431.svg" />
               </h6>
               <p>
-                This is what that amazing contract doesThis is what that amazing contract doesThis is what that amazing contract doesThis is what that amazing contract doesThis is what that amazing contract doesThis is what that amazing contract doesThis is what that amazing contract doesThis is what that amazing contract doesThis is what that amazing contract does
+                Noncense cultivates transactions through Smart Contracts of its own.
+                Our Smart Contracts deployed to the Ethereum blockchain are written in the computing language of Solidity.
+                These contracts firstly enable users to buy and sell products, exchanging the product for currency.
+                Secondly, these contracts enable users to upload a stone to the marketplace, specifying its unique credentials.
               </p>
             </li>
           </ul>
@@ -68,7 +79,8 @@ class Home extends Component {
                 Step 1
               </h6>
               <p>
-                Get Metamask.io
+                Download a program that enables your browser to run on an Ethereum Node.
+                We recommend the chrome extension: metamask.io.
               </p>
             </li>
             <li>
@@ -76,7 +88,8 @@ class Home extends Component {
                 Step 2
               </h6>
               <p>
-                This
+                Create an account with metamask.io.
+                Use the TestRPC network to
               </p>
             </li>
             <li>
@@ -84,7 +97,8 @@ class Home extends Component {
                 Step 3
               </h6>
               <p>
-                Something else
+                Navigate to the Noncense URL using a browser running on the Ethereum node.
+                While our site is in beta, we allow users to use the Ropsten Test Network to login to Noncense.
               </p>
             </li>
             <li>
@@ -92,7 +106,8 @@ class Home extends Component {
                 Step 4
               </h6>
               <p>
-                Profit
+                Sign up for Noncense using our secure authentication system.
+                Browse the available products, make purchases, and sell your precious stones!
               </p>
             </li>
           </ul>
@@ -107,7 +122,7 @@ class Home extends Component {
                 <a href='https://github.com/cylinda47'>
                   GitHub
                 </a>
-                <a>
+                <a href='https://www.linkedin.com/in/linda-cyl/'>
                   LinkedIn
                 </a>
               </div>
@@ -126,10 +141,10 @@ class Home extends Component {
             <li>
               <h6>Kevin Lee</h6>
               <div>
-                <a>
+                <a href='https://github.com/kl2695'>
                   GitHub
                 </a>
-                <a>
+                <a href='https://www.linkedin.com/in/kevin-lee-34a9aa2a/'>
                   LinkedIn
                 </a>
               </div>
@@ -140,7 +155,7 @@ class Home extends Component {
                 <a href='https://github.com/will-meng'>
                   GitHub
                 </a>
-                <a>
+                <a href='https://www.linkedin.com/in/william-meng-74039a11/'>
                   LinkedIn
                 </a>
               </div>
