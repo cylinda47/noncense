@@ -67,20 +67,6 @@
 
 .diamonds-properties-list {
     list-style:none; 
-<<<<<<< HEAD
-}
-
-.single-diamond-show{
-    color:white; 
-}
-
-.diamond-img{
-     height: auto;
-     width: auto;
-     max-width: 300px;
-     max-height: 300px;
-}
-=======
     
 }
 
@@ -93,4 +79,3 @@
     height: auto;
 }
 
->>>>>>> splashPage
