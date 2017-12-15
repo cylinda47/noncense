@@ -25,14 +25,13 @@ class DiamondsIndex extends React.Component {
         if (this.state.diamonds[0]) {
             console.log("im here!!");
             diamonds = Object.keys(this.state.diamonds).map(diamondId => (
-                <Link className="diamond-item" to={`diamonds/${diamondId}`}>
+                <Link className="diamond-item" to={`diamonds/${diamondId}`} key={diamondId}>
                     <div className="diamonds-item">
                         <button className="diamond-buy">Buy</button>
                         <ul className="diamonds-properites-list">
                             <li><img src="https://bnsec.bluenile.com/bluenile/is/image/bluenile/-graudated-milgrain-diamond-engagement-ring-14k-gold-/53700_main?$phab_detailmain$" /></li>
                             <li className="diamond-name"><div>{this.state.diamonds[diamondId].name}</div></li>
                             <li className="diamond-price">USD $ {this.state.diamonds[diamondId].price}.00</li>
-                            {/* <li>{this.state.diamonds[diamondId].address}</li> */}
                         </ul>
                     </div>
                 </Link>
