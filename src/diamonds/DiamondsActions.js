@@ -1,10 +1,10 @@
-import DiamondsContract from '../../build/contracts/Diamonds.json'
-import { browserHistory } from 'react-router'
-import store from '../store'
+import DiamondsContract from '../../build/contracts/Diamonds.json';
+import store from '../store';
 
-const contract = require('truffle-contract')
+const contract = require('truffle-contract');
 
 export const RECEIVE_ALL_DIAMONDS = 'RECEIVE_ALL_DIAMONDS';
+export const RECEIVE_OWN_DIAMONDS = 'RECEIVE_OWN_DIAMONDS';
 export const RECEIVE_DIAMOND = 'RECEIVE_DIAMOND';
 export const RECEIVE_DIAMOND_DETAILS = 'RECEIVE_DIAMOND_DETAILS';
 export const RECEIVE_CONVERSION = 'RECEIVE_CONVERSION';
@@ -13,6 +13,13 @@ export const receiveAllDiamonds = diamonds => {
   return {
     type: RECEIVE_ALL_DIAMONDS,
     diamonds,
+  }
+}
+
+export const receiveOwnDiamondIds = diamondIds => {
+  return {
+    type: RECEIVE_OWN_DIAMONDS,
+    diamondIds,
   }
 }
 
@@ -65,7 +72,6 @@ function getDiamondContract() {
 
 export function requestAllDiamonds() {
   return function (dispatch) {
-    const web3 = store.getState().web3.web3Instance;
     const diamonds = getDiamondContract();
 
     diamonds.deployed()
@@ -85,6 +91,35 @@ export function requestAllDiamonds() {
             }
 
             dispatch(receiveAllDiamonds(allDiamonds)); 
+          })
+      })
+      .catch(function(err){
+          console.log(err);
+      })
+  } 
+}
+
+export function requestOwnDiamonds() {
+  return function (dispatch) {
+    const diamonds = getDiamondContract();
+
+    diamonds.deployed()
+      .then(instance => {
+        instance.getOwnDiamonds()
+          .then(result => {
+            let ownDiamonds = {};
+
+            for (let i = 0; i < result[2].length; i++) {
+              const namesArray = result[1].slice(1).split('|');
+              const urlsArray = result[3].slice(1).split('|');
+              ownDiamonds[i] = {} ;
+              ownDiamonds[i].price = result[2][i].toNumber();
+              ownDiamonds[i].name = namesArray[i];
+              ownDiamonds[i].url = urlsArray[i];
+            }
+
+            dispatch(receiveAllDiamonds(ownDiamonds)); 
+            dispatch(receiveOwnDiamondIds(result[0])); 
           })
       })
       .catch(function(err){

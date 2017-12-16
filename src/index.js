@@ -7,6 +7,7 @@ import { UserIsAuthenticated, UserIsNotAuthenticated } from './util/wrappers.js'
 import DiamondsIndexContainer from './diamonds/diamondsIndex/DiamondsIndexContainer'; 
 import DiamondShowContainer from './diamonds/diamondShow/DiamondShowContainer';
 import DiamondsFormContainer from './diamonds/diamondsForm/DiamondsFormContainer';
+import DiamondsDashboardContainer from './diamonds/diamondsDashboard/DiamondsDashboardContainer';
 import getWeb3 from './util/web3/getWeb3';
 import { loginUser } from './user/ui/loginbutton/LoginButtonActions';
 import $ from 'jquery';
@@ -51,6 +52,7 @@ ReactDOM.render((
             <Route path="/diamonds/:diamondId" component={(DiamondShowContainer)} />
             <Route path="/new" component={UserIsAuthenticated(DiamondsFormContainer)} />
             <Route exact path="/diamonds" component={UserIsAuthenticated(DiamondsIndexContainer)} />
+            <Route exact path="/dashboard" component={UserIsAuthenticated(DiamondsDashboardContainer)} />
         </Route>
       </Router>
     </Provider>

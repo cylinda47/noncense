@@ -11,11 +11,19 @@ contract Diamonds {
     address[] diamondOwners;
     uint8[] diamondShapes;
     uint16[] diamondCarats;
-    uint8[] diamondGrades;
+    uint8[] diamondClaritys;
     uint8[] diamondCuts;
     uint8[] diamondColors;
 
-    address private owner;
+    address owner;
+    
+    struct Owner {
+       uint[] diamondIds;
+       string diamondNamesString;
+       string diamondUrlsString;
+    }
+
+    mapping (address => Owner) owners;
     
     function Diamonds() public {
         // constructor function
@@ -23,17 +31,23 @@ contract Diamonds {
     }
     
     function createDiamond(string name, uint price, string url, uint8 shape, 
-        uint16 carat, uint8 grade, uint8 cut, uint8 color) public 
+        uint16 carat, uint8 clarity, uint8 cut, uint8 color) public 
     {
+        uint id = diamondNames.length;
+        owners[msg.sender].diamondIds.push(id);
         diamondNames.push(name);
         diamondNamesString = concat(diamondNamesString, name, "|");
+        owners[msg.sender].diamondNamesString = 
+            concat(owners[msg.sender].diamondNamesString, name, "|");
         diamondPrices.push(price);
         diamondOwners.push(msg.sender);
         diamondUrls.push(url);
-        diamondUrlsString = concat(diamondUrlsString, name, "|");
+        diamondUrlsString = concat(diamondUrlsString, url, "|");
+        owners[msg.sender].diamondUrlsString = 
+            concat(owners[msg.sender].diamondUrlsString, url, "|");
         diamondShapes.push(shape);
         diamondCarats.push(carat);
-        diamondGrades.push(grade);
+        diamondClaritys.push(clarity);
         diamondCuts.push(cut);
         diamondColors.push(color);
     }
@@ -53,6 +67,25 @@ contract Diamonds {
         
         diamondPrices[id] = price;
     }
+
+    function getOwnDiamonds() view public
+        returns (uint[], string, uint[], string) 
+    {   
+        uint[] memory ids = owners[msg.sender].diamondIds;
+        uint[] memory prices = new uint[](ids.length);
+        
+        for (uint i = 0; i < ids.length; i++) {
+            prices[i] = (diamondPrices[ids[i]]);    
+        }
+        
+        return (
+            ids, 
+            owners[msg.sender].diamondNamesString, 
+            prices,
+            owners[msg.sender].diamondUrlsString
+        );
+    
+    }
     
     function getDiamond(uint id) view public 
         returns (uint, string, uint, address, string) 
@@ -66,7 +99,7 @@ contract Diamonds {
     function getDiamondDetails(uint id) view public 
         returns (uint, uint8, uint16, uint8, uint8, uint8)
     {
-        return (id, diamondShapes[id], diamondCarats[id], diamondGrades[id],
+        return (id, diamondShapes[id], diamondCarats[id], diamondClaritys[id],
             diamondCuts[id], diamondColors[id]
         );
     }
@@ -84,7 +117,7 @@ contract Diamonds {
         returns (uint, uint8, uint16, uint8, uint8, uint8)
     {
         uint id = diamondPrices.length - 1;
-        return (id, diamondShapes[id], diamondCarats[id], diamondGrades[id],
+        return (id, diamondShapes[id], diamondCarats[id], diamondClaritys[id],
             diamondCuts[id], diamondColors[id]);
     }
 
