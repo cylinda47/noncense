@@ -17,7 +17,7 @@ body {
 svg {
     position:absolute;
     z-index: 300;
-    opacity: 0;
+    display: none;
 }
 
 #wrapper {
@@ -36,7 +36,7 @@ svg {
 }
 
 .base {
-    opacity: 0;
+    display: none;
     position:absolute;
     width:inherit;
     height:inherit;

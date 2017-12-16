@@ -4,13 +4,13 @@ import $ from 'jquery';
 class Home extends Component {
 
   componentDidMount() {
-    $('svg').css('opacity', '1');
-    $('.base').css('opacity', '1');
+    $('svg').css('display', 'block');
+    $('.base').css('display', 'block');
   }
 
   componentWillUnmount() {
-    $('svg').css('opacity', '0');
-    $('.base').css('opacity', '0');
+    $('svg').css('display', 'none');
+    $('.base').css('display', 'none');
   }
 
   render() {

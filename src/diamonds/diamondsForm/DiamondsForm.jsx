@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import * as DiamondSpecs from '../diamondSpecs';
 
 class DiamondForm extends Component {
     constructor(props) {
@@ -14,32 +15,6 @@ class DiamondForm extends Component {
             color: '',
         }
         this.onInputChange = this.onInputChange.bind(this);
-        this.shapeOptions = ["Round Brilliant", "Princess", "Cushion", "Oval", "Emerald", "Asscher", "Radiant", "Pear", "Marquise", "Heart"];
-        this.gradeOptions = [
-            "Flawless(FL)",
-            "Internally Flawless(IF)",
-            "Very, Very Slightly Included(VVS1)",
-            "Very, Very Slightly Included(VVS2)",
-            "Very Slightly Included(VS1)",
-            "Very Slightly Included(VS2)",
-            "Slightly Included(SI1)",
-            "Slightly Included(SI2)",
-            "Included(I1)",
-            "Included(I2)",
-            "Included(I3)"
-        ];
-        this.cutOptions = [
-            "Excellent",
-            "Very Good",
-            "Good",
-            "Fair",
-            "Poor"
-        ]
-        this.colorOptions = [
-            "D",
-            "E",
-            "F"
-        ]
     }
 
     onInputChange(field, event) {
@@ -94,7 +69,7 @@ class DiamondForm extends Component {
                                 onChange={this.onInputChange('shape')}>
                                 <option value=""></option>
                                 {
-                                    this.shapeOptions.map((shape, idx) =>
+                                    DiamondSpecs.shapeOptions.map((shape, idx) =>
                                         <option value={idx} key={shape}>{shape}</option>
                                     )
                                 }
@@ -108,7 +83,7 @@ class DiamondForm extends Component {
                                 onChange={this.onInputChange('grade')}>
                                 <option value=""></option>
                                 {
-                                    this.gradeOptions.map((grade, idx) =>
+                                    DiamondSpecs.gradeOptions.map((grade, idx) =>
                                         <option value={idx} key={grade}>{grade}</option>
                                     )
                                 }
@@ -122,7 +97,7 @@ class DiamondForm extends Component {
                                 onChange={this.onInputChange('cut')}>
                                 <option value=""></option>
                                 {
-                                    this.cutOptions.map((cut, idx) =>
+                                    DiamondSpecs.cutOptions.map((cut, idx) =>
                                         <option value={idx} key={cut}>{cut}</option>
                                     )
                                 }
@@ -136,7 +111,7 @@ class DiamondForm extends Component {
                                 onChange={this.onInputChange('color')}>
                                 <option value=""></option>
                                 {
-                                    this.colorOptions.map((color, idx) =>
+                                    DiamondSpecs.colorOptions.map((color, idx) =>
                                         <option value={idx+3} key={color}>{color}</option>
                                     )
                                 }
