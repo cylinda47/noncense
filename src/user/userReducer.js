@@ -1,5 +1,8 @@
+import { RECEIVE_OWN_DIAMONDS } from '../diamonds/DiamondsActions';
+
 const initialState = {
-  data: null
+  data: null,
+  diamondIds: []
 }
 
 const userReducer = (state = initialState, action) => {
@@ -14,6 +17,13 @@ const userReducer = (state = initialState, action) => {
   {
     return Object.assign({}, state, {
       data: null
+    })
+  }
+
+  if (action.type === RECEIVE_OWN_DIAMONDS)
+  {
+    return Object.assign({}, state, {
+      diamondIds: action.diamondIds
     })
   }
 
