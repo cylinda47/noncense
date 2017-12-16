@@ -174,3 +174,100 @@
     background-color: white;
     color: black;
 }
+
+.diamonds-show {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 900px;
+    border-radius: 20px;
+}
+
+.diamonds-container nav {
+    height: 100px;
+}
+
+.diamonds-show ul {
+    background-color: white;
+    list-style: none;
+    width: 400px;
+    border-radius: 0px 20px 20px 0px;
+}
+
+.diamond-img {
+    width: 500px;
+    height: 570px;
+    border-radius: 20px 0px 0px 20px;
+    background-color: white;
+    background-size: 400px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.diamonds-show ul li {
+    padding: 10px;
+}
+
+.diamonds-show ul li button {
+    margin-left: 200px;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid rgb(170, 170, 170);
+    border-radius: 5px;
+    color: rgb(170, 170, 170);
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: 300ms linear;
+    letter-spacing: 0.5pt;
+    width: 150px;
+}
+
+.diamonds-show ul li button:hover {
+    color: white;
+    border-color: black;
+    background-color: black;
+}
+
+#diamond-show-name {
+    margin-top: 20px;
+}
+
+#diamond-show-name p {
+    font-size: 22px;
+    color: #1A62A3;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    height: 90px;
+    padding-right: 30px;
+    margin: 10px;
+}
+
+#diamond-show-field p {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    padding-right: 20px;
+    margin: 5px 10px;
+    font-size: 15px;
+}
+
+#diamond-show-line {
+    border-bottom: 1px solid rgb(207, 206, 206);
+    color: rgb(160, 160, 160);
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    padding: 4px;
+}
+
+#diamond-show-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5pt;
+}
+
+#diamond-show-item {
+    color: black;
+    font-size: 16px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+}
