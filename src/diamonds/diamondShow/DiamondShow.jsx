@@ -43,7 +43,7 @@ class DiamondShow extends React.Component {
                 <li id="diamond-show-field">
                   <div id="diamond-show-line">
                     <span id="diamond-show-label">PRICE</span>
-                    <span id="diamond-show-item">USD {diamond.price.toLocaleString(
+                    <span id="diamond-show-item">USD {(diamond.price / 1e18 * this.props.conv).toLocaleString(
                       "en-US", {style: "currency", currency: "USD"})}</span>
                   </div>
                 </li>

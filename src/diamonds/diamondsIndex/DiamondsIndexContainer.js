@@ -5,7 +5,7 @@ import DiamondsIndex from './DiamondsIndex'
 const mapStateToProps = (state, ownProps) => {
     
     return {
-        web3: state.web3,
+        conv: state.conversion,
         diamonds: state.diamonds 
     }
 }
