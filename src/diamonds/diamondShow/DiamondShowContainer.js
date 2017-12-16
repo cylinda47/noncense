@@ -9,6 +9,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     diamondId,
     diamond: state.diamonds[diamondId],
+    conv: state.conversion
   }
 };
 

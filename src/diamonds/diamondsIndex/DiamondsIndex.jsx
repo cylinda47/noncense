@@ -31,7 +31,7 @@ class DiamondsIndex extends React.Component {
                         <ul className="diamonds-properites-list">
                             <li><img src="https://bnsec.bluenile.com/bluenile/is/image/bluenile/-graudated-milgrain-diamond-engagement-ring-14k-gold-/53700_main?$phab_detailmain$" /></li>
                             <li className="diamond-name"><div>{this.state.diamonds[diamondId].name}</div></li>
-                            <li className="diamond-price">USD {this.state.diamonds[diamondId].price.toLocaleString(
+                            <li className="diamond-price">USD {(this.state.diamonds[diamondId].price / 1e18 * this.props.conv).toLocaleString(
                                 "en-US", { style: "currency", currency: "USD" })}</li>
                         </ul>
                     </div>
