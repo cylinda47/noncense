@@ -54,7 +54,7 @@ class App extends Component {
           </ul>
           <Link to="/" className="header-logo-link">
             <div className="header-logo-container">  
-              <img className="header-logo" src="https://image.flaticon.com/icons/svg/262/262445.svg" />
+              <img className="header-logo" src="https://image.flaticon.com/icons/svg/262/262445.svg" alt='Favicon'/>
               Noncense
             </div>
           </Link>

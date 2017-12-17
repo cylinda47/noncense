@@ -38,7 +38,7 @@ class DiamondForm extends Component {
         parseInt(this.state.grade, 10),
         parseInt(this.state.cut, 10),
         parseInt(this.state.color, 10)
-      ); 
+      ).then(() => this.props.router.push('/dashboard'));
     }
 
     render() {

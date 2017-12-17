@@ -84,6 +84,7 @@ export function requestAllDiamonds() {
               const namesArray = result[0].slice(1).split('|');
               const urlsArray = result[3].slice(1).split('|');
               allDiamonds[i] = {} ;
+              allDiamonds[i].id = i;
               allDiamonds[i].price = result[1][i].toNumber();
               allDiamonds[i].ownerAddr = result[2][i];
               allDiamonds[i].name = namesArray[i];
@@ -108,18 +109,22 @@ export function requestOwnDiamonds() {
         instance.getOwnDiamonds()
           .then(result => {
             let ownDiamonds = {};
+            const diamondIds = [];
 
             for (let i = 0; i < result[2].length; i++) {
               const namesArray = result[1].slice(1).split('|');
               const urlsArray = result[3].slice(1).split('|');
-              ownDiamonds[i] = {} ;
-              ownDiamonds[i].price = result[2][i].toNumber();
-              ownDiamonds[i].name = namesArray[i];
-              ownDiamonds[i].url = urlsArray[i];
+              const id = result[0][i].toNumber();
+              ownDiamonds[id] = {} ;
+              ownDiamonds[id].id = id;
+              diamondIds.push(id);
+              ownDiamonds[id].price = result[2][i].toNumber();
+              ownDiamonds[id].name = namesArray[i];
+              ownDiamonds[id].url = urlsArray[i];
             }
 
             dispatch(receiveAllDiamonds(ownDiamonds)); 
-            dispatch(receiveOwnDiamondIds(result[0])); 
+            dispatch(receiveOwnDiamondIds(diamondIds)); 
           })
       })
       .catch(function(err){
@@ -133,21 +138,23 @@ export function createDiamond(name, priceUSD, url, shape, carat, grade, cut, col
     const web3 = store.getState().web3.web3Instance;
     const diamonds = getDiamondContract();
 
-    diamonds.deployed()
-      .then(function (instance) {
+    return diamonds.deployed()
+      .then(instance => {
         const priceEth = priceUSD / store.getState().conversion;
-        instance.createDiamond(name, web3.toWei(priceEth), url, shape, carat, grade, cut, color)
+        return instance.createDiamond(
+          name, web3.toWei(priceEth), url, shape, carat, grade, cut, color
+        )
           .then(() => {
             setTimeout(() => instance.getLastDiamond()
               .then(payload => {
                 console.log(payload);
                 dispatch(receiveDiamond(payload));
-              }), 500);
-              setTimeout(() => instance.getLastDiamondDetails()
+            }), 400);
+            setTimeout(() => instance.getLastDiamondDetails()
               .then(payload => {
                 console.log(payload);
                 dispatch(receiveDiamondDetails(payload));
-              }), 500);
+            }), 500);
           });
       })
       .catch(function (err) {
@@ -164,6 +171,7 @@ export function updateDiamond(id, priceUSD) {
     diamonds.deployed()
       .then(function (instance) {
         const priceEth = priceUSD / store.getState().conversion;
+        console.log('Updating ', id, ' to ', priceEth);
         instance.updatePrice(id, web3.toWei(priceEth))
           .then(() => {
             instance.getDiamond.call(id)
@@ -177,19 +185,17 @@ export function updateDiamond(id, priceUSD) {
   }
 }
 
-export function buyDiamond(id, priceEth) {
-  const web3 = store.getState().web3.web3Instance;
+export function buyDiamond(id, priceWei) {
   return dispatch => {
     const diamonds = getDiamondContract();
 
-    diamonds.deployed()
+    return diamonds.deployed()
       .then(function (instance) {
-        console.log('buying diamond ', id);
-        instance.buy(id, { value: web3.toWei(priceEth) })
+        return instance.buy(id, { value: priceWei})
           .then(() => {
-            instance.getDiamond.call(id)
+            return instance.getDiamond.call(id)
               .then(payload => {
-                dispatch(receiveDiamond(payload));
+                return dispatch(receiveDiamond(payload));
               });
           })
       }).catch(function(err){
