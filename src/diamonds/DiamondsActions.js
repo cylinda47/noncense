@@ -43,7 +43,7 @@ export const receiveDiamondDetails = payload => {
       id: payload[0].toNumber(),
       shape: payload[1].toNumber(),
       carat: payload[2].toNumber(),
-      grade: payload[3].toNumber(),
+      clarity: payload[3].toNumber(),
       cut: payload[4].toNumber(),
       color: payload[5].toNumber(),
     },
@@ -127,7 +127,7 @@ export function requestOwnDiamonds() {
   } 
 }
 
-export function createDiamond(name, priceUSD, url, shape, carat, grade, cut, color) {
+export function createDiamond(name, priceUSD, url, shape, carat, clarity, cut, color) {
   return function (dispatch) {
     const web3 = store.getState().web3.web3Instance;
     const diamonds = getDiamondContract();
@@ -136,7 +136,7 @@ export function createDiamond(name, priceUSD, url, shape, carat, grade, cut, col
       .then(instance => {
         const priceEth = priceUSD / store.getState().conversion;
         return instance.createDiamond(
-          name, web3.toWei(priceEth), url, shape, carat, grade, cut, color
+          name, web3.toWei(priceEth), url, shape, carat, clarity, cut, color
         )
           .then(() => {
             setTimeout(() => instance.getLastDiamond()

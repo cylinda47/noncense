@@ -3,18 +3,8 @@ import * as DiamondSpecs from '../diamondSpecs';
 
 class DiamondShow extends React.Component {
 
-  constructor(props){
-    super(props); 
-    this.state = {
-      diamond: {}
-    }; 
-  }
   componentDidMount () {
-    this.props.getWeb3.then(() => this.props.requestDiamond(this.props.diamondId));
-  }
-
-  componentWillReceiveProps (newProps) {
-    this.setState({diamond:newProps.diamond});
+    this.props.requestDiamond(this.props.diamondId);
   }
 
   handleBuy() {
@@ -56,7 +46,7 @@ class DiamondShow extends React.Component {
                 <li id="diamond-show-field">
                   <div id="diamond-show-line">
                     <span id="diamond-show-label">CARAT</span>
-                    <span id="diamond-show-item">{diamond.carat}</span>
+                    <span id="diamond-show-item">{diamond.carat / 100}</span>
                   </div>
                 </li>
                 <li id="diamond-show-field">
@@ -68,7 +58,7 @@ class DiamondShow extends React.Component {
                 <li id="diamond-show-field">
                   <div id="diamond-show-line">
                     <span id="diamond-show-label">CLARITY GRADE</span>
-                    <span id="diamond-show-item">{DiamondSpecs.gradeOptions[diamond.grade]}</span>
+                    <span id="diamond-show-item">{DiamondSpecs.clarityOptions[diamond.clarity]}</span>
                   </div>
                 </li>
                 <li>
