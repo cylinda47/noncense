@@ -4,14 +4,15 @@ import { Link } from 'react-router';
 class DiamondsDashboard extends React.Component {
   componentDidMount() {
     this.props.requestOwnDiamonds();
-    setTimeout(this.props.requestOwnDiamonds, 1000);
   }
 
   handleUpdatePrice(id) {
     return e => {
       e.preventDefault();
-      const priceUSD = document.getElementById(`new-price-${id}`).value;
-      this.props.updateDiamond(id, parseFloat(priceUSD, 10));
+      const inputEl = document.getElementById(`new-price-${id}`);
+      const priceUSD = inputEl.value;
+      this.props.updateDiamond(id, parseFloat(priceUSD, 10))
+        .then(() => inputEl.value = '');
     }
   }
 

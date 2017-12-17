@@ -21,7 +21,7 @@ class DiamondShow extends React.Component {
     return (e) => {
         e.preventDefault();
         this.props.buyDiamond(this.props.diamondId, this.props.diamond.price)
-          .then(() => this.props.router.push('/dashboard'));
+          .then(() => setTimeout(() => this.props.router.push('/dashboard'), 1000));
     };
    }
 
