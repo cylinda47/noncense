@@ -2,53 +2,39 @@ import React from 'react';
 import { Link } from 'react-router';
 
 class DiamondsIndex extends React.Component {
+  componentDidMount(){
+    this.props.requestAllDiamonds(); 
+  }
 
-    constructor(props){
-        super(props); 
-        this.state = {
-            diamonds: {},
-        }; 
+  render() {      
+    const { diamonds, conv } = this.props;
+    let content;
+    if (diamonds.length > 0) {
+      content = diamonds.map(diamond => (
+        <Link className="diamond-item" to={`diamonds/${diamond.id}`} key={diamond.id}>
+          <div className="diamonds-item">
+            <button className="diamond-buy">Buy</button>
+            <ul className="diamonds-properites-list">
+              <li><img src={diamond.url} alt='Diamond'/></li>
+              <li className="diamond-name"><div>{diamond.name}</div></li>
+              <li className="diamond-price">USD {(diamond.price / 1e18 * conv)
+                .toLocaleString("en-US", { style: "currency", currency: "USD" })}
+              </li>
+            </ul>
+          </div>
+        </Link>
+      ));
+    }else{
+      content = <li>No Diamonds...yet</li>
     }
 
-    componentDidMount(){
-        this.props.requestAllDiamonds(); 
-    }
-
-    componentWillReceiveProps(newProps){
-        this.setState({diamonds: newProps.diamonds})
-    }
-
-    render(){       
-        console.log(this.state);
-        let diamonds;
-        console.log(this.state.diamonds[0]);
-        if (this.state.diamonds[0]) {
-            console.log("im here!!");
-            diamonds = Object.keys(this.state.diamonds).map(diamondId => (
-                <Link className="diamond-item" to={`diamonds/${diamondId}`} key={diamondId}>
-                    <div className="diamonds-item">
-                        <button className="diamond-buy">Buy</button>
-                        <ul className="diamonds-properites-list">
-                            <li><img src="https://bnsec.bluenile.com/bluenile/is/image/bluenile/-graudated-milgrain-diamond-engagement-ring-14k-gold-/53700_main?$phab_detailmain$" /></li>
-                            <li className="diamond-name"><div>{this.state.diamonds[diamondId].name}</div></li>
-                            <li className="diamond-price">USD {(this.state.diamonds[diamondId].price / 1e18 * this.props.conv).toLocaleString(
-                                "en-US", { style: "currency", currency: "USD" })}</li>
-                        </ul>
-                    </div>
-                </Link>
-            ));
-        }else{
-            diamonds = <li>Diamonds</li>
-        }
-
-        return (
-            <div className="diamonds-container">
-                <h1>Search for Diamonds</h1>
-                <div className="diamonds-item-container">{diamonds}</div>
-            </div>
-        )
-
-    }
+    return (
+      <div className="diamonds-container">
+        <h1>Search for Diamonds</h1>
+        <div className="diamonds-item-container">{content}</div>
+      </div>
+    )
+  }
 }
 
 export default DiamondsIndex

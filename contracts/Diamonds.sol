@@ -15,36 +15,25 @@ contract Diamonds {
     uint8[] diamondCuts;
     uint8[] diamondColors;
 
-    address owner;
+    address contractOwner;
     
-    struct Owner {
-       uint[] diamondIds;
-       string diamondNamesString;
-       string diamondUrlsString;
-    }
-
-    mapping (address => Owner) owners;
+    mapping(address => uint[]) ownerDiamondIds;
     
     function Diamonds() public {
         // constructor function
-        owner = msg.sender; // contract owner
+        contractOwner = msg.sender;
     }
     
     function createDiamond(string name, uint price, string url, uint8 shape, 
         uint16 carat, uint8 clarity, uint8 cut, uint8 color) public 
     {
-        uint id = diamondNames.length;
-        owners[msg.sender].diamondIds.push(id);
+        ownerDiamondIds[msg.sender].push(diamondNames.length);
         diamondNames.push(name);
         diamondNamesString = concat(diamondNamesString, name, "|");
-        owners[msg.sender].diamondNamesString = 
-            concat(owners[msg.sender].diamondNamesString, name, "|");
         diamondPrices.push(price);
         diamondOwners.push(msg.sender);
         diamondUrls.push(url);
         diamondUrlsString = concat(diamondUrlsString, url, "|");
-        owners[msg.sender].diamondUrlsString = 
-            concat(owners[msg.sender].diamondUrlsString, url, "|");
         diamondShapes.push(shape);
         diamondCarats.push(carat);
         diamondClaritys.push(clarity);
@@ -53,12 +42,29 @@ contract Diamonds {
     }
     
     function buy(uint id) payable public {
-        // id is index of diamond in the arrays
+        // check for valid id and sufficient funds sent
         require(diamondPrices.length > id && 
             msg.value >= diamondPrices[id]);
-
+        
+        // remove id from previous owner's array of diamond ids
+        uint[] memory ids = ownerDiamondIds[diamondOwners[id]];
+        for (uint i = 0; i < ids.length; i++) {
+            if (ids[i] == id) {
+                // move last id value to index of id
+                ownerDiamondIds[diamondOwners[id]][i] = ids[ids.length - 1];
+                break;
+            }
+        }
+        
+        // shorten previous owner's array of diamond ids by 1
+        ownerDiamondIds[diamondOwners[id]].length --;
+        
+         // transfer money to previous owner
         diamondOwners[id].transfer(diamondPrices[id]);
-        diamondOwners[id] = msg.sender; // change owner
+        
+        // change ownership
+        diamondOwners[id] = msg.sender;
+        ownerDiamondIds[msg.sender].push(id);
     }
 
     function updatePrice(uint id, uint price) public {
@@ -68,23 +74,29 @@ contract Diamonds {
         diamondPrices[id] = price;
     }
 
+    function getAllDiamonds() view public 
+        returns (string, uint[], address[], string) 
+    {
+        return (diamondNamesString, diamondPrices, diamondOwners,
+            diamondUrlsString
+        );
+    }
+
     function getOwnDiamonds() view public
         returns (uint[], string, uint[], string) 
     {   
-        uint[] memory ids = owners[msg.sender].diamondIds;
+        uint[] memory ids = ownerDiamondIds[msg.sender];
         uint[] memory prices = new uint[](ids.length);
+        string memory namesString;
+        string memory urlsString;
         
         for (uint i = 0; i < ids.length; i++) {
-            prices[i] = (diamondPrices[ids[i]]);    
+            prices[i] = diamondPrices[ids[i]];
+            namesString = concat(namesString, diamondNames[ids[i]], "|");
+            urlsString = concat(urlsString, diamondUrls[ids[i]], "|");
         }
         
-        return (
-            ids, 
-            owners[msg.sender].diamondNamesString, 
-            prices,
-            owners[msg.sender].diamondUrlsString
-        );
-    
+        return (ids, namesString, prices, urlsString);
     }
     
     function getDiamond(uint id) view public 
@@ -120,19 +132,11 @@ contract Diamonds {
         return (id, diamondShapes[id], diamondCarats[id], diamondClaritys[id],
             diamondCuts[id], diamondColors[id]);
     }
-
-    function getAllDiamonds() view public 
-        returns (string, uint[], address[], string) 
-    {
-        return (diamondNamesString, diamondPrices, diamondOwners,
-            diamondUrlsString
-        );
-    }
     
     function kill() public {
         // destroy contract and send all remaining funds to contract owner's address
-        require (msg.sender == owner);
-        selfdestruct(owner);
+        require (msg.sender == contractOwner);
+        selfdestruct(contractOwner);
     }
     
     function concat(string _base, string _value, string _separator) 
