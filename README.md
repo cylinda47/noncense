@@ -42,22 +42,23 @@ Problem Statement: Currently, peer to peer buying and selling of jewelry isn’t
     * Uses JSON RPC calls
     * Web3 Reducer
     
-    const initialState = {
-      web3Instance: null
-    }
+    
+          const initialState = {
+            web3Instance: null
+          }
 
-    const web3Reducer = (state = initialState, action) => {
-      if (action.type === 'WEB3_INITIALIZED')
-      {
-        return Object.assign({}, state, {
-          web3Instance: action.payload.web3Instance
-        })
-      }
+          const web3Reducer = (state = initialState, action) => {
+            if (action.type === 'WEB3_INITIALIZED')
+            {
+              return Object.assign({}, state, {
+                web3Instance: action.payload.web3Instance
+              })
+            }
 
-      return state
-    }
+            return state
+          }
 
-    export default web3Reducer
+          export default web3Reducer
 
 ### Constructing a Marketplace
 * This is done on the Ethereum blockchain.
@@ -68,19 +69,17 @@ Problem Statement: Currently, peer to peer buying and selling of jewelry isn’t
     * Users can buy and sell precious stones. It may also come to light that more details of the transaction would be necessary for this marketplace to be functional.
     
 ![](https://github.com/cylinda47/noncense/blob/master/public/Screen%20Shot%202017-12-17%20at%205.07.53%20PM.png)
-    
-    * We will validate our transaction model with our seed data.
 
 * Buy function of the contract:
 
-    function buy(uint id) payable public {
-        // id is index of diamond in the arrays
-        require(diamondPrices.length > id &&
-            msg.value >= diamondPrices[id] * 1e18);
+        function buy(uint id) payable public {
+            // id is index of diamond in the arrays
+            require(diamondPrices.length > id &&
+                msg.value >= diamondPrices[id] * 1e18);
 
-        diamondOwners[id].transfer(diamondPrices[id] * 1e18);
-        diamondOwners[id] = msg.sender; // change owner
-    }
+            diamondOwners[id].transfer(diamondPrices[id] * 1e18);
+            diamondOwners[id] = msg.sender; // change owner
+        }
 
 ### UX
 * Frontend Interface
