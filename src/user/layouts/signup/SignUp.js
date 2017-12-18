@@ -9,7 +9,10 @@ class SignUp extends Component {
         <div className="pure-g">
           <div className='pure-u-1-1'>
             <h1>How To</h1>
-            <p>You need to download Metamask</p>
+            <p>
+              You need to download Metamask in order to sign up.<br/>
+              Ensure your account has ether (test ether is acceptable!) as each interaction with the blockchain requires gas.
+            </p>
           </div>
           <div className="pure-u-1-1">
             <h1>Sign Up</h1>
