@@ -22,13 +22,21 @@ class DiamondShow extends React.Component {
           <div className="diamonds-container">
             <nav></nav>
             <div className="diamonds-show">
-              <div className="diamond-img" style={{backgroundImage: `url(${diamond.url})`}}/>
+              <div className="diamond-img-container">
+                <div className="diamond-img" style={{backgroundImage: `url(${diamond.url})`}}/>
+              </div>
               <ul className="diamonds-properites-list">
                 <li id="diamond-show-name">
                   <div id="diamond-show-line">
                     <span id="diamond-show-label">DESCRIPTION</span>
                     </div>
                     <p>{diamond.name}</p>
+                </li>
+                <li id="diamond-show-field">
+                  <div id="diamond-show-line">
+                    <span id="diamond-show-label">OWNER</span>
+                    <span id="diamond-show-item">{diamond.ownerName}</span>
+                  </div>
                 </li>
                 <li id="diamond-show-field">
                   <div id="diamond-show-line">

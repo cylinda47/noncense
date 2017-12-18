@@ -32,6 +32,7 @@ export const receiveDiamond = payload => {
       price: payload[2].toNumber(),
       ownerAddr: payload[3],
       url: payload[4],
+      ownerName: payload[5]
     },
   }
 }
@@ -77,19 +78,26 @@ export function requestAllDiamonds() {
     diamonds.deployed()
       .then(instance => instance.getAllDiamonds()
         .then(result => {
-          let allDiamonds = {};
+          const allDiamonds = {};
+          const allOwners ={};
 
+          const ownersNamesArray = result[5].slice(1).split('|');
+          for (let i = 0; i < result[4].length; i++) {
+            allOwners[result[4][i]] = ownersNamesArray[i];
+          }
+
+          const namesArray = result[0].slice(1).split('|');
+          const urlsArray = result[3].slice(1).split('|');
           for (let i = 0; i < result[1].length; i++) {
-            const namesArray = result[0].slice(1).split('|');
-            const urlsArray = result[3].slice(1).split('|');
             allDiamonds[i] = {} ;
             allDiamonds[i].id = i;
             allDiamonds[i].price = result[1][i].toNumber();
             allDiamonds[i].ownerAddr = result[2][i];
             allDiamonds[i].name = namesArray[i];
             allDiamonds[i].url = urlsArray[i];
+            allDiamonds[i].ownerName = allOwners[allDiamonds[i].ownerAddr];
           }
-
+          
           dispatch(receiveAllDiamonds(allDiamonds)); 
         })
       )
@@ -106,6 +114,7 @@ export function requestOwnDiamonds() {
         .then(result => {
           let ownDiamonds = {};
           const diamondIds = [];
+          const ownName = store.getState().user.data.name;
 
           for (let i = 0; i < result[2].length; i++) {
             const namesArray = result[1].slice(1).split('|');
@@ -117,6 +126,7 @@ export function requestOwnDiamonds() {
             ownDiamonds[id].price = result[2][i].toNumber();
             ownDiamonds[id].name = namesArray[i];
             ownDiamonds[id].url = urlsArray[i];
+            ownDiamonds[id].ownerName = ownName;
           }
 
           dispatch(receiveAllDiamonds(ownDiamonds)); 
@@ -135,12 +145,14 @@ export function createDiamond(name, priceUSD, url, shape, carat, clarity, cut, c
     return diamonds.deployed()
       .then(instance => {
         const priceEth = priceUSD / store.getState().conversion;
-        return instance.createDiamond(
-          name, web3.toWei(priceEth), url, shape, carat, clarity, cut, color
+        const username = store.getState().user.data.name;
+        return instance.createDiamond(name, web3.toWei(priceEth), url, shape, 
+          carat, clarity, cut, color, username
         )
           .then(() => {
             setTimeout(() => instance.getLastDiamond()
               .then(payload => {
+                payload.push(store.getState().user.data.name);
                 dispatch(receiveDiamond(payload));
             }), 400);
             setTimeout(() => instance.getLastDiamondDetails()
