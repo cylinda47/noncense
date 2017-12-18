@@ -1,5 +1,5 @@
 export const shapeOptions = ["Round Brilliant", "Princess", "Cushion", "Oval", "Emerald", "Asscher", "Radiant", "Pear", "Marquise", "Heart"];
-export const gradeOptions = [
+export const clarityOptions = [
     "Flawless(FL)",
     "Internally Flawless(IF)",
     "Very, Very Slightly Included(VVS1)",
@@ -19,8 +19,4 @@ export const cutOptions = [
     "Fair",
     "Poor"
 ]
-export const colorOptions = [
-    "D",
-    "E",
-    "F"
-]
+export const colorOptions = 'DEFGHIJKLMNOPQRSTUVWXYZ'.split('');
