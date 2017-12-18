@@ -1,4 +1,5 @@
 import { START_LOADING } from './loadingActions';
+import { USER_LOGGED_IN } from '../../user/ui/loginbutton/LoginButtonActions';
 import {
   RECEIVE_ALL_DIAMONDS,
   RECEIVE_DIAMOND,
@@ -15,6 +16,7 @@ const loadingReducer = (state = false, action) => {
     case RECEIVE_OWN_DIAMONDS:
     case RECEIVE_DIAMOND:
     case RECEIVE_DIAMOND_DETAILS:
+    case USER_LOGGED_IN:
       return false;
     default:
       return state;

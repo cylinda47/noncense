@@ -3,7 +3,9 @@ import SignUpForm from './SignUpForm'
 import { signUpUser } from './SignUpFormActions'
 
 const mapStateToProps = (state, ownProps) => {
-  return {}
+  return {
+    loading: state.loading
+  }
 }
 
 const mapDispatchToProps = (dispatch) => {
