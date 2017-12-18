@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router';
 import * as DiamondSpecs from '../diamondSpecs';
 
 class DiamondShow extends React.Component {
@@ -20,8 +19,9 @@ class DiamondShow extends React.Component {
 
   handleBuy() {
     return (e) => {
-        e.preventDefault;
-        this.props.buyDiamond(this.props.diamondId, this.props.diamond.price);
+        e.preventDefault();
+        this.props.buyDiamond(this.props.diamondId, this.props.diamond.price)
+          .then(() => setTimeout(() => this.props.router.push('/dashboard'), 1000));
     };
    }
 

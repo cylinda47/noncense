@@ -51,7 +51,7 @@ class Home extends Component {
               <h6>
                 Smart Contracts
               </h6>
-              <img className="contract-img" src="https://image.flaticon.com/icons/svg/306/306438.svg" />
+              <img className="contract-img" src="https://image.flaticon.com/icons/svg/306/306438.svg" alt='Contract'/>
               <p>
                 Smart Contracts regulate the communication between the application and the blockchain.
                 These self-executing contracts define the terms of agreement between the buyer and the seller directly by writing them into the lines of the code.
@@ -63,7 +63,7 @@ class Home extends Component {
               <h6>
                 Noncense Smart Contract
               </h6>
-                <img className="contract-img" src="https://image.flaticon.com/icons/svg/306/306471.svg" />
+                <img className="contract-img" src="https://image.flaticon.com/icons/svg/306/306471.svg" alt='Hub and spokes'/>
               <p>
                 Due to the nature of precious stone transactions, Noncense necessitates users being able to interact securely and accurately.
                 Using a traditional network server database, users sacrifice security for minimally improved performance speed.
@@ -73,7 +73,7 @@ class Home extends Component {
             <li>
               <h6>
                 Noncense Smart Contract Functionality
-                <img className="contract-img" src="https://image.flaticon.com/icons/svg/306/306431.svg" />
+                <img className="contract-img" src="https://image.flaticon.com/icons/svg/306/306431.svg" alt='Communication'/>
               </h6>
               <p>
                 Noncense cultivates transactions through Smart Contracts of its own.
