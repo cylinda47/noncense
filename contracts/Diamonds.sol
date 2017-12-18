@@ -14,10 +14,13 @@ contract Diamonds {
     uint8[] diamondClaritys;
     uint8[] diamondCuts;
     uint8[] diamondColors;
+    address[] uniqueOwnerAddr;
+    string uniqueOwnerNames;
 
     address contractOwner;
     
     mapping(address => uint[]) ownerDiamondIds;
+    mapping(address => string) ownerNames;
     
     function Diamonds() public {
         // constructor function
@@ -25,9 +28,14 @@ contract Diamonds {
     }
     
     function createDiamond(string name, uint price, string url, uint8 shape, 
-        uint16 carat, uint8 clarity, uint8 cut, uint8 color) public 
+        uint16 carat, uint8 clarity, uint8 cut, uint8 color, string owner) public 
     {
         ownerDiamondIds[msg.sender].push(diamondNames.length);
+        if (bytes(ownerNames[msg.sender]).length == 0) {
+          ownerNames[msg.sender] = owner;
+          uniqueOwnerAddr.push(msg.sender);
+          uniqueOwnerNames = concat(uniqueOwnerNames, owner, "|");
+        }
         diamondNames.push(name);
         diamondNamesString = concat(diamondNamesString, name, "|");
         diamondPrices.push(price);
@@ -75,10 +83,10 @@ contract Diamonds {
     }
 
     function getAllDiamonds() view public 
-        returns (string, uint[], address[], string) 
+        returns (string, uint[], address[], string, address[], string) 
     {
         return (diamondNamesString, diamondPrices, diamondOwners,
-            diamondUrlsString
+            diamondUrlsString, uniqueOwnerAddr, uniqueOwnerNames
         );
     }
 
@@ -100,11 +108,11 @@ contract Diamonds {
     }
     
     function getDiamond(uint id) view public 
-        returns (uint, string, uint, address, string) 
+        returns (uint, string, uint, address, string, string) 
     {
         require(diamondPrices.length > id);
         return (id, diamondNames[id], diamondPrices[id], diamondOwners[id],
-            diamondUrls[id]
+            diamondUrls[id], ownerNames[diamondOwners[id]]
         );
     }
 
@@ -153,13 +161,13 @@ contract Diamonds {
         uint i;
         uint j;
         
-        for (i=0; i < _baseBytes.length; i++) {
+        for (i = 0; i < _baseBytes.length; i++) {
             _newValue[j++] = _baseBytes[i];
         }
         
         _newValue[j++] = bytes(_separator)[0];
         
-        for (i=0; i < _valueBytes.length; i++) {
+        for (i = 0; i < _valueBytes.length; i++) {
             _newValue[j++] = _valueBytes[i];
         }
         
