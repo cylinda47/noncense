@@ -13,16 +13,14 @@ class DiamondsIndex extends React.Component {
       content = diamonds.map(diamond => (
         <Link className="diamond-item" to={`diamonds/${diamond.id}`} key={diamond.id}>
           <div className="diamonds-item">
-            <button className="diamond-buy">Buy</button>
+            <button className="diamond-buy">USD {(diamond.price / 1e18 * conv)
+              .toLocaleString("en-US", { style: "currency", currency: "USD" })}</button>
             <ul className="diamonds-properites-list">
               <li className='diamond-image-li'>
                 <img src={diamond.url} alt='Diamond'/>
               </li>
               <li className="diamond-name"><div>{diamond.name}</div></li>
-              <li className="diamond-price">USD {(diamond.price / 1e18 * conv)
-                .toLocaleString("en-US", { style: "currency", currency: "USD" })}
-              </li>
-              <li>Owner: {diamond.ownerName}</li>
+              <li className="diamond-price">Sold by: {diamond.ownerName}</li>
             </ul>
           </div>
         </Link>

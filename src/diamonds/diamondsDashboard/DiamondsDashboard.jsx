@@ -21,9 +21,8 @@ class DiamondsDashboard extends React.Component {
     let content;
     if (diamonds.length > 0) {
       content = diamonds.map(diamond => (
-        <div className="diamonds-item" key={diamond.id}>
+        <div className="diamonds-item visible" key={diamond.id}>
           <Link className="diamond-item" to={`diamonds/${diamond.id}`}>
-            <button className="diamond-buy">Buy</button>
             <ul className="diamonds-properites-list">
               <li className='diamond-image-li'>
                 <img src={diamond.url} alt='Diamond'/>
@@ -37,6 +36,7 @@ class DiamondsDashboard extends React.Component {
           <form onSubmit={this.handleUpdatePrice(diamond.id)}>
             <input id={`new-price-${diamond.id}`} type="number" 
               placeholder='New Price (USD)'
+              min='0.01' step='0.01'
             />
             <input type="submit" value='Update Price'/>
           </form>
