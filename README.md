@@ -14,7 +14,7 @@ Problem Statement: Currently, peer to peer buying and selling of jewelry isn’t
 * Marketplace constructed on the decentralized Ethereum network.
 * Interactive and adaptive website styling
 
-
+![](https://github.com/cylinda47/noncense/blob/master/public/Screen%20Shot%202017-12-17%20at%205.04.48%20PM.png)
 
 ## Technologies & Technical Challenges
 
@@ -66,6 +66,9 @@ Problem Statement: Currently, peer to peer buying and selling of jewelry isn’t
 
 * Determining the nature of the interactions using Smart Contracts.
     * Users can buy and sell precious stones. It may also come to light that more details of the transaction would be necessary for this marketplace to be functional.
+    
+![](https://github.com/cylinda47/noncense/blob/master/public/Screen%20Shot%202017-12-17%20at%205.07.53%20PM.png)
+    
     * We will validate our transaction model with our seed data.
 
 * Buy function of the contract:
