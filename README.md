@@ -41,6 +41,7 @@ Problem Statement: Currently, peer to peer buying and selling of jewelry isn’t
         * JavaScript/Web Application
     * Uses JSON RPC calls
     * Web3 Reducer
+    
     const initialState = {
       web3Instance: null
     }
@@ -68,6 +69,7 @@ Problem Statement: Currently, peer to peer buying and selling of jewelry isn’t
     * We will validate our transaction model with our seed data.
 
 * Buy function of the contract:
+
     function buy(uint id) payable public {
         // id is index of diamond in the arrays
         require(diamondPrices.length > id &&
