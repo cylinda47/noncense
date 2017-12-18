@@ -152,15 +152,20 @@
   min-height: 280px;
   border-radius: 20px;
   text-align: center;
-  max-height: 500px;
+  max-height: 540px;
   box-shadow: 1px 1px 2px #ccc;
+  font-family: 'Nunito', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
 }
 
 .how-it-works ul li h6 {
   justify-content: center;
-  font-size: 1em;
   margin-top: 5px;
   margin-bottom: 5px;
+  font-family: 'Comfortaa', cursive;
+  font-size: 17px;
+  font-weight: 400;
 }
 
  /* how to use noncense */
@@ -195,14 +200,14 @@
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  border-radius: 50%;
-  background-color: white;
-  padding: 1px 20px 20px 20px;
+  /* border-radius: 50%; */
+  /* background-color: white; */
+  /* padding: 1px 20px 20px 20px; */
   position: relative;
-  width: 350px;
-  height: 270px;
-  margin-bottom: 80px;
-  box-shadow: 2px 2px 2px #e6e6e6;
+  width: 400px;
+  height: 350px;
+  margin-bottom: 50px;
+  /* box-shadow: 2px 2px 2px #e6e6e6; */
 }
 
 .instructions ul li:last-child {
@@ -210,7 +215,38 @@
 }
 
 .instructions h6 {
-  font-size: 20px;
+  padding-top: 10px;
+  font-size: 30px;
+  font-family: 'Poiret One', cursive;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 30px;
+}
+
+#cut-diamond p {
+  padding: 0px 25px;
+}
+
+#cut-diamond {
+    border-style: solid;
+    border-color: transparent transparent white transparent;
+    border-width: 0 60px 80px 60px;
+    height: 0;
+    width: 300px;
+    position: relative;
+    margin: 25px 0 50px 0;
+    z-index: 99;
+}
+#cut-diamond-after {
+    content: "";
+    position: absolute;
+    top: 80px;
+    left: 0px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+    border-width: 250px 210px 0 210px;
 }
 
 /*contributors */
