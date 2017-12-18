@@ -89,42 +89,55 @@ class Home extends Component {
           <hr className='underline' />
           <ul>
             <li>
-              <h6>
-                Step 1
-              </h6>
-              <p>
-                Download a program that enables your browser to run on an Ethereum Node.
+              <div id="cut-diamond">
+                <h6>
+                  Step One
+                </h6>
+                <p>
+                  Download a program that enables your browser to run on an Ethereum Node.
                 We recommend the chrome extension: metamask.io.
-              </p>
+                </p>
+              </div>
+              <div id="cut-diamond-after"></div>
             </li>
             <li>
-              <h6>
-                Step 2
-              </h6>
+              <div id="cut-diamond">
+                <h6>
+                  Step Two
+                </h6>
               <p>
                 Create an account with metamask.io.
                 Use the TestRPC network to
               </p>
+              </div>
+              <div id="cut-diamond-after"></div>
             </li>
             <li>
-              <h6>
-                Step 3
-              </h6>
-              <p>
-                Navigate to the Noncense URL using a browser running on the Ethereum node.
-                While our site is in beta, we allow users to use the Ropsten Test Network to login to Noncense.
-              </p>
+              <div id="cut-diamond">
+                <h6>
+                  Step Three
+                </h6>
+                <p>
+                  Navigate to the Noncense URL using a browser running on the Ethereum node.
+                  While our site is in beta, we allow users to use the Ropsten Test Network to login to Noncense.
+                </p>
+              </div>
+              <div id="cut-diamond-after"></div>
             </li>
             <li>
-              <h6>
-                Step 4
-              </h6>
-              <p>
-                Sign up for Noncense using our secure authentication system.
-                Browse the available products, make purchases, and sell your precious stones!
-              </p>
+              <div id="cut-diamond">
+                <h6>
+                  Step Four
+                </h6>
+                <p>
+                  Sign up for Noncense using our secure authentication system.
+                  Browse the available products, make purchases, and sell your precious stones!
+                </p>
+              </div>
+              <div id="cut-diamond-after"></div>
             </li>
           </ul>
+          
         </section>
         <section className='contributors'>
           <h1>Contributors</h1>
