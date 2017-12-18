@@ -15,11 +15,14 @@ class DiamondsIndex extends React.Component {
           <div className="diamonds-item">
             <button className="diamond-buy">Buy</button>
             <ul className="diamonds-properites-list">
-              <li><img src={diamond.url} alt='Diamond'/></li>
+              <li className='diamond-image-li'>
+                <img src={diamond.url} alt='Diamond'/>
+              </li>
               <li className="diamond-name"><div>{diamond.name}</div></li>
               <li className="diamond-price">USD {(diamond.price / 1e18 * conv)
                 .toLocaleString("en-US", { style: "currency", currency: "USD" })}
               </li>
+              <li>Owner: {diamond.ownerName}</li>
             </ul>
           </div>
         </Link>

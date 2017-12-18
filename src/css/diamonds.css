@@ -14,7 +14,6 @@
     text-align: center;
     color: white;
     text-shadow: 0px 0px 9px white;
-    margin-bottom: 50px;
 }
 
 .diamonds-item-container {
@@ -79,9 +78,19 @@
     opacity: 1;
 }
 
+.diamond-image-li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+}
+
 .diamonds-item img {
-    width: 300px;
+    max-width: 300px;
+    max-height: 300px;
     height: auto;
+    width: auto;
 }
 
 .diamond-item {
@@ -189,16 +198,25 @@
 .diamonds-show ul {
     background-color: white;
     list-style: none;
-    width: 400px;
+    width: 450px;
     border-radius: 0px 20px 20px 0px;
 }
 
+.diamond-img-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 611px;
+  border-radius: 20px 0px 0px 20px;
+  background-color: white;
+}
+
 .diamond-img {
-    width: 500px;
-    height: 570px;
-    border-radius: 20px 0px 0px 20px;
-    background-color: white;
-    background-size: 400px;
+    width: 400px;
+    height: 400px;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -269,4 +287,13 @@
     font-size: 16px;
     font-family: 'Nunito', sans-serif;
     font-weight: 300;
+}
+
+.hidden {
+  display: none;
+}
+
+.error {
+  color: red;
+  text-transform: none;
 }
