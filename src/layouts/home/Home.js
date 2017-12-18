@@ -61,7 +61,7 @@ class Home extends Component {
             </li>
             <li>
               <h6>
-                Noncense Smart Contract
+                Security
               </h6>
                 <img className="contract-img" src="https://image.flaticon.com/icons/svg/306/306471.svg" alt='Hub and spokes'/>
               <p>
@@ -72,7 +72,7 @@ class Home extends Component {
             </li>
             <li>
               <h6>
-                Noncense Smart Contract Functionality
+                Noncense Functionality
                 <img className="contract-img" src="https://image.flaticon.com/icons/svg/306/306431.svg" alt='Communication'/>
               </h6>
               <p>
@@ -107,7 +107,7 @@ class Home extends Component {
                 </h6>
               <p>
                 Create an account with metamask.io.
-                Use the TestRPC network to
+                Use the "Ropsten Test Network" while our site is in Beta.
               </p>
               </div>
               <div id="cut-diamond-after"></div>
@@ -118,8 +118,8 @@ class Home extends Component {
                   Step Three
                 </h6>
                 <p>
-                  Navigate to the Noncense URL using a browser running on the Ethereum node.
-                  While our site is in beta, we allow users to use the Ropsten Test Network to login to Noncense.
+                  Obtain some free test Ether from a "faucet" such as
+                  faucet.metamask.io.
                 </p>
               </div>
               <div id="cut-diamond-after"></div>

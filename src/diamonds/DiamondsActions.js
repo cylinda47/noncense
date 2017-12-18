@@ -1,4 +1,5 @@
 import DiamondsContract from '../../build/contracts/Diamonds.json';
+import { startLoading } from '../util/loading/loadingActions';
 import store from '../store';
 
 const contract = require('truffle-contract');
@@ -141,6 +142,7 @@ export function createDiamond(name, priceUSD, url, shape, carat, clarity, cut, c
   return function (dispatch) {
     const web3 = store.getState().web3.web3Instance;
     const diamonds = getDiamondContract();
+    dispatch(startLoading());
 
     return diamonds.deployed()
       .then(instance => {
@@ -169,6 +171,7 @@ export function updateDiamond(id, priceUSD) {
   return dispatch => {
     const web3 = store.getState().web3.web3Instance;
     const diamonds = getDiamondContract();
+    dispatch(startLoading());
 
     return diamonds.deployed()
       .then(instance => {
@@ -185,6 +188,7 @@ export function updateDiamond(id, priceUSD) {
 export function buyDiamond(id, priceWei) {
   return dispatch => {
     const diamonds = getDiamondContract();
+    dispatch(startLoading());
 
     return diamonds.deployed()
       .then(instance => instance.buy(id, { value: priceWei})

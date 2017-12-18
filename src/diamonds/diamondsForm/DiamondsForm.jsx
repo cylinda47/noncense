@@ -234,9 +234,15 @@ class DiamondForm extends Component {
             
             <br />
             <center>
-              <button type="submit" className="pure-button pure-button-primary">
-                Create
+              {this.props.loading ? 
+              <button type="submit" 
+                className="pure-button pure-button-primary" disabled>Please Wait
               </button>
+              :
+              <button type="submit" 
+                className="pure-button pure-button-primary">Create
+              </button>
+              }
             </center>
           </fieldset>
         </form>

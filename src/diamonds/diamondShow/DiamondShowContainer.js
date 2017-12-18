@@ -9,7 +9,9 @@ const mapStateToProps = (state, ownProps) => {
   return {
     diamondId,
     diamond: state.diamonds[diamondId],
-    conv: state.conversion
+    conv: state.conversion,
+    loading: state.loading,
+    currentUsername: state.user.data.name
   }
 };
 

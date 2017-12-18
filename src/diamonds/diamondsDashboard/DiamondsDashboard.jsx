@@ -38,7 +38,11 @@ class DiamondsDashboard extends React.Component {
               placeholder='New Price (USD)'
               min='0.01' step='0.01'
             />
-            <input type="submit" value='Update Price'/>
+            {this.props.loading ?
+              <input type="submit" value='Please Wait' disabled/>
+            :
+              <input type="submit" value='Update Price'/>
+            }
           </form>
         </div>
       ));

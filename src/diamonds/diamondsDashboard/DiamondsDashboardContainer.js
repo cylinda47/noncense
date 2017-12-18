@@ -5,7 +5,8 @@ import DiamondsDashboard from './DiamondsDashboard';
 const mapStateToProps = (state, ownProps) => {
   return {
     conv: state.conversion,
-    diamonds: state.user.diamondIds.map(id => state.diamonds[id]) 
+    diamonds: state.user.diamondIds.map(id => state.diamonds[id]),
+    loading: state.loading
   }
 }
 

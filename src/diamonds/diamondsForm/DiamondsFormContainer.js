@@ -4,7 +4,8 @@ import DiamondsForm from './DiamondsForm'
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    diamonds: state.diamonds
+    diamonds: state.diamonds,
+    loading: state.loading
   }
 }
 
