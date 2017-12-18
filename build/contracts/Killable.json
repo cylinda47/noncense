@@ -39,15 +39,15 @@
       "type": "function"
     }
   ],
-  "bytecode": "0x6060604052336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506102b1806100536000396000f300606060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806341c0e1b51461005c5780638da5cb5b14610071578063f2fde38b146100c6575b600080fd5b341561006757600080fd5b61006f6100ff565b005b341561007c57600080fd5b610084610190565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156100d157600080fd5b6100fd600480803573ffffffffffffffffffffffffffffffffffffffff169060200190919050506101b5565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141561018e576000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16ff5b565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141561028257600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614151561028157806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b5b505600a165627a7a72305820a0d7d1691c00a672b34a5c47bf90dbcd763e3737eae5c8d87f138becf44312d00029",
-  "deployedBytecode": "0x606060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806341c0e1b51461005c5780638da5cb5b14610071578063f2fde38b146100c6575b600080fd5b341561006757600080fd5b61006f6100ff565b005b341561007c57600080fd5b610084610190565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156100d157600080fd5b6100fd600480803573ffffffffffffffffffffffffffffffffffffffff169060200190919050506101b5565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141561018e576000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16ff5b565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141561028257600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614151561028157806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b5b505600a165627a7a72305820a0d7d1691c00a672b34a5c47bf90dbcd763e3737eae5c8d87f138becf44312d00029",
+  "bytecode": "0x6060604052336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506102b1806100536000396000f300606060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806341c0e1b51461005c5780638da5cb5b14610071578063f2fde38b146100c6575b600080fd5b341561006757600080fd5b61006f6100ff565b005b341561007c57600080fd5b610084610190565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156100d157600080fd5b6100fd600480803573ffffffffffffffffffffffffffffffffffffffff169060200190919050506101b5565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141561018e576000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16ff5b565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141561028257600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614151561028157806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b5b505600a165627a7a7230582095d88440dffddea5ffdb8f45b9e9fc28744b59f823628df08015903e63457a5f0029",
+  "deployedBytecode": "0x606060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806341c0e1b51461005c5780638da5cb5b14610071578063f2fde38b146100c6575b600080fd5b341561006757600080fd5b61006f6100ff565b005b341561007c57600080fd5b610084610190565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156100d157600080fd5b6100fd600480803573ffffffffffffffffffffffffffffffffffffffff169060200190919050506101b5565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141561018e576000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16ff5b565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141561028257600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614151561028157806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b5b505600a165627a7a7230582095d88440dffddea5ffdb8f45b9e9fc28744b59f823628df08015903e63457a5f0029",
   "sourceMap": "179:91:3:-;;;275:10:4;267:5;;:18;;;;;;;;;;;;;;;;;;179:91:3;;;;;;",
   "deployedSourceMap": "179:91:3:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;212:56;;;;;;;;;;;;;;217:20:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;362:110;;;;;;;;;;;;;;;;;;;;;;;;;;;;212:56:3;339:5:4;;;;;;;;;;;325:19;;:10;:19;;;321:32;;;257:5:3;;;;;;;;;;;244:19;;;321:32:4;212:56:3:o;217:20:4:-;;;;;;;;;;;;;:::o;362:110::-;339:5;;;;;;;;;;;325:19;;:10;:19;;;321:32;;;447:1;427:22;;:8;:22;;;;423:44;;;459:8;451:5;;:16;;;;;;;;;;;;;;;;;;423:44;321:32;362:110;:::o",
   "source": "pragma solidity ^0.4.4;\n\n\nimport \"./../ownership/Ownable.sol\";\n\n\n/*\n * Killable\n * Base contract that can be killed by owner. All funds in contract will be sent to the owner.\n */\ncontract Killable is Ownable {\n  function kill() onlyOwner {\n    selfdestruct(owner);\n  }\n}\n",
-  "sourcePath": "/Users/cylinda/Documents/app_academy/noncense/contracts/zeppelin/lifecycle/Killable.sol",
+  "sourcePath": "/Users/william/Downloads/noncense/contracts/zeppelin/lifecycle/Killable.sol",
   "ast": {
     "attributes": {
-      "absolutePath": "/Users/cylinda/Documents/app_academy/noncense/contracts/zeppelin/lifecycle/Killable.sol",
+      "absolutePath": "/Users/william/Downloads/noncense/contracts/zeppelin/lifecycle/Killable.sol",
       "exportedSymbols": {
         "Killable": [
           932
@@ -71,7 +71,7 @@
       {
         "attributes": {
           "SourceUnit": 974,
-          "absolutePath": "/Users/cylinda/Documents/app_academy/noncense/contracts/zeppelin/ownership/Ownable.sol",
+          "absolutePath": "/Users/william/Downloads/noncense/contracts/zeppelin/ownership/Ownable.sol",
           "file": "./../ownership/Ownable.sol",
           "scope": 933,
           "symbolAliases": [
@@ -270,12 +270,17 @@
     "version": "0.4.18+commit.9cf6e910.Emscripten.clang"
   },
   "networks": {
+    "3": {
+      "events": {},
+      "links": {},
+      "address": "0xa1eabda3fb469ec62132ffe95f964ff5534d7064"
+    },
     "4447": {
       "events": {},
       "links": {},
-      "address": "0xf25186b5081ff5ce73482ad761db0eb0d25abfbf"
+      "address": "0x8c7ef141e529c5263e2a45581d1c8a39f64dc5df"
     }
   },
   "schemaVersion": "1.0.1",
-  "updatedAt": "2017-12-18T01:45:01.612Z"
+  "updatedAt": "2017-12-18T06:24:59.904Z"
 }
