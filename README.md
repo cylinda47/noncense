@@ -12,6 +12,9 @@ Problem Statement: Currently, peer to peer buying and selling of jewelry isn’t
 * Live conversion of Ethereum value to US Dollars
 * Post precious stones on the site to sell
 * Marketplace constructed on the decentralized Ethereum network.
+* Interactive and adaptive website styling
+
+
 
 ## Technologies & Technical Challenges
 
