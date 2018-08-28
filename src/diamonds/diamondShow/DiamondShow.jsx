@@ -16,7 +16,7 @@ class DiamondShow extends React.Component {
    }
 
   render () {
-    const { diamond } = this.props;
+    const { diamond, currentUsername, loading } = this.props;
     if (diamond) {
         return (
           <div className="diamonds-container">
@@ -75,7 +75,16 @@ class DiamondShow extends React.Component {
                     <span id="diamond-show-item">{DiamondSpecs.colorOptions[diamond.color-3]}</span>
                 </div>
                 </li>
-                <li><button onClick={this.handleBuy()}>Purchase</button></li>
+                <li>
+                  {loading ?
+                    <button disabled>Please Wait</button>
+                  :
+                    diamond.ownerName === currentUsername ?
+                      <button disabled>You own this</button>
+                    :
+                      <button onClick={this.handleBuy()}>Purchase</button>
+                  }
+                </li>
               </ul>
             </div>
           </div>

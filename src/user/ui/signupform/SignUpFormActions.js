@@ -1,6 +1,7 @@
 import AuthenticationContract from '../../../../build/contracts/Authentication.json'
 import { loginUser } from '../loginbutton/LoginButtonActions'
 import store from '../../../store'
+import { startLoading } from '../../../util/loading/loadingActions';
 
 const contract = require('truffle-contract')
 
@@ -11,6 +12,7 @@ export function signUpUser(name) {
   if (typeof web3 !== 'undefined') {
 
     return function(dispatch) {
+      dispatch(startLoading());
       // Using truffle-contract we create the authentication object.
       const authentication = contract(AuthenticationContract)
       authentication.setProvider(web3.currentProvider)

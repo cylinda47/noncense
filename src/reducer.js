@@ -4,6 +4,7 @@ import userReducer from './user/userReducer'
 import web3Reducer from './util/web3/web3Reducer'
 import diamondsReducer from './diamonds/diamondsReducer'
 import conversionReducer from './diamonds/conversionReducer'
+import loadingReducer from './util/loading/loadingReducer'
 
 const reducer = combineReducers({
   routing: routerReducer,
@@ -11,6 +12,7 @@ const reducer = combineReducers({
   web3: web3Reducer, 
   diamonds: diamondsReducer,
   conversion: conversionReducer,
+  loading: loadingReducer
 })
 
 export default reducer

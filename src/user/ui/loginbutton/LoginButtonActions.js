@@ -56,7 +56,7 @@ export function loginUser() {
           })
           .catch(function(result) {
             // If error, go to signup page.
-            console.error('Wallet ' + coinbase + ' does not have an account!')
+            // console.error('Wallet ' + coinbase + ' does not have an account!')
 
             return browserHistory.push('/signup')
           })

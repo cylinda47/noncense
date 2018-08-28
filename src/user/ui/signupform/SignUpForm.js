@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 class SignUpForm extends Component {
   constructor(props) {
@@ -31,7 +31,15 @@ class SignUpForm extends Component {
             <input className="signup-input" id="name" type="text" value={this.state.name} onChange={this.onInputChange.bind(this)} placeholder="Name" />
           <span className="pure-form-message">This is a required field.</span>
           <br />
-          <button type="submit" className="pure-button pure-button-primary">Sign Up</button>
+          {this.props.loading ?
+            <button type="submit" 
+              className="pure-button pure-button-primary" disabled>Please Wait
+            </button>
+          :
+            <button type="submit" 
+              className="pure-button pure-button-primary">Sign Up
+            </button>
+          }
         </fieldset>
       </form>
     )

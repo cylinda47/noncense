@@ -21,8 +21,6 @@ import SignUp from './user/layouts/signup/SignUp';
 
 // Redux Store
 import store from './store'
-// TODO remove before production
-window.getState = store.getState;
 
 // Get current ETH / USD conversion
 $.ajax({
@@ -36,11 +34,11 @@ const history = syncHistoryWithStore(browserHistory, store)
 
 getWeb3
 .then(results => {
-  console.log('Web3 initialized!')
+  // console.log('Web3 initialized!')
   store.dispatch(loginUser());
 })
 .catch(() => {
-  console.log('Error in web3 initialization.')
+  // console.log('Error in web3 initialization.')
 })
 
 ReactDOM.render((
