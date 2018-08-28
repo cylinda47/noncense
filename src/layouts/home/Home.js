@@ -36,7 +36,7 @@ class Home extends Component {
               </div>
               <div className="why-ethereum-container-2">
                 The marketplace for precious stones is monopolized by big, corporate retailers due to their readily available access to effective evaluators of clarity, cut, color, and carat weight.
-                Noncense enables all buyers and sellers to have access to any stone's credentials, including past sale prices. This is made possible through Etehreum blockchain technology.
+                Noncense enables all buyers and sellers to have access to any stone's credentials, including past sale prices. This is made possible through Ethereum blockchain technology.
                 In essence, this technology is a linked list that stores the historical information for any given product. Ethereum makes this possible by decentralizing the traditional 'server' into many private Ethereum Nodes.
                 These nodes ensure 100% security for transactions conducted by both buyers and sellers.
               </div>
